@@ -1321,6 +1321,8 @@ let UTS = loadState();
 let saveTimer = null;
 function saveState(){ clearTimeout(saveTimer); saveTimer = setTimeout(()=>{ try{ localStorage.setItem(STORE_KEY, JSON.stringify(UTS)); }catch(e){} }, 250); }
 const num = v => (v===''||v===null||v===undefined||isNaN(+v)) ? null : +v;
+const FFS_LOSS = 0.12;   // fit-for-service limit: 12 % loss of the nominal wall thickness (3 Nov 2026)
+function ffsOf(mk){ const m = UTS[mk], M = MEM[mk]; if(!m) return null; const wt = num(m.wt) ?? ((M && M.size && num(M.size.wt)) ?? null); return wt===null ? null : Math.round(wt*(1-FFS_LOSS)*100)/100; }
 
 // vertical rings: end ring at each end, 500 mm grid on LAT between (a grid ring within 150 mm of an end is dropped)
 function pileElevs(b, t){
@@ -1347,7 +1349,7 @@ function ringCount(mk){
 }
 function readingClass(mk, v){
   const x = num(v); if(x===null) return 'none';
-  const ffs = num(UTS[mk].ffs), wt = num(UTS[mk].wt);
+  const ffs = ffsOf(mk), wt = num(UTS[mk].wt);
   if(ffs!==null && x < ffs) return 'low';
   if(wt!==null && x > wt*1.1) return 'high';
   return 'ok';
@@ -1503,7 +1505,7 @@ $('mem-next').addEventListener('click', ()=>{ const i = MKEYS.indexOf(UTS.active
 // member + inspection fields
 const FIELDS = [
   ['id','Member ID','text'], ['structure','Structure','select:NSL,SSL'],
-  ['od','Nominal OD (mm)','num'], ['wt','Nominal WT (mm)','num'], ['ffs','Fit-for-service limit (mm)','num'],
+  ['od','Nominal OD (mm)','num'], ['wt','Nominal WT (mm)','num'], ['ffs','Fit-for-service limit (mm) — 12 % loss of nominal WT','num'],
 ];
 const EXTENT = { elev:[['bottom','Inspect from — bottom (m LAT)','num'],['top','Inspect to — top (m LAT)','num']], axial:[['length','Length between datum and end (mm)','num']] };
 const COMMON = [['date','Inspection date','date'],['operator','UT operator','text'],['cert','Operator cert no.','text'],['equip','Equipment ID','text'],['hat','HAT (m rel. LAT)','num'],
@@ -1513,7 +1515,8 @@ function fieldEl(scope, [k,label,type]){
   const id = `f-${scope}-${k}`, v = scope==='common' ? UTS.common[k] : UTS[UTS.active][k];
   if(type.startsWith('select:')) return h('label', {for:id}, label, h('select', {id, 'data-scope':scope, 'data-k':k}, type.slice(7).split(',').map(o=>h('option', {selected:o===v}, o))));
   return h('label', {for:id}, label, h('input', {id, type: type==='num' ? 'text' : type, inputmode: type==='num' ? 'decimal' : null, 'data-scope':scope, 'data-k':k,
-    value: v===null||v===undefined ? '' : v, autocomplete:'off', placeholder: (k==='od'||k==='wt') ? 'TBC — measure' : null}));
+    value: k==='ffs' ? (ffsOf(UTS.active) ?? '') : v===null||v===undefined ? '' : v, autocomplete:'off', readonly: k==='ffs' ? true : null, tabindex: k==='ffs' ? '-1' : null,
+    title: k==='ffs' ? 'Worked out automatically: nominal WT less 12 %' : null, placeholder: (k==='od'||k==='wt') ? 'TBC — measure' : k==='ffs' ? 'enter the nominal WT' : null}));
 }
 function renderForm(){
   const mk = UTS.active, M = MEM[mk];
@@ -1531,7 +1534,8 @@ function onField(e){
   tgt[k] = nv;
   saveState();
   if(['bottom','top','length'].includes(k)){ buildMember(UTS.active); renderTable(); renderMemberSelect(); }
-  if(['ffs','wt'].includes(k)){ recolour(UTS.active); restyleTable(); }
+  if(k==='ffs') return;   // worked out from the nominal WT
+  if(['ffs','wt'].includes(k)){ const fe = $('f-member-ffs'); if(fe) fe.value = ffsOf(UTS.active) ?? ''; recolour(UTS.active); restyleTable(); }
   if(k==='hat'){ /* zone only used in ITP */ }
   if(k==='id') renderSummary();
   renderSummary();
@@ -1592,7 +1596,7 @@ function updateRow(key){
 }
 function renderSummary(){
   const mk = UTS.active, list = ringsFor(mk), rd = UTS[mk].readings;
-  let n=0, tot=list.length*4, mn=null, at='', low=0; const ffs = num(UTS[mk].ffs);
+  let n=0, tot=list.length*4, mn=null, at='', low=0; const ffs = ffsOf(mk);
   list.forEach((R,i)=>KS.forEach(k=>{ const v = num((rd[R.key]||{})[k]); if(v===null) return; n++; if(ffs!==null && v<ffs) low++; if(mn===null||v<mn){ mn=v; at=`R${String(i+1).padStart(2,'0')} ${R.label}, ${KNAME(k)} o'clock`; } }));
   const sumEl = $('sum'); sumEl.replaceChildren(h('b', null, String(n)), ` of ${tot} readings`);
   if(mn!==null) sumEl.append(' · min ', h('b', null, `${mn.toFixed(1)} mm`), ` at ${at}`);
@@ -1755,7 +1759,7 @@ $('file-itp').addEventListener('change', async e=>{
     if(dt) put(cv,'Date:',CV,dt);
     if(dt) put(ms,'Inspection date',MS,dt);
     put(ms,'UT operator',MS,c.operator); put(ms,'Operator cert no.',MS,c.cert); put(ms,'Equipment ID',MS,c.equip);
-    put(ms,'Fit-for-service limit',MS,num(m.ffs)); put(ms,'HAT (m rel. LAT)',MS,num(c.hat));
+    put(ms,'Fit-for-service limit',MS,ffsOf(mk)); put(ms,'HAT (m rel. LAT)',MS,num(c.hat));
     put(ms,'Ring pitch',MS,500); put(ms,'Positions per ring',MS,4);
     if(MEM[mk].kind==='elev'){ put(ms,'Survey bottom',MS,num(m.bottom)); put(ms,'Survey top',MS,num(m.top)); }
     else put(ms,'Member length between welds',MS,num(m.length));
@@ -2865,7 +2869,7 @@ function exportAllCsv(){
                 'Defect','Defect type','Defect size','Defect position','Defect clock','Defect note','Scopes','Inspection date','UT operator','Operator cert no.','Equipment ID'];
   const rows = [head]; let nPts = 0, nMem = 0, nDef = 0;
   MKEYS.forEach(k=>{
-    const m = UTS[k], M = MEM[k], base = [STRUCT, m.id || k, k, M.group, shortName ? shortName(k) : M.name, m.od||'', m.wt||'', m.ffs||''];
+    const m = UTS[k], M = MEM[k], base = [STRUCT, m.id || k, k, M.group, shortName ? shortName(k) : M.name, m.od||'', m.wt||'', ffsOf(k)??''];
     const tail = [scopeNames(k), c.date||'', c.operator||'', c.cert||'', c.equip||''];
     const pts = pointRegister(k).filter(r=>r[5]!==null && r[5]!==undefined);
     const defs = m.defects || [];
@@ -3034,7 +3038,7 @@ async function exportUtReport(){
   const ExcelJS = await loadExcelJS().catch(e=>{ toast('Could not export: ' + e.message, true); return null; }); if(!ExcelJS) return;
   const STRUCT = PID_STRUCT==='N' ? 'NSL' : 'SSL';
   const STRUCT_NAME = STRUCT==='NSL' ? 'NSL — North Ship Loader (North Arm Pierhead)' : 'SSL — South Ship Loader';
-  const id = m.id || autoId(mk), nomWT = num(m.wt), ffs = num(m.ffs), elev = M.kind==='elev';
+  const id = m.id || autoId(mk), nomWT = num(m.wt), ffs = ffsOf(mk), elev = M.kind==='elev';
   const list = ringsFor(mk), mv = movedMap(mk), xs = (m.extra||[]).slice().sort((a,b)=>sFromPos(mk,a.pos)-sFromPos(mk,b.pos));
   const defs = m.defects || [];
   const inCellOK = await loadJSZip().then(()=>true, ()=>false);
@@ -3430,7 +3434,7 @@ function defNeighbours(mk, di, st, k){
 const median = a => { const s = a.slice().sort((x,y)=>x-y), m = s.length>>1; return s.length%2 ? s[m] : (s[m-1]+s[m])/2; };
 function checkValue(mk, raw, nb){
   const t = String(raw).trim().replace(',', '.'); if(t==='' || isNaN(+t)) return null;
-  const v = +t, wt = nomWT(mk), ffs = num(UTS[mk].ffs), msg = []; let fix = null;
+  const v = +t, wt = nomWT(mk), ffs = ffsOf(mk), msg = []; let fix = null;
   if(wt){
     if(v > wt*1.15) msg.push(`more than 15 % above nominal (${nomTxt(mk)})`);
     if(v >= wt*3 && Math.abs(v/10 - wt)/wt < 0.5){ fix = +(v/10).toFixed(2); }
@@ -3840,7 +3844,7 @@ async function loadPDF(){
   return window.jspdf.jsPDF;
 }
 async function exportMemberPdf(){
-  const mk = UTS.active, m = UTS[mk], M = MEM[mk], c = UTS.common, list = ringsFor(mk), s = memStat(mk), wt = nomWT(mk), ffs = num(m.ffs);
+  const mk = UTS.active, m = UTS[mk], M = MEM[mk], c = UTS.common, list = ringsFor(mk), s = memStat(mk), wt = nomWT(mk), ffs = ffsOf(mk);
   const btn = $('e26-pdf'); btn.disabled = true; btn.textContent = 'Building PDF…';
   try{
     const jsPDF = await loadPDF();
@@ -3949,7 +3953,7 @@ renderRules = function(){ _renderRules26();
 renderRules();
 const _genDefect26 = genDefect;
 genDefect = function(mk, d){
-  const r = _genDefect26(mk, d), ffs = num(UTS[mk].ffs);
+  const r = _genDefect26(mk, d), ffs = ffsOf(mk);
   if(d.type==='pitting'){ const dep = num(d.depth), dia = num(d.dia);
     if(dep!==null && dia!==null && !(dep > FUZE.pitDepth && dia > FUZE.pitDia)) r.warn.push(`Below the FUZE step 6 threshold (pit > ${FUZE.pitDepth} mm deep and > ${FUZE.pitDia} mm diameter) — note it with the readings rather than as a significant pit.`);
     if(dep===null) r.warn.push(`Enter the pit depth — FUZE step 6 notes pits > ${FUZE.pitDepth} mm deep and > ${FUZE.pitDia} mm diameter.`); }

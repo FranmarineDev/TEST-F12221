@@ -94,10 +94,10 @@ input:focus{outline:2px solid var(--accent);outline-offset:-1px}
       <!-- request a set-password link -->
       <section class="auth" id="v-link" hidden>
         <h2 id="ln-title">Set or reset your password</h2>
-        <p id="ln-intro">Enter your email address and we'll send you a one-time link. Open it on this device to choose a password; after that you sign in with your email and password.</p>
+        <p id="ln-intro">Enter your email address and we'll email you a 6-digit code. Enter it here to choose a password; after that you sign in with your email and password.</p>
         <form id="f-link" class="auth" novalidate>
           <label>Email address<input id="ln-email" type="email" autocomplete="email" required></label>
-          <button class="primary" id="ln-go" type="submit">Email me a link</button>
+          <button class="primary" id="ln-go" type="submit">Email me a code</button>
         </form>
         <p class="msg" id="ln-msg" role="alert"></p>
         <button type="button" class="link" id="to-signin">Back to sign in</button>
@@ -105,8 +105,24 @@ input:focus{outline:2px solid var(--accent);outline-offset:-1px}
 
       <section class="auth" id="v-sent" hidden>
         <h2>Check your email</h2>
-        <p>We've sent a link to <b id="sent-to"></b>. Open it on this device to set your password. It can take a minute; check junk mail too.</p>
+        <p>We've sent an email to <b id="sent-to"></b> with a <b>6-digit code</b> and a link. It can take a minute; check junk mail too.</p>
+        <form id="f-code" class="auth" novalidate>
+          <label>Enter the code from the email<input id="cd-code" inputmode="numeric" autocomplete="one-time-code" maxlength="10" placeholder="e.g. 123456"></label>
+          <button class="primary" id="cd-go" type="submit">Continue</button>
+        </form>
+        <p class="msg" id="cd-msg" role="alert"></p>
+        <p class="hint">Or open the link in the email on this device and press <b>Continue</b>.</p>
         <button type="button" class="link" id="sent-back">Back to sign in</button>
+      </section>
+
+      <!-- arrived from an email link that carries a one-time token: nothing is used until the person presses Continue
+           (email security scanners open links automatically and would otherwise use the one-time token up) -->
+      <section class="auth" id="v-confirm" hidden>
+        <h2>Set your password</h2>
+        <p>Press Continue to confirm it's you, then choose a password.</p>
+        <button class="primary" id="cf-go" type="button">Continue</button>
+        <p class="msg" id="cf-msg" role="alert"></p>
+        <button type="button" class="link" id="cf-back">Back to sign in</button>
       </section>
 
       <!-- arrived from the link, or chose "change password" -->
@@ -156,7 +172,7 @@ input:focus{outline:2px solid var(--accent);outline-offset:-1px}
   const $ = id => document.getElementById(id);
   const CFG = window.F12221_CONFIG || {}, STAFF = '@' + (CFG.STAFF_DOMAIN || 'franmarine.com.au');
   const HERE = location.origin + location.pathname;
-  const VIEWS = ['v-signin','v-link','v-sent','v-setpw','v-wait','v-home'];
+  const VIEWS = ['v-signin','v-link','v-sent','v-confirm','v-setpw','v-wait','v-home'];
   const show = v => { VIEWS.forEach(id => { $(id).hidden = id !== v; }); if(v !== 'v-home') $('tool-cards').hidden = true; };
   const msg = (id, t, ok) => { const m = $(id); m.textContent = t || ''; m.classList.toggle('ok', !!ok); };
   const okEmail = e => /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(e);
@@ -265,9 +281,9 @@ input:focus{outline:2px solid var(--accent);outline-offset:-1px}
   $('to-request').addEventListener('click', () => {
     show('v-link'); $('ln-email').value = $('si-email').value; msg('ln-msg', '');
     $('ln-title').textContent = 'Request access';
-    $('ln-intro').textContent = "First, confirm your email address. We'll send a one-time link — open it on this device, choose a password, and you'll be taken to a short request form. Franmarine reviews every request.";
+    $('ln-intro').textContent = "First, confirm your email address. We'll email you a 6-digit code — enter it here, choose a password, and you'll be taken to a short request form. Franmarine reviews every request.";
     $('ln-email').focus(); });
-  $('to-link').addEventListener('click', () => { $('ln-title').textContent = 'Set or reset your password'; $('ln-intro').textContent = "Enter your email address and we'll send you a one-time link. Open it on this device to choose a password; after that you sign in with your email and password."; });
+  $('to-link').addEventListener('click', () => { $('ln-title').textContent = 'Set or reset your password'; $('ln-intro').textContent = "Enter your email address and we'll email you a 6-digit code. Enter it here to choose a password; after that you sign in with your email and password."; });
   $('rq-edit').addEventListener('click', () => requestView(true));
   $('f-request').addEventListener('submit', async e => {
     e.preventDefault();
@@ -280,11 +296,34 @@ input:focus{outline:2px solid var(--accent);outline-offset:-1px}
     await requestView();
   });
 
+  // one-time code typed in (scanner-proof), or a token-hash link confirmed with a button press
+  $('f-code').addEventListener('submit', async e => {
+    e.preventDefault();
+    const em = $('sent-to').textContent.trim(), code = $('cd-code').value.replace(/\D/g, '');
+    if(code.length < 6) return msg('cd-msg', 'Enter the code from the email (6 digits).');
+    $('cd-go').disabled = true; msg('cd-msg', '');
+    let r = await sb.auth.verifyOtp({email:em, token:code, type:'email'});
+    if(r.error) r = await sb.auth.verifyOtp({email:em, token:code, type:'recovery'});
+    if(r.error) r = await sb.auth.verifyOtp({email:em, token:code, type:'invite'});
+    $('cd-go').disabled = false;
+    if(r.error || !r.data || !r.data.session) return msg('cd-msg', 'That code is not valid or has expired. Use the newest email, or go back and send a new one.');
+    user = r.data.session.user; shown = true; $('cd-code').value = ''; setPw();
+  });
+  const TH = new URLSearchParams(location.search), thHash = TH.get('th'), thType = TH.get('t');
+  $('cf-go').addEventListener('click', async () => {
+    $('cf-go').disabled = true; msg('cf-msg', '');
+    const r = await sb.auth.verifyOtp({token_hash:thHash, type:thType || 'magiclink'});
+    $('cf-go').disabled = false;
+    if(r.error || !r.data || !r.data.session) return msg('cf-msg', 'This link has expired or was already used. Go back, choose "First time here, or forgot your password?" and use the code in the new email.');
+    history.replaceState(null, '', HERE); user = r.data.session.user; shown = true; setPw();
+  });
+  $('cf-back').addEventListener('click', () => { history.replaceState(null, '', HERE); show('v-signin'); });
+
   sb.auth.onAuthStateChange((ev, session) => {
     if(ev === 'PASSWORD_RECOVERY' && session){ user = session.user; shown = true; history.replaceState(null, '', HERE); setPw(); return; }
     if(ev === 'SIGNED_OUT'){ user = null; show('v-signin'); }
   });
-  sb.auth.getSession().then(({data}) => route(data && data.session));
+  if(thHash){ show('v-confirm'); } else sb.auth.getSession().then(({data}) => route(data && data.session));
 })();
 </script>
 </body></html>

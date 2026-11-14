@@ -501,6 +501,162 @@ body.e26-diving .e26-legend{display:none}
 #ph-sec .dbtn.primary{background:var(--navy);color:var(--panel);border-color:var(--navy)}
 #ph-sec .dbtn:disabled{opacity:.5;cursor:default}
 .tag.ph-badge{background:#fff;border:1px solid #0b5cad;color:#0b5cad;font-weight:700}
+
+/* who entered it + who else is editing (4 Nov 2026) */
+.own-line{font-size:11.5px;color:var(--muted);margin:-2px 0 2px}
+.own-line.other{color:#a35c00;font-weight:600}
+.own-presence{background:#fff3cd;color:#5c4400;border:1px solid #e8cf7a;border-radius:4px;padding:6px 9px;font-size:12.5px;margin:8px 0}
+.pop-act{flex-wrap:wrap}
+.pop-act .navbtn{flex:0 0 38px;min-width:38px;padding-left:0;padding-right:0;font-size:18px;line-height:1;font-weight:700}
+#pop-next,#dp-next{flex:1 1 auto;white-space:nowrap}
+#pop-move,#pop-close,#dp-close{flex:1 1 40%}
+/* photos: structure gallery + viewer caption (4 Nov 2026) */
+#ph-sec .ph-all{border:1px solid var(--line);border-radius:8px;padding:8px 10px;margin:8px 0 12px;background:var(--bg)}
+#ph-sec .ph-all summary{cursor:pointer;font-weight:700;font-size:13px}
+#ph-sec .ph-mem{margin-top:8px}
+#ph-sec .ph-mem.cur .ph-go b{color:var(--navy)}
+#ph-sec .ph-go{border:none;background:none;padding:0;font:12px var(--font-ui);color:var(--fg);cursor:pointer;text-align:left;text-decoration:underline;text-decoration-color:var(--line)}
+#ph-sec .ph-mini{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+#ph-sec .ph-mopen{width:76px;height:57px;padding:0;border:1px solid var(--line);border-radius:5px;overflow:hidden;cursor:zoom-in;background:var(--panel)}
+#ph-sec .ph-mopen img{width:100%;height:100%;object-fit:cover;display:block}
+#ph-sec .ph-h3{font-size:13px;margin:10px 0 2px}
+.ph-box #ph-cap-big{max-width:min(900px,80vw);text-align:center;line-height:1.4}
+.ph-box #ph-cap-big .c{font-size:15px;margin-top:2px}
+.ph-box #ph-cap-big .m{font-size:12px;opacity:.75;margin-top:2px}
+.ph-box .ph-bar button,.ph-box .ph-bar a{font-size:15px}
+.ph-jump{display:block;margin:6px 0 0;border:1px solid var(--line);background:var(--panel);color:var(--fg);border-radius:6px;padding:5px 9px;font:600 12px var(--font-ui);cursor:pointer;text-align:left;width:100%}
+/* no reading (NR) */
+.pop .nr-panel{display:grid;gap:5px;border-top:1px solid var(--line);padding-top:6px;margin-top:2px}
+.pop .nr-panel[hidden],.pop .nr-line[hidden]{display:none}
+.pop .nr-panel label{font-size:12px;color:var(--muted)}
+.pop .nr-panel select,.pop .nr-panel input{width:100%;font-size:12.5px}
+.pop .nr-row{display:flex;gap:6px;flex-wrap:wrap}
+.pop .nr-row button{flex:1 1 auto}
+.pop .nr-line{font-size:12px;font-weight:600;color:#4b5563;background:#eceef2;border-radius:4px;padding:4px 7px}
+.pop-act .nr-btn{flex:1 1 40%}
+input.rd.nr,input.drd.nr{background:#e6e8ec;color:#4b5563}
+input.rd.nr::placeholder,input.drd.nr::placeholder{color:#4b5563;font-weight:700;opacity:1}
+body.viewer .nr-btn,body.viewer .nr-panel{display:none}
+/* dive mode: No reading (NR) */
+.e26-dock .pad button.nr{grid-column:1/-1;font:600 14px var(--font-ui);background:#eceef2;color:#374151;border-color:#c9ced8}
+.e26-dock .nrline{font:600 13px var(--font-ui);color:#374151;background:#eceef2;border-radius:6px;padding:6px 9px}
+.e26-dock .nrline[hidden],.e26-dock .nrpick[hidden]{display:none}
+.e26-dock .nrpick{display:grid;gap:6px;border:1px solid var(--line);border-radius:8px;padding:8px;background:var(--bg)}
+.e26-dock .nrh{font:700 13px var(--font-ui);color:var(--navy)}
+.e26-dock .nrgrid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.e26-dock .nrgrid button{font:600 13px var(--font-ui);text-align:left;padding:10px;border-radius:8px;border:1px solid var(--line);background:var(--panel);color:var(--fg);cursor:pointer;min-height:44px;touch-action:manipulation}
+.e26-dock .nrother{display:grid;grid-template-columns:1fr auto;gap:6px}
+.e26-dock .nrother input{font:14px var(--font-ui);padding:8px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--fg);min-width:0}
+.e26-dock .nrother button,.e26-dock .nract button{font:600 13px var(--font-ui);padding:8px 12px;border-radius:8px;border:1px solid var(--line);background:var(--panel);color:var(--fg);cursor:pointer;min-height:40px}
+.e26-dock .nrother .nrok{background:var(--navy);color:var(--panel);border-color:var(--navy)}
+.e26-dock .nract{display:flex;justify-content:flex-end;gap:6px}
+.e26-dock input.val::placeholder{color:#4b5563;font-weight:700}
+.e26-dock.picking .pad,.e26-dock.picking .row{display:none}
+/* defect areas */
+#df-list .da-tag{display:block;font-size:11.5px;font-weight:600;color:var(--navy);margin-top:2px}
+#df-list .da-tag.sep{color:#7a5c00}
+#da-box .da-why{display:grid;gap:4px;font-size:12.5px;color:var(--muted);margin:0 0 12px}
+#da-box textarea{font:13px inherit;padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg);width:100%;box-sizing:border-box}
+#df-sum .da-go{margin-left:6px}
+/* Denso Series 70 ITP */
+.rail .tabs button[data-tab="denso"]::before{border-radius:8px 8px 3px 3px;height:12px}
+#tab-denso .dz-status{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);margin:2px 0 10px}
+#tab-denso .dz-pill{color:#fff;border-radius:999px;padding:2px 10px;font:700 11.5px var(--font-ui)}
+#tab-denso .dz-hdr{grid-template-columns:1fr 1fr}
+#tab-denso .dz-fl{display:grid;gap:3px;font-size:12px;color:var(--muted)}
+#tab-denso .dz-fl input,#tab-denso .dz-fl select,#tab-denso .dz-note{font:13px var(--font-ui);padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg);min-width:0;width:100%;box-sizing:border-box}
+#tab-denso .dz-sec h3{font-size:13px;margin:4px 0 6px;color:var(--navy)}
+#tab-denso .dz-row{border:1px solid var(--line);border-left:4px solid var(--line);border-radius:6px;padding:8px 10px;margin-bottom:8px;display:grid;gap:6px;background:var(--panel)}
+#tab-denso .dz-row.ok{border-left-color:#2e9e4f} #tab-denso .dz-row.nc{border-left-color:#d62828} #tab-denso .dz-row.na{border-left-color:#8a8f99}
+#tab-denso .dz-top{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;font-size:13px}
+#tab-denso .dz-act{flex:1 1 auto}
+#tab-denso .dz-ref{font-size:11px;color:var(--muted)}
+#tab-denso .dz-pt{font:700 11px var(--font-mono);border-radius:4px;padding:1px 6px;background:#eceef2;color:#374151}
+#tab-denso .dz-pt.pt-H{background:#d62828;color:#fff} #tab-denso .dz-pt.pt-W{background:#e9a23b;color:#fff}
+#tab-denso .dz-crit{margin:0;font-size:12.5px;line-height:1.45}
+#tab-denso .dz-warn{margin:0;font-size:12px;font-weight:600;color:#a35c00}
+#tab-denso .dz-fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:6px}
+#tab-denso .dz-btns{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+#tab-denso .dz-btns button{font:600 12px var(--font-ui);padding:6px 10px;border-radius:6px;border:1px solid var(--line);background:var(--panel);color:var(--fg);cursor:pointer;min-height:34px}
+#tab-denso .dz-s.on.ok{background:#2e9e4f;border-color:#2e9e4f;color:#fff} #tab-denso .dz-s.on.nc{background:#d62828;border-color:#d62828;color:#fff} #tab-denso .dz-s.on.na{background:#8a8f99;border-color:#8a8f99;color:#fff}
+#tab-denso .dz-rel{background:var(--navy)!important;color:#fff!important;border-color:var(--navy)!important}
+#tab-denso .dz-rel:disabled{opacity:.45;cursor:not-allowed}
+#tab-denso .dz-hp{font-size:12px;font-weight:600;color:#1f7a36}
+#tab-denso .dz-by{margin:0;font-size:11.5px;color:var(--muted)}
+/* Denso install: tracker (panel) + step card (model) — 14 Nov 2026 */
+#tab-denso .dz-trk h2{margin-bottom:2px}
+#tab-denso .dz-scope{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;margin:8px 0;font-size:12px;color:var(--muted)}
+#tab-denso .dz-scope select{font:13px var(--font-ui);padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg);min-width:0;min-height:34px}
+#tab-denso .dz-add{display:grid;gap:6px;margin:0 0 8px}
+#tab-denso .dz-add textarea{font:13px var(--font-ui);padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg);resize:vertical}
+#tab-denso .dz-addrow{display:flex;gap:8px;align-items:center;justify-content:space-between}
+#tab-denso .dz-bar{height:10px;border-radius:5px;display:flex;overflow:hidden;margin:6px 0 10px;background:var(--line)}
+#tab-denso .dz-bar i{display:block;height:100%}
+#tab-denso .dz-tiles{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:8px}
+#tab-denso .dz-tile{border:1px solid var(--line);border-top:3px solid var(--c);border-radius:8px;padding:7px 4px;text-align:center;font:500 11px/1.25 var(--font-ui);color:var(--muted);background:var(--panel);cursor:pointer;min-height:56px}
+#tab-denso .dz-tile b{display:block;font-size:20px;color:var(--fg)}
+#tab-denso .dz-tile.on{outline:2px solid var(--navy);outline-offset:-1px;background:var(--bg)}
+#tab-denso .dz-chips{display:flex;gap:8px;align-items:center;margin-bottom:6px}
+#tab-denso .dz-chip{border:1px solid var(--line);border-radius:14px;padding:4px 12px;font:600 12px var(--font-ui);background:var(--panel);color:var(--fg);min-height:30px;cursor:pointer}
+#tab-denso .dz-chip.on{background:var(--navy);border-color:var(--navy);color:#fff}
+#tab-denso .dz-list{border:1px solid var(--line);border-radius:8px;overflow:auto;max-height:286px;margin-bottom:14px}
+#tab-denso .dz-empty{margin:0;padding:12px;font-size:12.5px;color:var(--muted)}
+#tab-denso .dz-mr{display:grid;grid-template-columns:minmax(92px,auto) 1fr 104px 14px;gap:8px;align-items:center;width:100%;text-align:left;padding:8px 10px;border:0;border-top:1px solid var(--line);background:var(--panel);color:var(--fg);font:12.5px var(--font-ui);min-height:40px;cursor:pointer}
+#tab-denso .dz-mr:first-child{border-top:0}
+#tab-denso .dz-mr.cur{background:var(--bg);box-shadow:inset 3px 0 0 var(--navy)}
+#tab-denso .dz-mr .id{font:600 12px var(--font-mono);color:var(--navy)}
+#tab-denso .dz-mr .chev{color:var(--muted)}
+#tab-denso .dz-mp{height:6px;border-radius:3px;background:var(--line);overflow:hidden}
+#tab-denso .dz-mp i{display:block;height:100%}
+#tab-denso .dz-mr .dz-pill{text-align:center;font-size:10.5px;padding:2px 6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#tab-denso .dz-memsec{border-top:1px solid var(--line);padding-top:10px}
+#tab-denso .dz-memsec .mem-row{display:grid;grid-template-columns:34px 1fr 34px;gap:6px;align-items:center}
+#tab-denso .dz-memsec .mem-row button{min-height:34px}
+#tab-denso .dz-memsec .mem-title{margin:0;font-size:14px}
+#tab-denso .dz-open{width:100%;margin:10px 0 8px}
+#tab-denso .dz-steps{border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-bottom:6px}
+#tab-denso .dz-ssec{background:var(--bg);font:700 11px var(--font-ui);letter-spacing:.06em;text-transform:uppercase;color:var(--navy);padding:6px 10px;border-top:1px solid var(--line)}
+#tab-denso .dz-ssec:first-child{border-top:0}
+#tab-denso .dz-step{display:grid;grid-template-columns:30px 1fr 24px 30px;gap:6px;align-items:center;width:100%;text-align:left;padding:7px 10px;border:0;border-top:1px solid var(--line);background:var(--panel);color:var(--fg);font:12.5px var(--font-ui);min-height:36px;cursor:pointer}
+#tab-denso .dz-step .n{font:600 12px var(--font-mono);color:var(--muted)}
+#tab-denso .dz-step .ic{text-align:center;font-weight:700;font-size:12px}
+#tab-denso .dz-step.ok .ic{color:#2e9e4f} #tab-denso .dz-step.nc .ic{color:#d62828} #tab-denso .dz-step.na .ic{color:#8a8f99;font-size:10px}
+#tab-denso .dz-step.cur{background:var(--bg);box-shadow:inset 3px 0 0 var(--navy);font-weight:700}
+#tab-denso .dz-ht{display:inline-block;margin-left:6px;font:700 10px var(--font-ui);letter-spacing:.03em;text-transform:uppercase;color:#d62828}
+#tab-denso .dz-ht.wait{color:#b26b00} #tab-denso .dz-ht.rel{color:#1f7a36}
+/* step card over the model */
+.dz-card{right:16px;bottom:16px;width:340px;max-height:calc(100% - 92px);overflow:auto}
+.dz-card .pop-id{font-size:14px}
+.dz-card .dz-dots{display:flex;gap:3px} .dz-card .dz-dots i{flex:1;height:6px;border-radius:3px;background:var(--line)}
+.dz-card .dz-dots i.ok{background:#2e9e4f} .dz-card .dz-dots i.nc{background:#d62828} .dz-card .dz-dots i.na{background:#8a8f99} .dz-card .dz-dots i.c{background:var(--navy);outline:2px solid var(--navy);outline-offset:1px}
+.dz-card .dz-ct{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;font-size:14px;color:var(--fg)}
+.dz-card .dz-ref{font-size:11px;color:var(--muted)}
+.dz-card .dz-pt{font:700 11px var(--font-mono);border-radius:4px;padding:1px 6px;background:#eceef2;color:#374151}
+.dz-card .dz-pt.pt-H{background:#d62828;color:#fff} .dz-card .dz-pt.pt-W{background:#e9a23b;color:#fff}
+.dz-card .dz-crit{margin:0;font-size:12.5px;line-height:1.45;color:var(--muted)}
+.dz-card .dz-warn{margin:0;font-size:12px;font-weight:600;color:#a35c00}
+.dz-card .dz-fields{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.dz-card .dz-fl{display:grid;gap:3px;font-size:11px;color:var(--muted)}
+.dz-card .dz-fl input,.dz-card .dz-note{font:14px var(--font-ui);padding:7px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg);min-width:0;width:100%;box-sizing:border-box;min-height:36px}
+.dz-card .dz-btns{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}
+.dz-card .dz-btns button,.dz-card .dz-rel{font:600 12.5px var(--font-ui)!important;padding:8px 6px!important;border-radius:6px;border:1px solid var(--line);background:var(--panel);color:var(--fg);min-height:38px;width:100%!important}
+.dz-card .dz-s.on.ok{background:#2e9e4f;border-color:#2e9e4f;color:#fff} .dz-card .dz-s.on.nc{background:#d62828;border-color:#d62828;color:#fff} .dz-card .dz-s.on.na{background:#8a8f99;border-color:#8a8f99;color:#fff}
+.dz-card .dz-rel{background:var(--navy)!important;color:#fff!important;border-color:var(--navy)!important}
+.dz-card .dz-rel:disabled{opacity:.45;cursor:not-allowed}
+.dz-card .dz-hp{margin:0;font-size:12px;font-weight:600;color:#1f7a36}
+.dz-card .dz-by{margin:0;font-size:11px;color:var(--muted)}
+.dz-card .dz-nav{display:grid;grid-template-columns:44px 1fr 44px;gap:6px}
+.dz-card .dz-nav button{min-height:42px;width:auto!important;font-size:16px!important;font-weight:700}
+.dz-card .dz-nav button.p{font-size:13px!important}
+.dz-card .dz-nav2 button{width:100%!important;min-height:36px}
+@media (max-width:760px){ .dz-card{left:8px;right:8px;bottom:8px;width:auto} }
+#tab-denso .dbtn{font:600 12.5px var(--font-ui);letter-spacing:.02em;padding:8px 12px;border-radius:6px;border:1px solid var(--line);background:var(--panel);color:var(--fg);cursor:pointer;min-height:36px}
+#tab-denso .dbtn.primary{background:var(--navy);color:#fff;border-color:var(--navy)}
+#tab-denso .dbtn:disabled{opacity:.5;cursor:default}
+#tab-denso #dz-pdf{width:100%}
+.dz-card{padding-bottom:0}
+.dz-card .dz-foot{position:sticky;bottom:0;background:var(--panel);display:grid;gap:6px;padding:8px 0 10px;box-shadow:0 -8px 8px -8px rgba(0,0,0,.18)}
+@media (max-width:900px){ .dz-card{top:auto;max-height:calc(100% - 16px)} }
 </style>
 
 <div class="app">
@@ -672,7 +828,7 @@ body.e26-diving .e26-legend{display:none}
       <section class="actions">
         <h2>Export</h2>
         <button type="button" id="btn-utr" class="primary">Export UT report (Excel)</button>
-        <p class="small">One report per member: test conditions, one row per ring / additional point / defect with min, max and wall reduction, the result and sign-off boxes; a Readings sheet with every clock reading and point ID; and a detail sheet for each defect. Fill in the inspection details (UT unit, probe, calibration block …) once — they apply to every member.</p>
+        <p class="small">One report per member: test conditions, one row per ring / additional point / defect and defect station with min, max, average and wall reduction, the result and sign-off boxes; a Readings sheet with every clock reading and point ID; and a detail sheet for each defect. Fill in the inspection details (UT unit, probe, calibration block …) once — they apply to every member.</p>
         <button type="button" id="btn-itp">Export to ITP workbook (previous format)</button>
         <p class="small">Select this member's ITP file (F12221-ITP-002). The Cover member details, Member Survey Sections B and C, the Section H ring grid (including additional points) and a Point Register sheet listing every point ID are filled, and a completed copy is saved. Re-exporting replaces the ring grid.</p>
         <p class="small" id="export-note"></p>
@@ -829,7 +985,7 @@ body.e26-diving .e26-legend{display:none}
       <section>
         <h2>6 · Export and backup</h2>
         <ul class="tips">
-          <li><b>Export UT report (Excel)</b>: one report per member — test conditions from the Inspection details, one row per ring / additional point / defect with min, max and wall reduction, the result, and sign-off boxes; plus a Readings sheet (every clock reading with its point ID) and a detail sheet per defect. No template file needed.</li>
+          <li><b>Export UT report (Excel)</b>: one report per member — test conditions from the Inspection details, one row per ring / additional point / defect and defect station with min, max, average and wall reduction, the result, and sign-off boxes; plus a Readings sheet (every clock reading with its point ID) and a detail sheet per defect. No template file needed.</li>
           <li><b>Export to ITP workbook (previous format)</b>: choose this member's F12221-ITP-002 file. The tool fills the Cover, the Member Survey (setup, ring readings, defect register) and one D-S sheet per defect (D-S02 onwards are copied from D-S01), then saves a completed copy.</li>
           <li>Sign in with your email and password to share readings live with the team (green <i>Live</i> pill in the header). Franmarine users are Editors; other users are added by Franmarine in the <i>Access</i> tab as Viewers or Editors. Without signing in, readings save in this browser only (<i>Local only</i>). Use <b>Save backup</b> at the end of each shift; <b>Load backup</b> while signed in replaces the team's copy after you confirm.</li>
           <li>Additional points go into the ring grid: in the ring's row if they share its position and the clock column is free, otherwise in their own AP rows after the rings (up to 40 rows in total).</li>
@@ -1508,9 +1664,9 @@ const FIELDS = [
   ['od','Nominal OD (mm)','num'], ['wt','Nominal WT (mm)','num'], ['ffs','Fit-for-service limit (mm) — 12 % loss of nominal WT','num'],
 ];
 const EXTENT = { elev:[['bottom','Inspect from — bottom (m LAT)','num'],['top','Inspect to — top (m LAT)','num']], axial:[['length','Length between datum and end (mm)','num']] };
-const COMMON = [['date','Inspection date','date'],['operator','UT operator','text'],['cert','Operator cert no.','text'],['equip','Equipment ID','text'],['hat','HAT (m rel. LAT)','num'],
+const COMMON = [['date','Inspection date','date'],['operator','UT operator','text'],['cert','Operator cert no.','text'],['supervisor','Supervisor','text'],['equip','Equipment ID','text'],['hat','HAT (m rel. LAT)','num'],
   ['unit','UT unit (make / model)','text'],['serial','UT unit serial no.','text'],['probe','Probe size / frequency','text'],['calblock','Calibration block','text'],
-  ['couplant','Couplant','text'],['technique','Technique','select:,Pulse-echo,Echo-echo (through coating)'],['surface','Surface condition','text']];
+  ['couplant','Couplant','text'],['technique','Technique','select:,Multiple Echo Mode - Single Element Probes Only,Single Echo Mode - Twin Element Probes Only,Echo-Echo Mode - Twin Element Probes Only'],['surface','Surface condition','text']];
 function fieldEl(scope, [k,label,type]){
   const id = `f-${scope}-${k}`, v = scope==='common' ? UTS.common[k] : UTS[UTS.active][k];
   if(type.startsWith('select:')) return h('label', {for:id}, label, h('select', {id, 'data-scope':scope, 'data-k':k}, type.slice(7).split(',').map(o=>h('option', {selected:o===v}, o))));
@@ -1758,7 +1914,7 @@ $('file-itp').addEventListener('change', async e=>{
     const dt = c.date ? new Date(c.date+'T00:00:00Z') : null;
     if(dt) put(cv,'Date:',CV,dt);
     if(dt) put(ms,'Inspection date',MS,dt);
-    put(ms,'UT operator',MS,c.operator); put(ms,'Operator cert no.',MS,c.cert); put(ms,'Equipment ID',MS,c.equip);
+    put(ms,'UT operator',MS,c.operator); put(ms,'Supervisor',MS,c.supervisor); put(ms,'Operator cert no.',MS,c.cert); put(ms,'Equipment ID',MS,c.equip);
     put(ms,'Fit-for-service limit',MS,ffsOf(mk)); put(ms,'HAT (m rel. LAT)',MS,num(c.hat));
     put(ms,'Ring pitch',MS,500); put(ms,'Positions per ring',MS,4);
     if(MEM[mk].kind==='elev'){ put(ms,'Survey bottom',MS,num(m.bottom)); put(ms,'Survey top',MS,num(m.top)); }
@@ -2249,7 +2405,8 @@ async function exportDefects(wb, mk, ms){
     // grid rows by station id in column A
     const rowOf = {}; ws.eachRow({includeEmpty:false},(row,rn)=>{ const t = cellText(row.getCell(1).value); if(/^(LA|LB|D)\d+$/.test(t) && !rowOf[t]) rowOf[t] = rn; });
     const CLK = ['D','E','F','G','H','I','J','K','L','M','N','O'];
-    r.stations.forEach(x=>{ const rn = rowOf[x.id]; if(!rn) return;
+    const alias = {}, cnt = {}; r.stations.forEach(x=>{ const z = x.zone==='Landing A' ? 'LA' : x.zone==='Landing B' ? 'LB' : 'D'; cnt[z] = (cnt[z]||0) + 1; alias[x.id] = z + cnt[z]; });   // defect-area stations fill the template rows in order
+    r.stations.forEach(x=>{ const rn = rowOf[x.id] || rowOf[alias[x.id]]; if(!rn) return;
       ws.getCell('C'+rn).value = sheetPos(mk,x.s);
       for(let k=0;k<12;k++){ const v = num(dVal(d,x.id,k)); if(v!==null) ws.getCell(CLK[k]+rn).value = v; }
     });
@@ -2866,20 +3023,20 @@ function exportAllCsv(){
   const STRUCT = PID_STRUCT==='N' ? 'NSL' : 'SSL', c = UTS.common || {};
   const scopeNames = k => Object.values((c.scopes)||{}).filter(sc=>sc.members && sc.members[k]).map(sc=>sc.name).join('; ');
   const head = ['Structure','Member ID','Tool ID','Group','Description','Nominal OD (mm)','Nominal WT (mm)','FFS limit (mm)','Point ID','Record','Ring / station','Position','Clock','WT (mm)','Status','Note',
-                'Defect','Defect type','Defect size','Defect position','Defect clock','Defect note','Scopes','Inspection date','UT operator','Operator cert no.','Equipment ID'];
+                'Defect','Defect type','Defect size','Defect position','Defect clock','Defect note','Scopes','Inspection date','UT operator','Operator cert no.','Equipment ID','Entered by','Entered at'];
   const rows = [head]; let nPts = 0, nMem = 0, nDef = 0;
   MKEYS.forEach(k=>{
     const m = UTS[k], M = MEM[k], base = [STRUCT, m.id || k, k, M.group, shortName ? shortName(k) : M.name, m.od||'', m.wt||'', ffsOf(k)??''];
     const tail = [scopeNames(k), c.date||'', c.operator||'', c.cert||'', c.equip||''];
     const pts = pointRegister(k).filter(r=>r[5]!==null && r[5]!==undefined);
-    const defs = m.defects || [];
+    const defs = m.defects || [], OWN = window.F12221_OWNER ? window.F12221_OWNER(k) : {}, oc = o => window.F12221_OWNCELLS ? window.F12221_OWNCELLS(o) : ['',''];
     if(!pts.length && !defs.length) return;
     nMem++;
     pts.forEach(r=>{ nPts++; const dm = /^D-S(\d+)/.exec(String(r[1])); const d = dm ? nth(defs, +dm[1]-1) : null;
-      rows.push([...base, r[0], r[1], r[2], r[3], r[4], r[5], r[6], r[7], dm ? `D-S${dm[1]}` : '', d ? DTYPES[d.type].label : '', '', '', '', '', ...tail]); });
+      rows.push([...base, r[0], r[1], r[2], r[3], r[4], r[5], r[6], r[7], dm ? `D-S${dm[1]}` : '', d ? DTYPES[d.type].label : '', '', '', '', '', ...tail, ...oc(OWN[r[0]])]); });
     defs.forEach((d,di)=>{ nDef++;
       const size = d.type==='crack' ? `${d.len} mm @ ${d.ang||0}°` : d.type==='pitting' ? `Ø${d.dia} mm${d.depth ? ', ' + d.depth + ' mm deep' : ''}` : `${d.ax} × ${d.cw} mm${d.depth ? ', ' + d.depth + ' mm deep' : ''}`;
-      rows.push([...base, '', 'Defect record', '', '', '', '', '', '', defId(di), DTYPES[d.type].label, size, posLabel(k, sFromPos(k, d.pos)), fmtK(+d.clock), d.note||'', ...tail]); });
+      rows.push([...base, '', 'Defect record', '', '', '', '', '', '', defId(di), DTYPES[d.type].label, size, posLabel(k, sFromPos(k, d.pos)), fmtK(+d.clock), d.note||'', ...tail, ...oc(OWN['#rec' + di])]); });
   });
   if(rows.length===1){ toast('No readings or defects recorded yet.', true); return; }
   const csv = '﻿' + rows.map(r=>r.map(x=>{ const s = x===null || x===undefined ? '' : String(x); return /[",\n;]/.test(s) ? '"' + s.replace(/"/g,'""') + '"' : s; }).join(',')).join('\r\n');
@@ -2989,7 +3146,8 @@ const imgOf = (wb, url) => wb.addImage({base64:url, extension:'png'});
 function loadJSZip(){
   if(window.JSZip) return Promise.resolve(window.JSZip);
   return new Promise((res,rej)=>{ const s=document.createElement('script'); s.src='https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js';
-    s.onload=()=>res(window.JSZip); s.onerror=()=>rej(new Error('zip library unavailable')); document.head.appendChild(s); });
+    s.onload=()=>res(window.JSZip); s.onerror=()=>{ const t=document.createElement('script'); t.src='https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js';
+      t.onload=()=>res(window.JSZip); t.onerror=()=>rej(new Error('zip library unavailable')); document.head.appendChild(t); }; document.head.appendChild(s); });
 }
 // Excel "Place in Cell" pictures (Excel 365 / 2021+): ExcelJS writes a numeric sentinel in each picture cell; this swaps it for a rich-value image.
 const IMG_SENTINEL = 987650;
@@ -3042,6 +3200,7 @@ async function exportUtReport(){
   const list = ringsFor(mk), mv = movedMap(mk), xs = (m.extra||[]).slice().sort((a,b)=>sFromPos(mk,a.pos)-sFromPos(mk,b.pos));
   const defs = m.defects || [];
   const inCellOK = await loadJSZip().then(()=>true, ()=>false);
+  if(!inCellOK) toast('Pictures could not be set to Place in Cell (zip library did not load) — they are fixed to their cells instead.', true);
   const CELLPICS = [];
   const wb = new ExcelJS.Workbook(); wb.creator = 'Franmarine Underwater Services Pty Ltd'; wb.created = new Date();
   const logoId = wb.addImage({base64:FM_LOGO, extension:'png'});
@@ -3051,7 +3210,7 @@ async function exportUtReport(){
     ws.pageSetup = {paperSize:9, orientation:'portrait', fitToPage:true, fitToWidth:1, fitToHeight:0, horizontalCentered:true,
       margins:{left:0.4, right:0.4, top:0.5, bottom:0.6, header:0.25, footer:0.3}};
     ws.headerFooter.oddFooter = `&C&"Calibri"&9UNCONTROLLED WHEN PRINTED | Page &P of &N`;
-    ws.addImage(logoId, {tl:logoAt || {col:cols.length - 2.6, row:0.15}, ext:{width:150, height:46}}); };
+    ws.addImage(logoId, {tl:logoAt || {col:cols.length - 3, row:0.15}, ext:{width:150, height:46}}); };
   const cell = (ws, ref, v, o) => { const x = ws.getCell(ref); x.value = v===undefined || v===null ? '' : v; o = o || {};
     x.font = {name:'Calibri', size:o.size||9.5, bold:!!o.bold, color:o.color ? {argb:o.color} : (o.fill===GREY && o.bold ? {argb:NAVY} : undefined)};
     x.alignment = {vertical:'middle', horizontal:o.h||'left', wrapText:o.wrap!==false};
@@ -3062,7 +3221,7 @@ async function exportUtReport(){
   // picture placed in a merged cell range (Excel "Place in Cell"); floating picture if the zip library is unavailable
   const picture = (ws, rng, url, w, hpx) => { merge(ws, rng); const ref = rng.split(':')[0];
     if(inCellOK){ cell(ws, ref, IMG_SENTINEL + CELLPICS.length, {h:'center'}); CELLPICS.push({sheetId:ws.id, ref, url}); }
-    else { cell(ws, ref, '', {}); const c0 = ws.getCell(ref).col - 1, r0 = +ref.replace(/[A-Z]+/,'') - 1; ws.addImage(imgOf(wb, url), {tl:{col:c0 + 0.1, row:r0 + 0.15}, ext:{width:w, height:hpx}}); } };
+    else { cell(ws, ref, '', {}); const [a, b] = rng.split(':').map(x=>ws.getCell(x)); ws.addImage(imgOf(wb, url), {tl:{col:a.col - 1 + 0.05, row:a.row - 1 + 0.1}, br:{col:b.col - 0.05, row:b.row - 0.1}, editAs:'twoCell'}); } };
   const val = v => num(v);
   const red = v => { const x = val(v); return x===null || nomWT===null ? ['',''] : [+(nomWT - x).toFixed(1), +((nomWT - x)/nomWT*100).toFixed(1)]; };
   const flag = v => { const k = readingClass(mk, v); return k==='low' ? 'BELOW FFS' : k==='high' ? 'Over nominal +10% — verified?' : ''; };
@@ -3072,7 +3231,7 @@ async function exportUtReport(){
     ws.getRow(1).height = 24; ws.getRow(2).height = 18; ws.getRow(3).height = 8; };
 
   // ---------- Report sheet
-  const ws = wb.addWorksheet('Report'); setup(ws, [6, 20, 11, 8, 8, 8, 8, 7, 8, 7, 22]);
+  const ws = wb.addWorksheet('Report'); setup(ws, [7, 22, 10, 8, 7, 7, 7, 7, 7, 7, 7, 22]);   // Min / Max / Avg gauge readings (FUZE review, 3 Nov 2026)
   title(ws, 'ULTRASONIC THICKNESS TESTING REPORT', `Report No. F12221-UTR-${id} · F12221 CIP Structural Remediation`);
   const ext = elev ? `${posLabel(mk, list.length ? list[0].s : M.p0.y)} to ${posLabel(mk, list.length ? nth(list, list.length-1).s : M.p1.y)} (rel. LAT)` : `0 to ${m.length || M.len} mm from datum`;
   const left = [['Client','Christmas Island Phosphates'], ['Client reference','CIP-MAR-INF-SOW-2026-001 Rev 0'], ['Structure', STRUCT_NAME], ['Member ID', id],
@@ -3082,7 +3241,7 @@ async function exportUtReport(){
     ['Calibration block', c.calblock||''], ['Couplant', c.couplant||''], ['Technique', c.technique||''], ['Procedure', 'AS 2452.3 · FZ-GDN UT Inspection Rev 0'],
     ['Surface condition', c.surface||''], ['Nominal OD / WT', `${m.od||'—'} / ${m.wt||'—'} mm`]];
   left.forEach(([l,v],i)=>{ const r = 4+i;
-    merge(ws, `A${r}:B${r}`); merge(ws, `C${r}:E${r}`); merge(ws, `F${r}:G${r}`); merge(ws, `H${r}:K${r}`);
+    merge(ws, `A${r}:B${r}`); merge(ws, `C${r}:E${r}`); merge(ws, `F${r}:G${r}`); merge(ws, `H${r}:L${r}`);
     cell(ws, `A${r}`, l, {bold:true, fill:GREY}); cell(ws, `C${r}`, v);
     const [rl, rv] = nth(right, i); cell(ws, `F${r}`, rl, {bold:true, fill:GREY}); cell(ws, `H${r}`, rv);
     const lines = Math.max(Math.ceil(String(v).length / 30), Math.ceil(String(rv).length / 44), 1); ws.getRow(r).height = 4 + 12*lines; });
@@ -3090,58 +3249,77 @@ async function exportUtReport(){
   let r = 4 + left.length + 1;
   { const loc = snapLocation(mk, 760, 640, 2), mem = snapMember(mk, 860, 640, 2);
     merge(ws, `A${r}:E${r}`); cell(ws, `A${r}`, 'LOCATION ON THE STRUCTURE', {bold:true, fill:GREY, h:'center'}).border = CAP;
-    merge(ws, `F${r}:K${r}`); cell(ws, `F${r}`, 'MEMBER — rings / reading points (blue no reading, green OK, red below FFS)', {bold:true, fill:GREY, h:'center'}).border = CAP;
-    picture(ws, `A${r+1}:E${r+16}`, loc, 380, 320); picture(ws, `F${r+1}:K${r+16}`, mem, 425, 320);
+    merge(ws, `F${r}:L${r}`); cell(ws, `F${r}`, 'MEMBER — rings / reading points (blue no reading, green OK, red below FFS)', {bold:true, fill:GREY, h:'center'}).border = CAP;
+    picture(ws, `A${r+1}:E${r+16}`, loc, 380, 320); picture(ws, `F${r+1}:L${r+16}`, mem, 425, 320);
     for(let i=1;i<=16;i++) ws.getRow(r+i).height = 15;
     r += 18; }
   // results table
   const H1 = r, H2 = r+1;
   [['A','Item'],['B','Identification (point ID)'],['C', elev ? 'Elevation (m LAT)' : 'Position (mm)'],['D','Nominal WT (mm)']].forEach(([col,t])=>{ merge(ws, `${col}${H1}:${col}${H2}`); cell(ws, `${col}${H1}`, t, {bold:true, h:'center', fill:GREY}); });
-  merge(ws, `E${H1}:F${H1}`); cell(ws, `E${H1}`, 'Gauge reading (mm)', {bold:true, h:'center', fill:GREY});
-  merge(ws, `G${H1}:J${H1}`); cell(ws, `G${H1}`, 'Wall thickness reduction', {bold:true, h:'center', fill:GREY});
-  merge(ws, `K${H1}:K${H2}`); cell(ws, `K${H1}`, 'Remarks', {bold:true, h:'center', fill:GREY});
-  [['E','Min'],['F','Max'],['G','Least mm'],['H','%'],['I','Most mm'],['J','%']].forEach(([col,t])=>cell(ws, `${col}${H2}`, t, {bold:true, h:'center', fill:GREY}));
+  merge(ws, `E${H1}:G${H1}`); cell(ws, `E${H1}`, 'Gauge reading (mm)', {bold:true, h:'center', fill:GREY});
+  merge(ws, `H${H1}:K${H1}`); cell(ws, `H${H1}`, 'Wall thickness reduction', {bold:true, h:'center', fill:GREY});
+  merge(ws, `L${H1}:L${H2}`); cell(ws, `L${H1}`, 'Remarks', {bold:true, h:'center', fill:GREY});
+  [['E','Min'],['F','Max'],['G','Avg'],['H','Least mm'],['I','%'],['J','Most mm'],['K','%']].forEach(([col,t])=>cell(ws, `${col}${H2}`, t, {bold:true, h:'center', fill:GREY}));
   r = H2 + 1;
   let all = [];   // [value, point id]
-  const row = (item, ident, pos, vals, remark) => {
+  const SUBFILL = 'FFF2F4F8';   // defect summary rows
+  const row = (item, ident, pos, vals, remark, o) => { o = o || {};
     const v = vals.map(val).filter(x=>x!==null), mn = v.length ? Math.min(...v) : null, mx = v.length ? Math.max(...v) : null;
+    const av = v.length ? Math.round(v.reduce((a,b)=>a+b, 0) / v.length * 100) / 100 : null;
     const [lr, lp] = red(mx), [hr, hp] = red(mn), f = mn!==null ? flag(mn) : '';
     [['A',item,'center'],['B',ident],['C',pos,'center'],['D',nomWT===null?'':nomWT,'center'],['E',mn===null?'':mn,'center'],['F',mx===null?'':mx,'center'],
-     ['G',lr,'center'],['H',lp,'center'],['I',hr,'center'],['J',hp,'center'],['K',[f, remark].filter(Boolean).join(' — ')]].forEach(([col,v,h])=>{
-      const x = cell(ws, `${col}${r}`, v, {h:h||'left', size:8.5});
-      if(f==='BELOW FFS' && ['E','I','J','K'].includes(col)) x.fill = {type:'pattern', pattern:'solid', fgColor:{argb:RED}};
-      else if(f && col==='K') x.fill = {type:'pattern', pattern:'solid', fgColor:{argb:AMB}}; });
+     ['G',av===null?'':av,'center'],['H',lr,'center'],['I',lp,'center'],['J',hr,'center'],['K',hp,'center'],['L',[f, remark].filter(Boolean).join(' — ')]].forEach(([col,v,h])=>{
+      const x = cell(ws, `${col}${r}`, v, {h:h||'left', size:o.sub ? 8 : 8.5, bold:!!o.bold});
+      if(col==='G' && av!==null) x.numFmt = '0.00';
+      if(f==='BELOW FFS' && ['E','J','K','L'].includes(col)) x.fill = {type:'pattern', pattern:'solid', fgColor:{argb:RED}};
+      else if(f && col==='L') x.fill = {type:'pattern', pattern:'solid', fgColor:{argb:AMB}};
+      else if(o.fill) x.fill = {type:'pattern', pattern:'solid', fgColor:{argb:o.fill}}; });
     r++; };
   list.forEach((R,i)=>{ const rd = m.readings[R.key]||{}, ids = [PID_STRUCT, mk, pidRingTag(mk, R.key)].join('/');
     const vals = KS.map(k=>rd[k]); vals.forEach((v,j)=>{ if(val(v)!==null) all.push([val(v), pidRing(mk, R.key, nth(KS,j))]); });
     const moved = KS.filter(k=>mv[jk(R.key,k)]).map(k=>`${KNAME(k)} o'clock moved to ${xLabel(mv[jk(R.key,k)])}`);
-    row(`R${String(i+1).padStart(2,'0')}`, ids, R.label.replace(' mm','').replace(' m',''), vals, [(m.remarks||{})[R.key]||'', ...moved].filter(Boolean).join('; ')); });
+    const nrs = KS.filter(k=>val(rd[k])===null && ((m.nr||{})[R.key]||{})[k]).map(k=>`NR ${KNAME(k)} o'clock — no reading: ${m.nr[R.key][k]}`);
+    row(`R${String(i+1).padStart(2,'0')}`, ids, R.label.replace(' mm','').replace(' m',''), vals, [...nrs, (m.remarks||{})[R.key]||'', ...moved].filter(Boolean).join('; ')); });
   xs.forEach(x=>{ const v = val(x.val); if(v!==null) all.push([v, pidAP(mk, x)]);
     row(xLabel(x), pidAP(mk, x), xPosLabel(mk, x).replace(' mm','').replace(' m',''), [x.val], [`${fmtK(+x.clock)} o'clock`, x.from ? 'replaces ' + xFromLabel(mk, x) : '', x.note||''].filter(Boolean).join(' — ')); });
-  defs.forEach((d,di)=>{ const g = genDefect(mk, d), vals = [];
-    g.stations.forEach(st=>{ for(let k=0;k<12;k++){ const v = dVal(d, st.id, k); if(val(v)!==null){ vals.push(v); all.push([val(v), pidDef(mk, di, st.id, k)]); } } });
-    Object.entries(d.edge||{}).forEach(([t,v])=>{ if(val(v)!==null){ vals.push(v); all.push([val(v), pidDef(mk, di, 'edge:'+t, 0)]); } });
-    if(d.pit && val(d.pit.rem)!==null){ vals.push(d.pit.rem); all.push([val(d.pit.rem), pidDef(mk, di, 'pit', 0)]); }
-    row(defId(di), [PID_STRUCT, mk, defId(di).replace('-','')].join('/'), posLabel(mk, sFromPos(mk, d.pos)).replace(' mm','').replace(' m',''), vals,
-      `${DTYPES[d.type].label}, ${fmtK(+d.clock)} o'clock — see sheet ${defId(di)}`); });
-  if(r === H2 + 1){ merge(ws, `A${r}:K${r}`); cell(ws, `A${r}`, 'No readings recorded.', {h:'center'}); r++; }
+  // defects: a summary row over all the defect's readings, then one row per grid station (12 clock positions) and each edge / pit reading
+  defs.forEach((d,di)=>{ const g = genDefect(mk, d), vals = [], sub = [], dn = defId(di), base = [PID_STRUCT, mk, g.area && g.primary===di ? g.area : dn.replace('-','')].join('/');
+    const DAX = window.F12221_DA, dasz = g.area ? DAX.daSize(mk, {members:g.areaMembers}) : null;
+    const areaTxt = g.area ? (g.primary===di ? ` · defect area ${g.area} (${g.areaMembers.map(defId).join(' + ')}) ${dasz.len} × ${dasz.wid} mm — repair sized on the total` : ` · part of defect area ${g.area} (${dasz.len} × ${dasz.wid} mm); UT grid read with ${defId(g.primary)}, see its rows and sheet`) : d.sep ? ` · kept separate: ${d.sep.why}` : '';
+    g.stations.forEach(st=>{ const sv = [];
+      for(let k=0;k<12;k++){ const v = dVal(d, st.id, k); if(val(v)!==null){ vals.push(v); sv.push(v); all.push([val(v), pidDef(mk, di, st.id, k)]); } }
+      const below = ffs===null ? 0 : sv.filter(v=>val(v) < ffs).length;
+      sub.push([st.id, `${base}/${st.id}/…`, posLabel(mk, st.s).replace(' mm','').replace(' m',''), sv,
+        `${st.zone==='Defect' ? 'Defect zone' : st.zone} · ${sv.length}/12 read${Object.keys((d.nr||{})[st.id]||{}).length ? ` · ${Object.keys(d.nr[st.id]).length} NR (${[...new Set(Object.values(d.nr[st.id]))].join('; ')})` : ''}${below ? ` · ${below} below FFS` : ''}`]); });
+    const ex = [];
+    if(g.extras.edges) ['+ax','−ax','CW','CCW'].forEach(e=>ex.push([`Hole edge ${e}`, (d.edge||{})[e], 'edge:'+e]));
+    if(g.extras.pit){ ex.push(['Pit — remaining WT', (d.pit||{}).rem, 'pit']); ['+ax','−ax','CW','CCW'].forEach(e=>ex.push([`Around pit ${e}`, (d.edge||{})[e], 'edge:'+e])); }
+    else Object.entries(d.edge||{}).forEach(([t,v])=>{ if(!g.extras.edges) ex.push([`Edge ${t}`, v, 'edge:'+t]); });
+    ex.forEach(([l,v,t])=>{ const p = pidDef(mk, di, t, 0); if(val(v)!==null){ vals.push(v); all.push([val(v), p]); }
+      sub.push([t==='pit' ? 'PIT' : 'E' + t.slice(5).replace('−','-'), p, '', [v], l]); });
+    row(dn, base, posLabel(mk, sFromPos(mk, d.pos)).replace(' mm','').replace(' m',''), vals,
+      `${DTYPES[d.type].label}, ${fmtK(+d.clock)} o'clock — ${g.area && g.primary!==di ? 'own pit / edge readings only' : `all ${vals.length} defect readings; stations below, full grid on sheet ${dn}`}${areaTxt}`, {bold:true, fill:SUBFILL});
+    sub.forEach(a=>row(...a, {sub:true})); });
+  if(r === H2 + 1){ merge(ws, `A${r}:L${r}`); cell(ws, `A${r}`, 'No readings recorded.', {h:'center'}); r++; }
   // result line
   r++;
   const mn = all.length ? all.reduce((a,b)=>b[0] < a[0] ? b : a) : null, nLow = ffs===null ? 0 : all.filter(a=>a[0] < ffs).length;
-  merge(ws, `A${r}:K${r}`);
-  cell(ws, `A${r}`, mn ? `RESULT — minimum reading ${mn[0]} mm at ${mn[1]}${nomWT!==null ? ` (${((nomWT-mn[0])/nomWT*100).toFixed(1)}% loss)` : ''} · ${all.length} readings · ${nLow} below the fit-for-service limit · ${defs.length} defect${defs.length===1?'':'s'} recorded`
+  const mxAll = all.length ? Math.max(...all.map(a=>a[0])) : null, avAll = all.length ? (all.reduce((a,b)=>a + b[0], 0) / all.length).toFixed(2) : null;
+  merge(ws, `A${r}:L${r}`);
+  cell(ws, `A${r}`, mn ? `RESULT — minimum reading ${mn[0]} mm at ${mn[1]}${nomWT!==null ? ` (${((nomWT-mn[0])/nomWT*100).toFixed(1)}% loss)` : ''} · maximum ${mxAll} mm · average ${avAll} mm · ${all.length} readings · ${nLow} below the fit-for-service limit · ${defs.length} defect${defs.length===1?'':'s'} recorded`
                      : 'RESULT — no readings recorded', {bold:true, fill: nLow ? RED : 'FFE6F2E6'});
   ws.getRow(r).height = 20; r += 2;
   // sign-off
-  const SIG = [['A','D','Performed / evaluated by', `UT operator: ${c.operator||''}${c.cert ? ' · cert ' + c.cert : ''}`], ['E','H','Witnessed by', 'CIP / FUZE representative (if required)'], ['I','K','Reviewed / approved by', 'Franmarine Project Manager / QA']];
-  SIG.forEach(([a,b,t,sub])=>{ merge(ws, `${a}${r}:${b}${r}`); cell(ws, `${a}${r}`, t, {bold:true, fill:GREY});
-    merge(ws, `${a}${r+1}:${b}${r+3}`); cell(ws, `${a}${r+1}`, 'Name:\nSignature:\nDate:', {size:8.5});
+  const SIG = [['A','C','Performed / evaluated by', `UT operator${c.cert ? ' · cert ' + c.cert : ''}`, c.operator||''], ['D','F','Supervised by', 'Franmarine Supervisor', c.supervisor||''],
+    ['G','I','Witnessed by', 'CIP / FUZE representative (if required)', ''], ['J','L','Reviewed / approved by', 'Franmarine Project Manager / QA', '']];
+  SIG.forEach(([a,b,t,sub,nm])=>{ merge(ws, `${a}${r}:${b}${r}`); cell(ws, `${a}${r}`, t, {bold:true, fill:GREY});
+    merge(ws, `${a}${r+1}:${b}${r+3}`); cell(ws, `${a}${r+1}`, `Name: ${nm}\nSignature:\nDate:`, {size:8.5});
     ws.getCell(`${a}${r+1}`).alignment = {vertical:'top', wrapText:true};
     merge(ws, `${a}${r+4}:${b}${r+4}`); cell(ws, `${a}${r+4}`, sub, {size:7.5, h:'center', color:NAVY}); });
   [r+1,r+2,r+3].forEach(n=>ws.getRow(n).height = 16);
   r += 5;
-  merge(ws, `A${r}:K${r+1}`); ws.getRow(r+1).height = 18;
-  cell(ws, `A${r}`, 'Point IDs are written on the member at each reading and used in photo file names: <Member ID>_<point or defect ID>_<n>.jpg. Individual clock readings are on the Readings sheet; defect grids on the D-S sheets.', {size:7.5, box:false, color:NAVY, h:'center'}).border = {top:LINE};
+  merge(ws, `A${r}:L${r+1}`); ws.getRow(r+1).height = 18;
+  cell(ws, `A${r}`, 'Point IDs are written on the member at each reading and used in photo file names: <Member ID>_<point or defect ID>_<n>.jpg. Min / Max / Avg are over the readings in each row. Ring clock readings are on the Readings sheet; the full defect grids are on the D-S sheets.', {size:7.5, box:false, color:NAVY, h:'center'}).border = {top:LINE};
 
   // ---------- Readings sheet
   const rs = wb.addWorksheet('Readings'); setup(rs, [7, 24, 11, 9, 9, 9, 9, 8, 26, 4, 4], {col:8.11, row:0.46});
@@ -3153,7 +3331,7 @@ async function exportUtReport(){
   hdr([['A','Ring'],['B','Point ID (ring)'],['C', elev ? 'Elev. (m LAT)' : 'Pos. (mm)'],['D','12'],['E','3'],['F','6'],['G','9'],['H','Min'],['I','Remarks']]);
   list.forEach((R,i)=>{ const rd = m.readings[R.key]||{}, vs = KS.map(k=>val(rd[k])), ok = vs.filter(x=>x!==null);
     cell(rs, `A${q}`, `R${String(i+1).padStart(2,'0')}`, {h:'center'}); cell(rs, `B${q}`, [PID_STRUCT, mk, pidRingTag(mk, R.key)].join('/') + '/…'); cell(rs, `C${q}`, R.label.replace(' mm','').replace(' m',''), {h:'center'});
-    ['D','E','F','G'].forEach((col,j)=>{ const v = nth(vs,j), x = cell(rs, `${col}${q}`, v===null ? (mv[jk(R.key, nth(KS,j))] ? 'moved' : '') : v, {h:'center'}); if(v!==null && readingClass(mk, v)==='low') x.fill = {type:'pattern', pattern:'solid', fgColor:{argb:RED}}; });
+    ['D','E','F','G'].forEach((col,j)=>{ const v = nth(vs,j), x = cell(rs, `${col}${q}`, v===null ? (mv[jk(R.key, nth(KS,j))] ? 'moved' : ((m.nr||{})[R.key]||{})[nth(KS,j)] ? 'NR' : '') : v, {h:'center'}); if(v!==null && readingClass(mk, v)==='low') x.fill = {type:'pattern', pattern:'solid', fgColor:{argb:RED}}; });
     cell(rs, `H${q}`, ok.length ? Math.min(...ok) : '', {h:'center', bold:true}); cell(rs, `I${q}`, (m.remarks||{})[R.key]||''); q++; });
   if(xs.length){ q++; hdr([['A','Point'],['B','Point ID'],['C', elev ? 'Elev. (m LAT)' : 'Pos. (mm)'],['D','Clock'],['E','WT (mm)']]); q--; merge(rs, `F${q}:I${q}`); cell(rs, `F${q}`, 'Note', {bold:true, h:'center', fill:GREY}); q++;
     xs.forEach(x=>{ cell(rs, `A${q}`, xLabel(x), {h:'center'}); cell(rs, `B${q}`, pidAP(mk, x)); cell(rs, `C${q}`, xPosLabel(mk, x).replace(' mm','').replace(' m',''), {h:'center'});
@@ -3162,11 +3340,11 @@ async function exportUtReport(){
 
   // ---------- one sheet per defect
   defs.forEach((d,di)=>{
-    const g = genDefect(mk, d), name = defId(di), ds = wb.addWorksheet(name);
+    const g = genDefect(mk, d), name = defId(di); if(g.area && g.primary!==di) return; const ds = wb.addWorksheet(name);
     setup(ds, [7, 9, ...Array(12).fill(5.6), 7, 7, 14]);
     const L = 'Q';
     const t = (ref, v, o) => cell(ds, ref, v, o);
-    merge(ds, 'A1:M1'); t('A1', `DEFECT DETAIL — ${name}`, {size:14, bold:true, box:false, color:NAVY});
+    merge(ds, 'A1:M1'); t('A1', `DEFECT DETAIL — ${name}${g.area ? ` · DEFECT AREA ${g.area} (${g.areaMembers.map(defId).join(' + ')})` : ''}`, {size:14, bold:true, box:false, color:NAVY});
     merge(ds, 'A2:M2'); t('A2', `Report No. F12221-UTR-${id} · ${id} · point IDs ${[PID_STRUCT, mk, name.replace('-','')].join('/')}/<station>/<clock>`, {box:false, color:NAVY});
     ds.getRow(1).height = 24; ds.getRow(2).height = 18;
     const size = d.type==='crack' ? `${d.len} mm @ ${d.ang||0}°` : d.type==='pitting' ? `Ø${d.dia} mm${d.depth ? ', ' + d.depth + ' mm deep (gauge)' : ''}` : `${d.ax} × ${d.cw} mm${d.depth ? ', ' + d.depth + ' mm deep' : ''}`;
@@ -3185,7 +3363,7 @@ async function exportUtReport(){
     g.stations.forEach(st=>{
       t(`A${rr}`, st.id, {h:'center', bold:true, fill: st.zone==='Defect' ? 'FFE3F1E3' : 'FFFFF6CC'}); t(`B${rr}`, posLabel(mk, st.s).replace(' mm','').replace(' m',''), {h:'center', size:8});
       const vs = [];
-      for(let k=0;k<12;k++){ const v = val(dVal(d, st.id, k)); if(v!==null) vs.push(v); const x = t(ds.getColumn(3+k).letter + rr, v===null ? '' : v, {h:'center', size:8});
+      for(let k=0;k<12;k++){ const v = val(dVal(d, st.id, k)); if(v!==null) vs.push(v); const x = t(ds.getColumn(3+k).letter + rr, v===null ? (((d.nr||{})[st.id]||{})[k] ? 'NR' : '') : v, {h:'center', size:8});
         if(v!==null && readingClass(mk, v)==='low') x.fill = {type:'pattern', pattern:'solid', fgColor:{argb:RED}}; }
       const smin = vs.length ? Math.min(...vs) : null; if(smin!==null) zmin[st.zone] = Math.min(zmin[st.zone] ?? 1e9, smin);
       t(`O${rr}`, smin===null ? '' : smin, {h:'center', bold:true}); t(`P${rr}`, ffs===null ? '' : vs.filter(v=>v < ffs).length, {h:'center'}); t(`Q${rr}`, st.zone, {size:8}); rr++; });
@@ -3272,6 +3450,7 @@ const LOSS = [
 const lossCls = (mk, v) => { if(v===null) return null; if(readingClass(mk,v)==='low') return 3; const wt = nomWT(mk); if(!wt) return -1; const l = (wt - v)/wt*100; return LOSS.findIndex(x=>l < x.max); };
 G.status = new THREE.Group(); scene.add(G.status);
 G.heat = new THREE.Group(); scene.add(G.heat);
+G.denso = new THREE.Group(); scene.add(G.denso); let densoColour = null, densoLegend = null;   // filled in by the Denso install module
 const stMats = {}; Object.entries(ST).forEach(([k,s])=>{ stMats[k] = new THREE.MeshBasicMaterial({color:s.col, transparent:true, opacity:.5, depthWrite:false}); });
 const lossMats = LOSS.map(x=>new THREE.MeshBasicMaterial({color:x.col, transparent:true, opacity:.9, depthWrite:false}));
 const naMat = new THREE.MeshBasicMaterial({color:0x9aa6b8, transparent:true, opacity:.8, depthWrite:false});
@@ -3297,6 +3476,7 @@ function buildColour(){
       G.heat.add(sleeve(a, b, M.r + 0.022, c===-1 ? naMat : lossMats[c])); });
   });
   counts.loss = lc; counts.na = na;
+  clearGroup(G.denso); if(colourMode==='denso' && densoColour) densoColour(); G.denso.visible = colourMode==='denso';
   G.status.visible = colourMode==='status' && !focus.on; G.heat.visible = colourMode==='loss';
   renderLegend();
 }
@@ -3307,12 +3487,13 @@ function scheduleColour(){ clearTimeout(colT); colT = setTimeout(buildColour, 25
 const legend = h('div', {class:'e26-legend', role:'group', 'aria-label':'Model colouring'});
 view.appendChild(legend);
 function renderLegend(){
-  const seg = h('span', {class:'seg'}, [['status','Status'],['loss','Wall loss'],['off','Off']].map(([k,t])=>h('button', {type:'button', 'data-m':k, 'aria-pressed':String(colourMode===k)}, t)));
+  const seg = h('span', {class:'seg'}, [['status','Status'],['loss','Wall loss'],['denso','Denso'],['off','Off']].map(([k,t])=>h('button', {type:'button', 'data-m':k, 'aria-pressed':String(colourMode===k)}, t)));
   let items = null;
   if(colourMode==='status') items = h('div', {class:'items'}, Object.entries(ST).map(([k,s])=>h('span', {class:'it'}, h('i', {style:`background:${s.css}`}), s.label, h('b', null, String(counts[k]||0)))),
     h('span', {class:'it'}, h('i', {style:'background:transparent;border:1px solid var(--line)'}), 'Not started', h('b', null, String(counts.none||0))));
   if(colourMode==='loss') items = h('div', {class:'items'}, LOSS.map((x,i)=>h('span', {class:'it'}, h('i', {style:`background:${x.css}`}), x.label, h('b', null, String((counts.loss||[])[i]||0)))),
     counts.na ? h('span', {class:'it'}, h('i', {style:'background:#9aa6b8'}), 'No nominal WT', h('b', null, String(counts.na))) : null);
+  if(colourMode==='denso') items = densoLegend ? densoLegend() : null;
   rc(legend, h('div', {class:'lh'}, 'Colour', seg), items, colourMode==='loss' ? h('div', {class:'lnote e26-tip'}, 'Ring minimum vs nominal WT (entered, else the engineer\'s model).') : null);
 }
 legend.addEventListener('click', e=>{ const b = e.target.closest('button[data-m]'); if(!b) return; colourMode = b.dataset.m; LS('colour', colourMode); buildColour(); });
@@ -3681,37 +3862,50 @@ const dive = (function(){
     h('div', {class:'pid', id:'e26-dpid'}),
     h('div', {class:'row'}, h('input', {class:'val', id:'e26-dv', inputmode:'none', autocomplete:'off', 'aria-label':'Wall thickness (mm)'}), h('span', {class:'unit'}, 'mm')),
     h('div', {class:'e26-warn', id:'e26-dwarn', hidden:true, role:'alert'}),
+    h('div', {class:'nrline', id:'e26-dnr', hidden:true}),
     h('div', {class:'done', id:'e26-ddone', hidden:true}, h('span', null, '✓ Every point on this member is read.'), h('button', {type:'button', id:'e26-dnextm', class:'dbtn primary'}, 'Next member ›')),
     h('div', {class:'pad'}, ['7','8','9','⌫','4','5','6','Clear','1','2','3','Skip','.','0'].map(t=>h('button', {type:'button', 'data-key':t, class: t.length>1 && t!=='⌫' ? 'fn' : null}, t)),
-      h('button', {type:'button', 'data-key':'save', class:'save'}, 'Save ›')),
+      h('button', {type:'button', 'data-key':'save', class:'save'}, 'Save ›'),
+      h('button', {type:'button', 'data-key':'nr', class:'nr', id:'e26-dnrb'}, 'No reading (NR) — record why')),
+    h('div', {class:'nrpick', id:'e26-dnrp', hidden:true},
+      h('div', {class:'nrh'}, 'Why can\'t this point be read?'),
+      h('div', {class:'nrgrid', id:'e26-dnrg'}),
+      h('div', {class:'nrother'}, h('input', {id:'e26-dnro', autocomplete:'off', placeholder:'Other reason — type it here'}), h('button', {type:'button', 'data-key':'nr-other', class:'nrok'}, 'Record')),
+      h('div', {class:'nract'}, h('button', {type:'button', 'data-key':'nr-clear', id:'e26-dnrc', hidden:true}, 'Clear NR'), h('button', {type:'button', 'data-key':'nr-cancel'}, 'Cancel'))),
     h('div', {class:'foot'}, h('span', null, h('button', {type:'button', 'data-key':'prev'}, '‹ Previous'), ' '),
       h('label', null, h('input', {type:'checkbox', id:'e26-dskip', checked:skipRead}), 'Skip points already read'),
       h('span', {class:'e26-tip'}, 'Enter save · Shift+Enter back · Esc close'), h('button', {type:'button', 'data-key':'exit'}, 'Close')));
   const inp = $('e26-dv'), warn = $('e26-dwarn');
   const pts = mk => { const out = []; ringsFor(mk).forEach(R=>KS.forEach(k=>out.push({mk, key:R.key, k}))); return out; };
   const valOf = p => num((UTS[p.mk].readings[p.key]||{})[p.k]);
+  const nrOf = p => (typeof ringNR==='function') ? ringNR(p.mk, p.key, p.k) : null;
+  const doneOf = p => valOf(p)!==null || !!nrOf(p);   // a No reading (NR) point counts as done
   function show(p){
     cur = p; okKey = ''; fresh = true; warn.hidden = true;
-    const all = pts(p.mk), read = all.filter(x=>valOf(x)!==null).length, i = all.findIndex(x=>x.key===p.key && x.k===p.k);
+    const all = pts(p.mk), read = all.filter(doneOf).length, i = all.findIndex(x=>x.key===p.key && x.k===p.k);
+    nrPick(false);
     $('e26-dm').textContent = UTS[p.mk].id || p.mk; $('e26-dn').textContent = shortName(p.mk); $('e26-dp').textContent = `${read} of ${all.length} read · point ${i+1}`;
     const R = ringsFor(p.mk).find(x=>x.key===p.key);
     rc($('e26-dw'), `${ringName(p.mk, p.key)} · ${KNAME(p.k)} o'clock`, h('small', null, R ? R.label : ''));
     $('e26-dpid').textContent = pidRing(p.mk, p.key, p.k);
-    const v = valOf(p); inp.value = v===null ? '' : String(v);
+    const v = valOf(p), nr = nrOf(p); inp.value = v===null ? '' : String(v); inp.placeholder = v===null && nr ? 'NR' : '';
+    $('e26-dnr').hidden = !(v===null && nr); $('e26-dnr').textContent = v===null && nr ? `NR — no reading: ${nr}` : '';
+    $('e26-dnrb').textContent = v===null && nr ? 'Change / clear the NR' : 'No reading (NR) — record why';
     $('e26-ddone').hidden = true;
     select(p, false);
     if(!isTouch) { inp.focus(); inp.select(); }
   }
   function nextFrom(p, dir){
     const all = pts(p.mk); let i = all.findIndex(x=>x.key===p.key && x.k===p.k);
-    for(let n=0; n<all.length; n++){ i += dir; if(i<0 || i>=all.length) break; if(!skipRead || dir<0 || valOf(all[i])===null) return all[i]; }
-    if(dir>0 && skipRead){ const u = all.find(x=>valOf(x)===null); if(u) return u; }
+    for(let n=0; n<all.length; n++){ i += dir; if(i<0 || i>=all.length) break; if(!skipRead || dir<0 || !doneOf(all[i])) return all[i]; }
+    if(dir>0 && skipRead){ const u = all.find(x=>!doneOf(x)); if(u) return u; }
     return null;
   }
   function complete(){ cur = cur || null; $('e26-ddone').hidden = false; warn.hidden = true; $('e26-dp').textContent = `${pts(UTS.active).length} of ${pts(UTS.active).length} read`; }
   function save(){
     if(!cur) return;
     const raw = inp.value.trim();
+    if(typeof NR_TYPED!=='undefined' && NR_TYPED.test(raw)){ inp.value = ''; const g = $('e26-dnrg'); if($('e26-dnrp').hidden) $('e26-dnrb').click(); return; }
     if(raw!==''){
       const key = jk(cur.mk, cur.key, cur.k, raw), chk = checkValue(cur.mk, raw, neighbours(cur.mk, cur.key, cur.k));
       if(chk && okKey!==key){ okKey = key;
@@ -3723,7 +3917,17 @@ const dive = (function(){
     }
     advance(1);
   }
+  function nrPick(on){ $('e26-dnrp').hidden = !on; el.classList.toggle('picking', on); }
   function advance(dir){ const n = nextFrom(cur, dir); if(n) show(n); else if(dir>0) complete(); }
+  // No reading (NR): record the reason (or clear it), then move on — same rules as the entry card
+  function recordNR(why){
+    if(!cur) return; const p = cur, pid = pidRing(p.mk, p.key, p.k), v = valOf(p), nr = nrOf(p), ow = ringOwn(p.mk, p.key, p.k);
+    const go = () => { setRingNR(p.mk, p.key, p.k, why); nrPick(false);
+      if(p.mk===UTS.active){ renderTable(); renderSummary(); } renderMemberSelect();
+      if(why){ toast(`${pid}: no reading recorded.`); if(cur===p) advance(1); } else if(cur===p) show(p); };
+    if(ownIsOther(ow) && (v!==null || nr)){ ownAsk(ow, `${UTS[p.mk].id||p.mk} · ${pid} — ${v!==null ? v + ' mm' : 'NR (' + nr + ')'}`, why ? 'Record it as no reading' : 'Clear the NR', go); return; }
+    go();
+  }
   warn.addEventListener('click', e=>{ const b = e.target.closest('button[data-fix]'); if(!b) return; inp.value = b.dataset.fix; okKey = ''; warn.hidden = true; });
   el.addEventListener('click', e=>{
     const b = e.target.closest('button[data-key]'); if(!b) return; const k = b.dataset.key;
@@ -3734,7 +3938,12 @@ const dive = (function(){
     else if(k==='prev') advance(-1);
     else if(k==='save') save();
     else if(k==='exit') toggle(false);
-    if(!isTouch) inp.focus();
+    else if(k==='nr'){ const pk = $('e26-dnrp'), g = $('e26-dnrg'); if(!g.children.length) rc(g, ...NR_REASONS.map(w=>h('button', {type:'button', 'data-key':'nr-why', 'data-why':w}, w))); nrPick(pk.hidden); $('e26-dnrc').hidden = !nrOf(cur||{}); if(!pk.hidden){ $('e26-dnro').value = ''; } return; }
+    else if(k==='nr-why') recordNR(b.dataset.why);
+    else if(k==='nr-other'){ const w = $('e26-dnro').value.trim(); if(!w){ toast('Type the reason, or pick one of the reasons above.', true); $('e26-dnro').focus(); return; } recordNR(w); }
+    else if(k==='nr-clear') recordNR(null);
+    else if(k==='nr-cancel'){ nrPick(false); }
+    if(!isTouch && $('e26-dnrp').hidden) inp.focus();
   });
   $('e26-dnextm').addEventListener('click', ()=>{
     const sc = scActive(), order = sc ? scMembers(sc) : MKEYS; let i = order.indexOf(UTS.active);
@@ -3747,12 +3956,13 @@ const dive = (function(){
     else if(e.key==='Escape'){ e.preventDefault(); toggle(false); }
   });
   inp.addEventListener('input', ()=>{ okKey = ''; fresh = false; warn.hidden = true; });
+  $('e26-dnro').addEventListener('keydown', e=>{ if(e.key==='Enter'){ e.preventDefault(); const w = e.target.value.trim(); if(w) recordNR(w); } else if(e.key==='Escape'){ e.preventDefault(); nrPick(false); inp.focus(); } });
   const isTouch = window.matchMedia('(pointer:coarse)').matches;
   function start(){
     const mk = UTS.active, all = pts(mk);
     if(!all.length){ toast('Enter the survey extent for this member first — no rings yet.', true); toggle(false); return; }
-    const s = selected && selected.mk===mk ? all.find(x=>x.key===selected.key && x.k===selected.k && valOf(x)===null) : null;
-    const first = s || all.find(x=>valOf(x)===null);
+    const s = selected && selected.mk===mk ? all.find(x=>x.key===selected.key && x.k===selected.k && !doneOf(x)) : null;
+    const first = s || all.find(x=>!doneOf(x));
     if(first) show(first); else { show(all[0]); complete(); }
   }
   function toggle(on){
@@ -3876,14 +4086,17 @@ async function exportMemberPdf(){
     // summary
     let y = doc.lastAutoTable.finalY + 6;
     const lowN = list.reduce((a,R)=>a + KS.filter(k=>readingClass(mk, (m.readings[R.key]||{})[k])==='low').length, 0);
-    const res = s.low ? 'BELOW FIT-FOR-SERVICE LIMIT' : s.n < s.tot ? 'INCOMPLETE' : 'WITHIN LIMITS';
-    const resCol = s.low ? [214,40,40] : s.n < s.tot ? [178,107,0] : [31,122,54];
+    const done = s.n + (s.nr||0);   // a point with No reading (NR) recorded counts as done
+    const res = s.low ? 'BELOW FIT-FOR-SERVICE LIMIT' : done < s.tot ? 'INCOMPLETE' : 'WITHIN LIMITS';
+    const resCol = s.low ? [214,40,40] : done < s.tot ? [178,107,0] : [31,122,54];
     doc.setFillColor(...resCol); doc.roundedRect(ML, y-4.2, 62, 7, 1.2, 1.2, 'F');
     doc.setTextColor(255,255,255); doc.setFont('helvetica','bold'); doc.setFontSize(9); doc.text(res, ML+31, y+0.4, {align:'center'});
     doc.setTextColor(20,33,58); doc.setFont('helvetica','normal');
-    doc.text(`${s.n} of ${s.tot} ring readings · minimum ${s.mn===null ? '—' : s.mn.toFixed(1) + ' mm'}${s.loss!==null ? ` · max wall loss ${s.loss.toFixed(1)} %` : ''} · ${lowN} below FFS · ${s.defs} defect${s.defs===1?'':'s'}`, ML+66, y+0.4);
+    const sumTxt = `${done} of ${s.tot} ring points done (${s.n} readings${s.nr ? ` + ${s.nr} NR` : ''}) · minimum ${s.mn===null ? '—' : s.mn.toFixed(1) + ' mm'}${s.loss!==null ? ` · max wall loss ${s.loss.toFixed(1)} %` : ''} · ${lowN} below FFS · ${s.defs} defect${s.defs===1?'':'s'}`;
+    const sumLines = doc.splitTextToSize(sumTxt, CW - 66);   // wraps inside the page margin
+    doc.text(sumLines, ML+66, y+0.4, {lineHeightFactor:1.25});
     // pictures
-    y += 6;
+    y += Math.max(6, sumLines.length * 4.2 + 2);
     try{
       const iw = (CW-4)/2, ih = iw*0.62;
       const a = snapLocation(mk, 900, Math.round(900*0.62), 2), b = snapMember(mk, 900, Math.round(900*0.62), 2);
@@ -3893,12 +4106,17 @@ async function exportMemberPdf(){
     }catch(e){ y += 2; }
     // readings
     const elev = M.kind==='elev';
-    const body = list.map((R,i)=>{ const r = m.readings[R.key]||{}, vals = KS.map(k=>num(r[k])), ok = vals.filter(v=>v!==null), mn = ok.length ? Math.min(...ok) : null;
-      return [`R${String(i+1).padStart(2,'0')}`, R.label.replace(' mm','').replace(' m',''), ...vals.map(fmt), fmt(mn), mn!==null && wt ? Math.max(0,(wt-mn)/wt*100).toFixed(1) : '—', (m.remarks||{})[R.key] || '']; });
+    // Min / Max / Avg over the readings in each row (FUZE review, 3 Nov 2026)
+    const mma = vals => { const ok = vals.map(num).filter(v=>v!==null); return ok.length ? [Math.min(...ok), Math.max(...ok), ok.reduce((a,b)=>a+b,0)/ok.length] : [null, null, null]; };
+    const avg2 = v => v===null ? '—' : v.toFixed(2);
+    const body = list.map((R,i)=>{ const r = m.readings[R.key]||{}, vals = KS.map(k=>num(r[k])), [mn, mx, av] = mma(vals);
+      const NRF = window.F12221_NR, nrs = KS.map(k=>NRF ? NRF.ringNR(mk, R.key, k) : null);
+      return [`R${String(i+1).padStart(2,'0')}`, R.label.replace(' mm','').replace(' m',''), ...vals.map((v,j)=>v===null && nrs[j] ? 'NR' : fmt(v)), fmt(mn), fmt(mx), avg2(av), mn!==null && wt ? Math.max(0,(wt-mn)/wt*100).toFixed(1) : '—',
+        [...KS.map((k,j)=>nrs[j] && vals[j]===null ? `NR ${KNAME(k)} o'clock: ${nrs[j]}` : '').filter(Boolean), (m.remarks||{})[R.key] || ''].filter(Boolean).join('; ')]; });
     doc.autoTable({startY:y, margin:{left:ML, right:ML, bottom:16}, theme:'grid',
-      head:[['Ring', elev ? 'Elev. (m)' : 'Pos. (mm)', '12', '3', '6', '9', 'Min', 'Loss %', 'Remark']], body: body.length ? body : [['—','','','','','','','','No rings — enter the survey extent']],
+      head:[['Ring', elev ? 'Elev. (m)' : 'Pos. (mm)', '12', '3', '6', '9', 'Min', 'Max', 'Avg', 'Loss %', 'Remark']], body: body.length ? body : [['—','','','','','','','','','','No rings — enter the survey extent']],
       styles:{fontSize:8, cellPadding:1.3, halign:'center', lineColor:[211,217,227], lineWidth:0.2, textColor:[20,33,58]},
-      headStyles:{fillColor:NAVY, textColor:255, fontStyle:'bold'}, columnStyles:{0:{fontStyle:'bold'}, 8:{halign:'left', cellWidth:48}},
+      headStyles:{fillColor:NAVY, textColor:255, fontStyle:'bold'}, columnStyles:{0:{fontStyle:'bold'}, 10:{halign:'left', cellWidth:40}},
       didParseCell: d=>{ if(d.section!=='body' || d.column.index<2 || d.column.index>6) return; const v = num(d.cell.raw); const cl = readingClass(mk, v);
         if(cl==='low'){ d.cell.styles.fillColor = [246,201,201]; d.cell.styles.textColor = [176,28,28]; d.cell.styles.fontStyle = 'bold'; }
         else if(cl==='high') d.cell.styles.fillColor = [251,233,200]; }});
@@ -3909,17 +4127,33 @@ async function exportMemberPdf(){
       styles:{fontSize:8, cellPadding:1.3, lineColor:[211,217,227], lineWidth:0.2}, headStyles:{fillColor:NAVY, textColor:255}});
     const DL = (m.defects||[]);
     if(DL.length) doc.autoTable({startY:doc.lastAutoTable.finalY + 5, margin:{left:ML, right:ML, bottom:16}, theme:'grid',
-      head:[['Defect', 'Type', 'Centre', 'Clock', 'Size', 'Readings', 'Min (mm)', 'Note']],
-      body: DL.map((d,di)=>{ const r = genDefect(mk, d); let n = 0, mn = null; r.stations.forEach(st=>{ for(let k=0;k<12;k++){ const v = num(dVal(d, st.id, k)); if(v!==null){ n++; if(mn===null || v<mn) mn = v; } } });
+      head:[['Defect', 'Type', 'Centre', 'Clock', 'Size', 'Readings', 'Min', 'Max', 'Avg', 'Note']],
+      body: DL.map((d,di)=>{ const r = genDefect(mk, d), all = defAll(d, r), [mn, mx, av] = mma(all.map(a=>a[1]));
         const size = d.type==='crack' ? `${d.len} mm @ ${d.ang||0}°` : d.type==='pitting' ? `Ø${d.dia} mm` : `${d.ax} × ${d.cw} mm`;
-        return [defId(di), DTYPES[d.type].label, posLabel(mk, sFromPos(mk, d.pos)), fmtK(+d.clock), size, `${n}/${r.stations.length*12}`, fmt(mn), d.note||'']; }),
+        return [defId(di), DTYPES[d.type].label, posLabel(mk, sFromPos(mk, d.pos)), fmtK(+d.clock), size, `${all.length}`, fmt(mn), fmt(mx), avg2(av), d.note||'']; }),
       styles:{fontSize:8, cellPadding:1.3, lineColor:[211,217,227], lineWidth:0.2}, headStyles:{fillColor:NAVY, textColor:255}});
+    // every defect reading: one row per grid station (12 clock positions), then edge / pit readings
+    DL.forEach((d,di)=>{ const r = genDefect(mk, d), rows = []; if(!r.stations.length && !defExtras(d, r).length) return;
+      r.stations.forEach(st=>{ const vs = []; for(let k=0;k<12;k++) vs.push(num(dVal(d, st.id, k))); const [mn, mx, av] = mma(vs);
+        rows.push([st.id, posLabel(mk, st.s).replace(' mm','').replace(' m',''), ...vs.map((v,k)=>v===null ? (((d.nr||{})[st.id]||{})[k] ? 'NR' : '') : fmt(v)), fmt(mn), fmt(mx), avg2(av)]); });
+      const ex = defExtras(d, r);
+      if(ex.length){ const [mn, mx, av] = mma(ex.map(e=>e[1]));
+        rows.push([{content:'Edge / pit', colSpan:2, styles:{fontStyle:'bold'}}, {content: ex.map(([l,v])=>`${l} ${v===null||v===undefined||v==='' ? '—' : fmt(v)}`).join(' · '), colSpan:12, styles:{halign:'left'}}, fmt(mn), fmt(mx), avg2(av)]); }
+      let sy = doc.lastAutoTable.finalY + 5; if(sy > 262){ doc.addPage(); sy = 18; }
+      doc.autoTable({startY:sy, margin:{left:ML, right:ML, bottom:16}, theme:'grid',
+        head:[[{content:`${defId(di)}${r.area ? ` / defect area ${r.area} (${r.areaMembers.map(defId).join(' + ')}, ${(window.F12221_DA.daSize(mk, {members:r.areaMembers})).len} × ${(window.F12221_DA.daSize(mk, {members:r.areaMembers})).wid} mm)` : ''} — defect readings (mm) by station and clock position · yellow = landing, green = defect zone`, colSpan:17, styles:{halign:'left'}}],
+              ['Stn', elev ? 'Elev.' : 'Pos.', '12', ...Array.from({length:11}, (_,k)=>String(k+1)), 'Min', 'Max', 'Avg']],
+        body: rows, styles:{fontSize:6.6, cellPadding:0.9, halign:'center', lineColor:[211,217,227], lineWidth:0.2, textColor:[20,33,58]},
+        headStyles:{fillColor:NAVY, textColor:255, fontStyle:'bold'}, columnStyles:{0:{fontStyle:'bold', cellWidth:10}, 1:{cellWidth:13}, 14:{fontStyle:'bold'}},
+        didParseCell: c=>{ if(c.section!=='body') return; const st = r.stations[c.row.index];
+          if(st && c.column.index===0) c.cell.styles.fillColor = st.zone==='Defect' ? [227,241,227] : [255,246,204];
+          if(c.column.index>=2 && c.column.index<=14 && st){ const cl = readingClass(mk, num(c.cell.raw)); if(cl==='low'){ c.cell.styles.fillColor = [246,201,201]; c.cell.styles.textColor = [176,28,28]; c.cell.styles.fontStyle = 'bold'; } } }}); });
     // sign-off
     y = doc.lastAutoTable.finalY + 8; if(y > 250){ doc.addPage(); y = 20; }
     const phN = typeof phList==='function' ? phList(mk).length : 0;
     if(phN){ doc.setFontSize(8.5); doc.setTextColor(...MUTED); doc.text(`${phN} photograph${phN===1?'':'s'} — see the last page${phN>4?'s':''}.`, ML, y - 2); y += 3; }
     doc.autoTable({startY:y, margin:{left:ML, right:ML, bottom:16}, theme:'grid', head:[['Sign-off', 'Name', 'Signature', 'Date']],
-      body:[['UT operator', c.operator||'', '', ''], ['Supervisor', '', '', ''], ['Client representative', '', '', '']],
+      body:[['UT operator', c.operator||'', '', ''], ['Supervisor', c.supervisor||'', '', ''], ['Client representative', '', '', '']],
       styles:{fontSize:8.5, cellPadding:3.2, lineColor:[211,217,227], lineWidth:0.2, minCellHeight:11}, headStyles:{fillColor:NAVY, textColor:255}, columnStyles:{0:{fontStyle:'bold', cellWidth:44}}});
     try{ await pdfPhotos(doc, mk, ML, CW, NAVY, MUTED); }catch(e){ console.warn('[F12221] photos left out of the PDF', e); }
     const pages = doc.getNumberOfPages(), gen = new Date().toISOString().slice(0,16).replace('T',' ');
@@ -3929,10 +4163,17 @@ async function exportMemberPdf(){
   }catch(err){ toast('PDF failed: ' + err.message, true); }
   finally{ btn.disabled = false; btn.textContent = 'Export member sheet (PDF)'; }
 }
+function defExtras(d, g){ const ex = [], E = d.edge||{};
+  if(g.extras.edges) ['+ax','−ax','CW','CCW'].forEach(e=>ex.push([`Hole edge ${e}`, num(E[e])]));
+  if(g.extras.pit){ ex.push(['Pit remaining WT', num((d.pit||{}).rem)]); ['+ax','−ax','CW','CCW'].forEach(e=>ex.push([`Around pit ${e}`, num(E[e])])); }
+  if(!g.extras.edges && !g.extras.pit) Object.entries(E).forEach(([t,v])=>ex.push([`Edge ${t}`, num(v)]));
+  return ex; }
+function defAll(d, g){ const out = []; g.stations.forEach(st=>{ for(let k=0;k<12;k++){ const v = num(dVal(d, st.id, k)); if(v!==null) out.push([st.id, v]); } });
+  defExtras(d, g).forEach(([l,v])=>{ if(v!==null) out.push([l, v]); }); return out; }
 function fmtElev(v){ const x = num(v); return x===null ? '—' : `${x>=0?'+':'−'}${Math.abs(x).toFixed(2)}`; }
 (function(){
   const b = h('button', {type:'button', id:'e26-pdf'}, 'Export member sheet (PDF)');
-  const p = h('p', {class:'small'}, 'A summary to print or send: member and test details, location and member pictures, the readings with wall loss, defects, sign-off boxes and the member\'s photos.');
+  const p = h('p', {class:'small'}, 'A summary to print or send: member and test details, location and member pictures, the readings with min / max / average and wall loss, every defect reading by station, sign-off boxes and the member\'s photos.');
   const utrNote = $('btn-utr').nextElementSibling; (utrNote && utrNote.tagName==='P' ? utrNote : $('btn-utr')).insertAdjacentElement('afterend', b); b.insertAdjacentElement('afterend', p);
   b.addEventListener('click', exportMemberPdf);
 })();
@@ -3989,6 +4230,17 @@ async function phUrl(p){   // object URL for a stored photo (cached for the sess
   const r = await sb.storage.from(PH.bucket).download(p.path); if(r.error) throw new Error(r.error.message || 'download failed');
   return (PH.url[p.path] = URL.createObjectURL(r.data));
 }
+async function phThumb(p){   // small copy for the panel; photos added before 4 Nov 2026 have none, so the full photo is used
+  if(!p.tp) return phUrl(p);
+  if(PH.url[p.tp]) return PH.url[p.tp];
+  const sb = phClient(); if(!sb) throw new Error('sign in to see photos');
+  const r = await sb.storage.from(PH.bucket).download(p.tp); if(r.error) return phUrl(p);
+  return (PH.url[p.tp] = URL.createObjectURL(r.data));
+}
+function phSmall(blob, px){ return new Promise((res, rej)=>{ const u = URL.createObjectURL(blob), img = new Image();
+  img.onload = ()=>{ const s = Math.min(1, px/Math.max(img.naturalWidth, img.naturalHeight)), cv = document.createElement('canvas'); cv.width = Math.round(img.naturalWidth*s); cv.height = Math.round(img.naturalHeight*s);
+    cv.getContext('2d').drawImage(img, 0, 0, cv.width, cv.height); URL.revokeObjectURL(u); cv.toBlob(b=>b ? res(b) : rej(new Error('thumbnail')), 'image/jpeg', 0.8); };
+  img.onerror = ()=>{ URL.revokeObjectURL(u); rej(new Error('thumbnail')); }; img.src = u; }); }
 async function phDataUrl(p){ const u = await phUrl(p); const b = await (await fetch(u)).blob(); return await new Promise(res=>{ const fr = new FileReader(); fr.onload = ()=>res(fr.result); fr.readAsDataURL(b); }); }
 async function phUpload(mk, item){
   const sb = phClient(); if(!sb) throw new Error('not signed in to the team database');
@@ -3996,14 +4248,19 @@ async function phUpload(mk, item){
   const r = await sb.storage.from(PH.bucket).upload(path, item.blob, {contentType:'image/jpeg', upsert:false});
   if(r.error) throw new Error(r.error.message || 'upload failed');
   PH.url[path] = URL.createObjectURL(item.blob);
+  let tp = null;
+  try{ const tb = await phSmall(item.blob, 480), tpath = `${STRUCT}/${mk}/${id}_t.jpg`;
+    const t = await sb.storage.from(PH.bucket).upload(tpath, tb, {contentType:'image/jpeg', upsert:false}); if(!t.error){ tp = tpath; PH.url[tpath] = URL.createObjectURL(tb); } }catch(e){}
   UTS[mk].photos = UTS[mk].photos || {};
-  UTS[mk].photos[id] = {path, tag:item.tag, cap:item.cap||'', by:who(), t:Date.now(), w:item.w, h:item.h};
+  UTS[mk].photos[id] = Object.assign({path, tag:item.tag, cap:item.cap||'', by:who(), t:Date.now(), w:item.w, h:item.h}, tp ? {tp} : {});
   saveState();
 }
 // section in the member panel
 const phSec = h('section', {id:'ph-sec'},
   h('h2', null, 'Photos'),
-  h('p', {class:'small e26-tip'}, 'An overview of the member and a photo of each defect. They appear for the client and engineer as soon as they upload, and go into the member sheet PDF.'),
+  h('details', {class:'ph-all', id:'ph-all', open:true}, h('summary', {id:'ph-all-sum'}, 'All photos on this structure'), h('div', {id:'ph-all-body'})),
+  h('h3', {class:'ph-h3', id:'ph-this'}, 'This member'),
+  h('p', {class:'small e26-tip'}, 'An overview of the member and a photo of each defect. They appear for the client and engineer as soon as they upload, and go into the member sheet PDF. Click a photo to open it full size.'),
   h('div', {class:'ph-grid', id:'ph-grid'}),
   h('div', {class:'ph-add form', id:'ph-add'},
     h('label', {for:'ph-tag'}, 'Photo of', h('select', {id:'ph-tag'})),
@@ -4027,14 +4284,33 @@ function renderPhotos(){
     : !edit ? (L.length ? '' : 'No photos on this member yet.') : L.length >= PH.perMember ? `${PH.perMember} photos is the limit per member — remove one to add another.` : '';
   $('ph-pick').disabled = !edit || L.length >= PH.perMember;
   rc(grid, ...L.map(p=>{ const img = h('img', {alt:`${phTagLabel(mk, p.tag)}${p.cap ? ' — ' + p.cap : ''}`, loading:'lazy'});
-    if(sb) phUrl(p).then(u=>{ img.src = u; }).catch(()=>{ img.alt = 'Could not load'; });
+    if(sb) phThumb(p).then(u=>{ img.src = u; }).catch(e=>{ img.alt = 'Could not load: ' + e.message; });
     return h('figure', {class:'ph-item', 'data-id':p.id},
       h('button', {type:'button', class:'ph-open', 'data-id':p.id, title:'Open full size'}, img),
       h('figcaption', null, h('b', null, phTagLabel(mk, p.tag)), p.cap ? ' · ' + p.cap : '', h('span', {class:'m'}, ` · ${String(p.by||'').split('@')[0]} ${when(p.t)}`)),
       edit ? h('button', {type:'button', class:'ph-del', 'data-id':p.id, title:'Remove this photo'}, 'Remove') : null); }));
   renderPending();
   phBadges();
+  renderAllPhotos();
 }
+function renderAllPhotos(){
+  const sb = phClient(), groups = MKEYS.map(mk=>({mk, L:phList(mk)})).filter(g=>g.L.length), n = groups.reduce((a,g)=>a + g.L.length, 0);
+  $('ph-all-sum').textContent = `All photos on this structure (${n} on ${groups.length} member${groups.length===1?'':'s'})`;
+  $('ph-this').textContent = `This member — ${UTS[UTS.active].id || UTS.active} (${phList(UTS.active).length})`;
+  const body = $('ph-all-body');
+  if(!n){ rc(body, h('p', {class:'small'}, sb ? 'No photos uploaded yet.' : 'Sign in to see photos.')); return; }
+  rc(body, ...groups.map(g=>h('div', {class:'ph-mem' + (g.mk===UTS.active ? ' cur' : '')},
+    h('button', {type:'button', class:'ph-go', 'data-mk':g.mk, title:'Go to this member'}, h('b', null, UTS[g.mk].id || g.mk), ` · ${shortName ? shortName(g.mk) : MEM[g.mk].name} · ${g.L.length} photo${g.L.length===1?'':'s'}`),
+    h('div', {class:'ph-mini'}, ...g.L.map(p=>{ const img = h('img', {alt:`${UTS[g.mk].id || g.mk} — ${phTagLabel(g.mk, p.tag)}${p.cap ? ' — ' + p.cap : ''}`, loading:'lazy'});
+      if(sb && $('ph-all').open) phThumb(p).then(u=>{ img.src = u; }).catch(e=>{ img.alt = 'Could not load'; });
+      return h('button', {type:'button', class:'ph-mopen', 'data-mk':g.mk, 'data-id':p.id, title:`${phTagLabel(g.mk, p.tag)}${p.cap ? ' — ' + p.cap : ''} — click to open full size`}, img); })))));
+}
+$('ph-all').addEventListener('toggle', ()=>{ if($('ph-all').open) renderAllPhotos(); });
+$('ph-all-body').addEventListener('click', e=>{
+  const go = e.target.closest('.ph-go'), op = e.target.closest('.ph-mopen');
+  if(go){ setActive(go.dataset.mk, true); $('ph-this').scrollIntoView({behavior:'smooth', block:'start'}); }
+  if(op){ const seq = MKEYS.flatMap(mk=>phList(mk).map(p=>({mk, id:p.id}))); phLightbox(op.dataset.mk, op.dataset.id, seq); }
+});
 function renderPending(){
   rc($('ph-pend'), ...PH.pending.filter(x=>x.mk===UTS.active).map((x,i)=>h('div', {class:'ph-p' + (x.err ? ' err' : '')},
     x.err ? `Not uploaded: ${x.err}. ` : 'Uploading… ', h('span', {class:'m'}, phTagLabel(x.mk, x.tag)),
@@ -4077,18 +4353,22 @@ $('ph-grid').addEventListener('click', e=>{
 // full-size viewer
 const phBox = h('div', {class:'ph-box', id:'ph-box', hidden:true, role:'dialog', 'aria-label':'Photo'},
   h('img', {id:'ph-big', alt:''}), h('div', {class:'ph-bar'}, h('button', {type:'button', id:'ph-prev', 'aria-label':'Previous photo'}, '‹'),
-    h('span', {id:'ph-cap-big'}), h('a', {id:'ph-dl', download:'photo.jpg'}, 'Download'), h('button', {type:'button', id:'ph-next', 'aria-label':'Next photo'}, '›'),
+    h('div', {id:'ph-cap-big'}), h('a', {id:'ph-dl', download:'photo.jpg'}, 'Download'), h('button', {type:'button', id:'ph-next', 'aria-label':'Next photo'}, '›'),
     h('button', {type:'button', id:'ph-x', 'aria-label':'Close'}, '✕')));
 document.body.append(phBox);
 let phCur = null;
-async function phLightbox(mk, id){
-  const L = phList(mk), i = L.findIndex(p=>p.id===id); if(i<0) return; const p = L[i]; phCur = {mk, i};
-  phBox.hidden = false; $('ph-cap-big').textContent = `${UTS[mk].id || mk} · ${phTagLabel(mk, p.tag)}${p.cap ? ' · ' + p.cap : ''} · ${String(p.by||'').split('@')[0]} ${when(p.t)}  (${i+1} of ${L.length})`;
-  try{ const u = await phUrl(p); $('ph-big').src = u; $('ph-dl').href = u; $('ph-dl').download = `${(UTS[mk].id||mk)}_${p.tag==='OV' ? 'overview' : defId(+p.tag.slice(1))}_${p.id}.jpg`; }catch(e){ toast(e.message, true); }
+async function phLightbox(mk, id, seq){
+  seq = seq || phList(mk).map(p=>({mk, id:p.id}));
+  const i = seq.findIndex(x=>x.mk===mk && x.id===id), p = phList(mk).find(x=>x.id===id); if(i<0 || !p) return; phCur = {seq, i};
+  phBox.hidden = false;
+  rc($('ph-cap-big'), h('div', {class:'t'}, h('b', null, `${UTS[mk].id || mk} · ${phTagLabel(mk, p.tag)}`), `  (${i+1} of ${seq.length})`),
+    p.cap ? h('div', {class:'c'}, p.cap) : null, h('div', {class:'m'}, `${String(p.by||'')} · ${new Date(p.t).toLocaleString('en-AU', {day:'numeric', month:'short', year:'numeric', hour:'2-digit', minute:'2-digit'})}${p.w ? ` · ${p.w} × ${p.h} px` : ''}`));
+  $('ph-big').removeAttribute('src');
+  try{ const u = await phUrl(p); if(!phCur || phCur.seq[phCur.i].id!==id) return; $('ph-big').src = u; $('ph-dl').href = u; $('ph-dl').download = `${(UTS[mk].id||mk)}_${p.tag==='OV' ? 'overview' : defId(+p.tag.slice(1))}_${p.id}.jpg`; }catch(e){ toast(e.message, true); }
 }
 $('ph-x').addEventListener('click', ()=>{ phBox.hidden = true; phCur = null; });
-$('ph-prev').addEventListener('click', ()=>{ if(!phCur) return; const L = phList(phCur.mk); phLightbox(phCur.mk, L[(phCur.i - 1 + L.length) % L.length].id); });
-$('ph-next').addEventListener('click', ()=>{ if(!phCur) return; const L = phList(phCur.mk); phLightbox(phCur.mk, L[(phCur.i + 1) % L.length].id); });
+$('ph-prev').addEventListener('click', ()=>{ if(!phCur) return; const S = phCur.seq, x = S[(phCur.i - 1 + S.length) % S.length]; phLightbox(x.mk, x.id, S); });
+$('ph-next').addEventListener('click', ()=>{ if(!phCur) return; const S = phCur.seq, x = S[(phCur.i + 1) % S.length]; phLightbox(x.mk, x.id, S); });
 phBox.addEventListener('click', e=>{ if(e.target===phBox){ phBox.hidden = true; phCur = null; } });
 window.addEventListener('keydown', e=>{ if(phBox.hidden) return; if(e.key==='Escape'){ phBox.hidden = true; phCur = null; } if(e.key==='ArrowLeft') $('ph-prev').click(); if(e.key==='ArrowRight') $('ph-next').click(); });
 // every photo on the structure as one zip
@@ -4214,6 +4494,749 @@ snapshot = function(o){ DOCK.hold = true; camera.clearViewOffset(); let r; try{ 
 window.__dock = () => ({...DOCK, pop:{l:pop.style.left, t:pop.style.top}});
 window.__dockOpen = (n, k) => { const R = ringsFor(UTS.active)[n]; if(R) select({mk:UTS.active, key:R.key, k:k||0}, true); };
 
+// ---------------------------------------------------------------- WHO ENTERED IT (4 Nov 2026)
+// Every reading, remark, additional point and defect record carries a stamp "email|time" of the person who last entered it:
+//   member.own.readings[ring][clock], member.own.remarks[ring], defect.own.rd[station][clock] / .pit.rem / .edge[side] / .rec, point.own.val.
+// Changing or clearing something another person entered asks first (everyone gets the prompt). Values entered before stamping
+// started belong to Tim Stockbridge. The database keeps its own change log (public.member_audit) of every change.
+const OWN_LEGACY = {email:'tim@franmarine.com.au', name:'Tim Stockbridge'};
+let OWN_BYPASS = false;
+const ownMe = () => (typeof persistence!=='undefined' && persistence.email) || '';
+const ownStamp = () => `${ownMe() || 'this browser'}|${Date.now()}`;
+function ownParse(s){ if(!s) return null; const i = String(s).lastIndexOf('|'); return {email:String(s).slice(0, i), t:+String(s).slice(i+1) || null}; }
+function ownOf(stamp, hasValue){ const p = ownParse(stamp); return p ? p : hasValue ? {email:OWN_LEGACY.email, t:null, legacy:true} : null; }
+function ownName(o){ return !o ? '' : o.legacy ? `${OWN_LEGACY.name} (entered before tracking started)` : o.email; }
+function ownWhen(o){ if(!o || !o.t) return ''; const d = new Date(o.t); return d.toLocaleDateString('en-AU', {day:'numeric', month:'short'}) + ' ' + d.toTimeString().slice(0,5); }
+function ownText(o){ return o ? `Entered by ${ownName(o)}${o.t ? ', ' + ownWhen(o) : ''}` : ''; }
+const ownIsOther = o => !!o && o.email !== (ownMe() || 'this browser');
+const has = v => v!==undefined && v!==null && v!=='';
+function deep(obj, path, val){ let o = obj; for(let i=0;i<path.length-1;i++){ o = o[path[i]] = (o[path[i]] && typeof o[path[i]]==='object') ? o[path[i]] : {}; }
+  const last = nth(path, path.length-1); if(val===undefined) delete o[last]; else o[last] = val; }
+const get = (obj, path) => path.reduce((o,k)=>o && o[k], obj);
+// stamp locations
+const ringOwn = (mk, key, k) => ownOf(get(UTS[mk], ['own','readings',key,String(k)]), has((UTS[mk].readings[key]||{})[k]));
+const remOwn = (mk, key) => ownOf(get(UTS[mk], ['own','remarks',key]), has((UTS[mk].remarks||{})[key]));
+const dPath = (st, k) => st==='pit' ? ['pit','rem'] : String(st).startsWith('edge:') ? ['edge', st.slice(5)] : ['rd', st, String(k)];
+const defOwn = (mk, di, st, k) => { const d = UTS[mk].defects[di]; return d ? ownOf(get(d, ['own', ...dPath(st, k)]), has(dRead(d, st, k))) : null; };
+const recOwn = (mk, di) => { const d = UTS[mk].defects[di]; return d ? ownOf((d.own||{}).rec, true) : null; };
+const xOwn = (mk, n) => { const x = xFind(mk, n); return x ? ownOf((x.own||{}).val, has(x.val)) : null; };
+
+// ---- the prompt (one at a time; a queue if several cells clash, e.g. a paste)
+const OWNQ = []; let ownBusy = false;
+function ownAsk(o, what, newText, redo, after){
+  OWNQ.push({o, what, newText, redo, after}); if(!ownBusy) ownNext();
+}
+function ownNext(){
+  const q = OWNQ.shift(); if(!q){ ownBusy = false; return; } ownBusy = true;
+  const d = $('ah-confirm'), msg = $('ah-confirm-msg');
+  msg.replaceChildren(h('b', null, q.what), h('br'), ownText(q.o) + '.', h('br'), q.newText + '?');
+  $('ah-ok').textContent = 'Override'; $('ah-cancel').textContent = 'Cancel';
+  d.hidden = false; $('ah-cancel').focus();
+  const done = ok => { d.hidden = true; $('ah-ok').onclick = $('ah-cancel').onclick = null; $('ah-cancel').textContent = 'Cancel';
+    if(ok){ OWN_BYPASS = true; try{ q.redo(); } finally { OWN_BYPASS = false; } }
+    try{ q.after && q.after(ok); }catch(e){ console.warn(e); }
+    setTimeout(ownNext, 0); };
+  $('ah-ok').onclick = ()=>done(true); $('ah-cancel').onclick = ()=>done(false);
+}
+const valText = raw => { const v = String(raw).trim(); return v==='' ? 'Clear it' : `Override with ${v} mm`; };
+const unchanged = (o, raw) => { const v = String(raw).trim().replace(',', '.'); return v==='' ? !has(o) : has(o) && +v===+o; };
+
+// ---- readings
+const _setReadingOwn = setReading;
+setReading = function(mk, key, k, raw){
+  const o = (UTS[mk].readings[key]||{})[k];
+  if(!OWN_BYPASS && !unchanged(o, raw)){ const ow = ringOwn(mk, key, k);
+    if(ownIsOther(ow)){ ownAsk(ow, `${UTS[mk].id||mk} · ${pidRing(mk, key, k)} — ${o} mm`, valText(raw), ()=>setReading(mk, key, k, raw), ()=>refreshAfter([mk], new Set(['ring']))); return false; } }
+  const ok = _setReadingOwn(mk, key, k, raw); if(!ok) return ok;
+  if(!unchanged(o, raw)){ UTS[mk].own = UTS[mk].own || {}; deep(UTS[mk].own, ['readings', key, String(k)], has((UTS[mk].readings[key]||{})[k]) ? ownStamp() : undefined); saveState(); }
+  return ok;
+};
+const _setDReadingOwn = setDReading;
+setDReading = function(mk, di, st, k, raw){
+  const d = UTS[mk].defects[di], o = d ? dRead(d, st, k) : undefined;
+  if(d && !OWN_BYPASS && !unchanged(o, raw)){ const ow = defOwn(mk, di, st, k);
+    if(ownIsOther(ow)){ ownAsk(ow, `${UTS[mk].id||mk} · ${pidDef(mk, di, st, k)} — ${o} mm`, valText(raw), ()=>setDReading(mk, di, st, k, raw), ()=>refreshAfter([mk], new Set(['def']))); return false; } }
+  const ok = _setDReadingOwn(mk, di, st, k, raw); if(!ok || !d) return ok;
+  if(!unchanged(o, raw)){ d.own = d.own || {}; deep(d.own, dPath(st, k), has(dRead(d, st, k)) ? ownStamp() : undefined); saveState(); }
+  return ok;
+};
+const _setXReadingOwn = setXReading;
+setXReading = function(mk, n, raw, note){
+  const x = xFind(mk, n), o = x ? x.val : undefined;
+  if(x && !OWN_BYPASS && !unchanged(o, raw)){ const ow = xOwn(mk, n);
+    if(ownIsOther(ow)){ ownAsk(ow, `${UTS[mk].id||mk} · ${pidAP(mk, x)} — ${o} mm`, valText(raw), ()=>setXReading(mk, n, raw, note), ()=>refreshAfter([mk], new Set(['x']))); return false; } }
+  const ok = _setXReadingOwn(mk, n, raw, note); if(!ok || !x) return ok;
+  if(!unchanged(o, raw)){ x.own = x.own || {}; if(has(x.val)) x.own.val = ownStamp(); else delete x.own.val; saveState(); }
+  return ok;
+};
+// ---- ring remarks (entry box)
+const _commitPopOwn = commitPop;
+commitPop = function(){
+  const s = selected; if(!s) return true;
+  const was = (UTS[s.mk].remarks||{})[s.key] || '', now = popRem.value.trim();
+  if(now !== was && !OWN_BYPASS){ const ow = remOwn(s.mk, s.key);
+    if(ownIsOther(ow)){ const raw = popVal.value, rem = now;
+      ownAsk(ow, `${UTS[s.mk].id||s.mk} · remark at ${pidRing(s.mk, s.key, s.k).split('/').slice(0,3).join('/')} — “${was}”`, rem ? `Replace it with “${rem}”` : 'Clear it',
+        ()=>{ if(setReading(s.mk, s.key, s.k, raw)){ UTS[s.mk].remarks = UTS[s.mk].remarks||{}; if(rem) UTS[s.mk].remarks[s.key] = rem; else delete UTS[s.mk].remarks[s.key];
+          UTS[s.mk].own = UTS[s.mk].own||{}; deep(UTS[s.mk].own, ['remarks', s.key], rem ? ownStamp() : undefined); saveState(); } },
+        ()=>{ if(s.mk===UTS.active){ renderTable(); renderSummary(); } });
+      return false; } }
+  const ok = _commitPopOwn(); if(!ok) return ok;
+  if(now !== was){ UTS[s.mk].own = UTS[s.mk].own||{}; deep(UTS[s.mk].own, ['remarks', s.key], now ? ownStamp() : undefined); saveState(); }
+  return ok;
+};
+// ---- defect records: edit and delete
+let ownDefSnap = null;
+$('df-save').addEventListener('click', e=>{
+  const list = UTS[UTS.active].defects||[];
+  ownDefSnap = {n:list.length, i:editIdx, json:editIdx===null ? null : JSON.stringify(list[editIdx])};
+  if(OWN_BYPASS || editIdx===null) return;
+  const mk = UTS.active, i = editIdx, ow = recOwn(mk, i);
+  if(ownIsOther(ow)){ e.stopImmediatePropagation(); ownDefSnap = null; ownAsk(ow, `${UTS[mk].id||mk} · defect ${defId(i)} record`, 'Save your changes to it', ()=>$('df-save').click()); }
+}, true);
+$('df-save').addEventListener('click', ()=>{
+  const sn = ownDefSnap; ownDefSnap = null; if(!sn) return; const list = UTS[UTS.active].defects||[];
+  const i = list.length > sn.n ? list.length-1 : (sn.i!==null && list[sn.i] && JSON.stringify(list[sn.i])!==sn.json) ? sn.i : null;
+  if(i!==null){ list[i].own = list[i].own||{}; list[i].own.rec = ownStamp(); saveState(); renderDefects(); }
+});
+$('df-list').addEventListener('click', e=>{
+  const b = e.target.closest('button.ddel'); if(!b || OWN_BYPASS) return; const i = +b.dataset.i, mk = UTS.active;
+  if(delArm!==i) return;   // first click only arms the button
+  const ow = recOwn(mk, i); if(!ownIsOther(ow)) return;
+  e.stopImmediatePropagation(); delArm = null;
+  ownAsk(ow, `${UTS[mk].id||mk} · defect ${defId(i)} and its readings`, 'Delete it', ()=>{ UTS[mk].defects.splice(i,1); activeDef = null; saveState(); renderDefects(); buildDefects(); toast('Defect deleted. Later defects are renumbered.'); },
+    ok=>{ if(!ok) renderDefects(); });
+}, true);
+
+// ---- hover: who entered each value (tables) and a line in each entry box
+function ownTip(el, o){ const base = (el.title||'').split('\n')[0]; el.title = o ? (base ? base + '\n' : '') + ownText(o) : base; }
+function ownRingTips(){ const mk = UTS.active;
+  document.querySelectorAll('#ut-body input.rd').forEach(inp=>ownTip(inp, ringOwn(mk, inp.dataset.key, inp.dataset.k)));
+  document.querySelectorAll('#ut-body tr[data-key]').forEach(tr=>{ const td = tr.querySelector('td:last-child'), o = remOwn(mk, tr.dataset.key); if(td && td!==tr.querySelector('.mn') && o) ownTip(td, o); }); }
+function ownDefTips(){ const mk = UTS.active; if(activeDef===null) return;
+  document.querySelectorAll('#df-body input.drd').forEach(inp=>ownTip(inp, defOwn(mk, activeDef, inp.dataset.st, +inp.dataset.k)));
+  document.querySelectorAll('#df-extra input.dex').forEach(inp=>{ const k = inp.dataset.k; if(k==='pit' || k.startsWith('edge:')) ownTip(inp, defOwn(mk, activeDef, k, 0)); }); }
+const _renderTableOwn = renderTable; renderTable = function(){ _renderTableOwn(); ownRingTips(); };
+const _updateRowOwn = updateRow; updateRow = function(key){ _updateRowOwn(key); ownRingTips(); };
+const _renderDefTableOwn = renderDefTable; renderDefTable = function(){ _renderDefTableOwn(); ownDefTips(); };
+const _renderDefectsOwn = renderDefects; renderDefects = function(){ _renderDefectsOwn(); const mk = UTS.active;
+  document.querySelectorAll('#df-list button.dsel').forEach(b=>ownTip(b, recOwn(mk, +b.dataset.i))); };
+['pop','dpop','xpop'].forEach(id=>{ const p = $(id), pid = $(id+'-pid'), el = h('div', {class:'own-line', id:id+'-own'}); (pid ? pid.nextSibling : p.firstChild) ? p.insertBefore(el, pid ? pid.nextSibling : p.firstChild) : p.append(el); });
+const ownLine = (id, o) => { const el = $(id); if(el){ el.textContent = o ? ownText(o) : ''; el.hidden = !o; el.classList.toggle('other', ownIsOther(o)); } };
+const _selectOwn = select; select = function(sel, openPop){ _selectOwn(sel, openPop); if(sel && openPop) ownLine('pop-own', ringOwn(sel.mk, sel.key, sel.k)); };
+const _openDPopOwn = openDPop; openDPop = function(u){ _openDPopOwn(u); ownLine('dpop-own', defOwn(u.mk, u.di, u.st, u.k)); };
+const _openXPopOwn = openXPop; openXPop = function(mk, n){ _openXPopOwn(mk, n); ownLine('xpop-own', xOwn(mk, n)); };
+// for the Export all data CSV: point ID → who entered it
+window.F12221_OWNER = function(mk){ const out = {}, m = UTS[mk];
+  Object.entries(m.readings||{}).forEach(([key, r])=>Object.keys(r||{}).forEach(k=>{ out[pidRing(mk, key, k)] = ringOwn(mk, key, k); }));
+  (m.extra||[]).forEach(x=>{ out[pidAP(mk, x)] = xOwn(mk, x.n); });
+  (m.defects||[]).forEach((d,di)=>{ Object.entries(d.rd||{}).forEach(([st, r])=>Object.keys(r||{}).forEach(k=>{ out[pidDef(mk, di, st, +k)] = defOwn(mk, di, st, +k); }));
+    if(d.pit && has(d.pit.rem)) out[pidDef(mk, di, 'pit', 0)] = defOwn(mk, di, 'pit', 0);
+    Object.keys(d.edge||{}).forEach(t=>{ out[pidDef(mk, di, 'edge:'+t, 0)] = defOwn(mk, di, 'edge:'+t, 0); });
+    out['#rec' + di] = recOwn(mk, di); });
+  return out; };
+window.F12221_OWNCELLS = o => o ? [o.email, o.t ? (d => { const z = -d.getTimezoneOffset(), p = n => String(n).padStart(2,'0'); return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())} (UTC${z>=0?'+':'-'}${p(Math.floor(Math.abs(z)/60))}:${p(Math.abs(z)%60)})`; })(new Date(o.t)) : (o.legacy ? 'before tracking started' : '')] : ['',''];
+
+// ---------------------------------------------------------------- WHO ELSE IS ON THIS MEMBER (live presence, editors only)
+const PRES = {chan:null, others:[], key:Math.random().toString(36).slice(2,10)};
+const presBar = h('div', {id:'own-presence', class:'own-presence', hidden:true, role:'status'});
+(document.querySelector('#tab-entry') || document.querySelector('aside')).prepend(presBar);
+// only sends when the open member changes, and not more than once every 5 s (Realtime limits presence messages per client)
+function presTrack(force){ if(!PRES.chan || typeof PRES.chan.track!=='function') return;
+  if(persistence.role!=='editor') return;
+  if(!force && PRES.sent===UTS.active) return;
+  clearTimeout(PRES.t); const wait = Math.max(0, 5000 - (Date.now() - (PRES.at||0)));
+  PRES.t = setTimeout(()=>{ if(!PRES.chan) return; PRES.sent = UTS.active; PRES.at = Date.now();
+    PRES.chan.track({email:persistence.email, mk:UTS.active, since:Date.now()}).catch(()=>{}); }, force ? 0 : wait); }
+function presRender(){
+  const mk = UTS.active, here = PRES.others.filter(p=>p.mk===mk);
+  presBar.hidden = !here.length;
+  if(here.length) presBar.replaceChildren('⚠ ', h('b', null, here.map(p=>p.email).filter((v,i,a)=>a.indexOf(v)===i).join(', ')), ` also ${here.length>1?'have':'has'} ${UTS[mk].id||mk} open for editing. Agree who enters which readings — changes to each other's entries will ask before overriding.`);
+}
+function presStart(){
+  if(PRES.chan || typeof persistence==='undefined' || persistence.mode!=='shared' || !persistence.client) return;
+  const c = persistence.client; if(typeof c.channel!=='function') return;
+  const STRUCT = PID_STRUCT==='N' ? 'NSL' : 'SSL';
+  const ch = c.channel('editing-' + STRUCT, {config:{presence:{key:PRES.key}}});
+  if(typeof ch.presenceState!=='function' || typeof ch.track!=='function'){ return; }
+  PRES.chan = ch;
+  ch.on('presence', {event:'sync'}, ()=>{ const st = ch.presenceState(); PRES.others = [];
+      Object.entries(st).forEach(([k, arr])=>{ if(k===PRES.key) return; (arr||[]).forEach(p=>{ if(p && p.email && p.email!==persistence.email) PRES.others.push(p); }); });
+      presRender(); })
+    .subscribe(s=>{ if(s==='SUBSCRIBED') presTrack(true); });
+}
+const presT = setInterval(()=>{ presStart(); if(PRES.chan) clearInterval(presT); }, 2000);
+const _setActiveOwn = setActive; setActive = function(...a){ const r = _setActiveOwn(...a); presTrack(); presRender(); return r; };
+window.__own = {ringOwn, remOwn, defOwn, recOwn, xOwn, q:()=>OWNQ.length, pres:PRES};
+
+// ---------------------------------------------------------------- ‹ › buttons on the entry cards (4 Nov 2026)
+// › = save and next (same as Enter), ‹ = save and previous (same as Shift+Enter). View-only users just move between points.
+function navButtons(popId, input, stepFn){
+  const act = $(popId).querySelector('.pop-act'); if(!act) return;
+  const mk = (txt, dir, label) => { const b = h('button', {type:'button', class:'ghost navbtn', 'aria-label':label, title:label}, txt);
+    b.addEventListener('click', ()=>{
+      if(document.body.classList.contains('viewer')){ stepFn(dir); return; }
+      input.focus(); input.dispatchEvent(new KeyboardEvent('keydown', {key:'Enter', shiftKey:dir<0, bubbles:true, cancelable:true})); });
+    return b; };
+  act.prepend(mk('‹', -1, 'Previous reading (saves this one)'));
+  act.firstChild.insertAdjacentElement('afterend', act.querySelector('button:not(.navbtn)'));
+  act.children[1].insertAdjacentElement('afterend', mk('›', 1, 'Next reading (saves this one)'));
+}
+navButtons('pop', popVal, d=>step(d));
+navButtons('dpop', dpVal, d=>dStep(d));
+window.__dOpen = (di, i, k) => { const mk = UTS.active, d = UTS[mk].defects[di]; if(!d) return; const st = genDefect(mk, d).stations[i]; activeDef = di; openDPop({mk, di, st:st.id, k:k||0, s:st.s}); };
+{ const ph = $('pop').querySelector('.pop-hint'); if(ph) ph.textContent = '‹ › or Enter / Shift+Enter = save and move · Esc = close';
+  const dh = $('dpop').querySelector('.pop-hint'); if(dh) dh.textContent = '‹ › or Enter / Shift+Enter = save and move · Esc = close'; }
+
+// ---------------------------------------------------------------- photos: quick link under the member picker (4 Nov 2026)
+{ const row = document.querySelector('.mem-row'), b = h('button', {type:'button', id:'ph-jump', class:'ph-jump'}, '📷 Photos');
+  if(row){ row.insertAdjacentElement('afterend', b);
+    b.addEventListener('click', ()=>{ $('ph-all').open = true; renderAllPhotos(); $('ph-sec').scrollIntoView({behavior:'smooth', block:'start'}); }); }
+  const _rAll = renderAllPhotos; renderAllPhotos = function(){ _rAll(); const n = MKEYS.reduce((a,mk)=>a + phList(mk).length, 0), m = phList(UTS.active).length;
+    b.textContent = `📷 Photos — ${m} on this member · ${n} on the structure`; }; }
+
+// ---------------------------------------------------------------- inspection points with a reading stand out (4 Nov 2026)
+// Read points sit just outside the status / wall-loss shading, 70 % larger, with a white rim; points still to read stay small on the surface.
+const PT_OUT = 0.05, PT_BIG = 1.7;
+const rimMat = new THREE.MeshBasicMaterial({color:0xffffff, side:THREE.BackSide});
+let RIM = null;
+const _rebuildAllPt = rebuildAll;
+rebuildAll = function(){
+  if(RIM){ G.rings.remove(RIM); RIM.dispose && RIM.dispose(); RIM = null; }
+  _rebuildAllPt();
+  if(!INST.length) return;
+  RIM = new THREE.InstancedMesh(ptGeo, rimMat, INST.length); RIM.renderOrder = 2; PTS.renderOrder = 3;
+  _m.makeScale(0,0,0); for(let i=0;i<INST.length;i++) RIM.setMatrixAt(i, _m);
+  G.rings.add(RIM); MKEYS.forEach(mk=>ptPlace(mk));
+};
+const _ps = new THREE.Vector3(), _pq = new THREE.Quaternion();
+function ptPlace(mk){
+  if(!PTS || !RIM) return; const M = MEM[mk];
+  ringsFor(mk).forEach(R=>KS.forEach(k=>{
+    const i = IDX[jk(mk,R.key,k)]; if(i===undefined) return;
+    const read = num((UTS[mk].readings[R.key]||{})[k])!==null;
+    if(read){ const p = clockPos(M.o.clone().addScaledVector(M.a, R.s), M.f, M.u, M.r + PT_OUT, k);
+      _m.compose(p, _pq.identity(), _ps.set(PT_BIG, PT_BIG, PT_BIG)); PTS.setMatrixAt(i, _m);
+      _m.compose(p, _pq, _ps.set(PT_BIG*1.4, PT_BIG*1.4, PT_BIG*1.4)); RIM.setMatrixAt(i, _m); }
+    else { _m.compose(pointPos(mk, R.s, k), _pq.identity(), _ps.set(1,1,1)); PTS.setMatrixAt(i, _m); _m.makeScale(0,0,0); RIM.setMatrixAt(i, _m); }
+  }));
+  PTS.instanceMatrix.needsUpdate = true; RIM.instanceMatrix.needsUpdate = true;
+}
+const _recolourPt = recolour; recolour = function(mk){ _recolourPt(mk); ptPlace(mk); };
+rebuildAll();
+
+// ---------------------------------------------------------------- NO READING (NR) at an inspection point (6 Nov 2026)
+// A point that cannot be read is recorded as NR with a reason instead of being left blank: ring points member.nr[ring][clock],
+// defect grid points defect.nr[station][clock]. NR counts towards completion, is left out of min / max / average, shows grey in the
+// model and as "NR" in the tables and every export. Entering a value later clears the NR. Who recorded it is stamped like a reading.
+const NR_REASONS = ['No stable echo — surface too rough / pitted', 'Coating could not be removed', 'Marine growth could not be cleaned',
+  'No access — clamp, baffle, bracing or splice', 'Under water at the time (tide)', 'Unsafe to access'];
+const NR_COL = 0x8a8f99;
+const ringNR = (mk, key, k) => ((UTS[mk].nr||{})[key]||{})[k] || null;
+const defNR = (mk, di, st, k) => { const d = (UTS[mk].defects||[])[di]; return d ? (((d.nr||{})[st]||{})[k] || null) : null; };
+const nrCount = mk => { let n = 0; ringsFor(mk).forEach(R=>KS.forEach(k=>{ if(ringNR(mk, R.key, k) && num((UTS[mk].readings[R.key]||{})[k])===null) n++; })); return n; };
+function setRingNR(mk, key, k, why){
+  const m = UTS[mk];
+  m.nr = m.nr || {}; m.nr[key] = m.nr[key] || {};
+  if(why){ m.nr[key][k] = why; if(m.readings[key]) delete m.readings[key][k]; } else { delete m.nr[key][k]; if(!Object.keys(m.nr[key]).length) delete m.nr[key]; }
+  m.own = m.own || {}; deep(m.own, ['readings', key, String(k)], why ? ownStamp() : undefined);
+  saveState(); recolour(mk); scheduleColour();
+}
+function setDefNR(mk, di, st, k, why){
+  const d = UTS[mk].defects[di]; if(!d) return;
+  d.nr = d.nr || {}; d.nr[st] = d.nr[st] || {};
+  if(why){ d.nr[st][k] = why; if(d.rd && d.rd[st]) delete d.rd[st][k]; } else { delete d.nr[st][k]; if(!Object.keys(d.nr[st]).length) delete d.nr[st]; }
+  d.own = d.own || {}; deep(d.own, ['rd', st, String(k)], why ? ownStamp() : undefined);
+  saveState();
+}
+// entering a value clears the NR
+const _setReadingNR = setReading;
+setReading = function(mk, key, k, raw){ const ok = _setReadingNR(mk, key, k, raw);
+  if(ok && ringNR(mk, key, k) && String(raw).trim()!==''){ delete UTS[mk].nr[key][k]; if(!Object.keys(UTS[mk].nr[key]).length) delete UTS[mk].nr[key]; saveState(); recolour(mk); }
+  return ok; };
+const _setDReadingNR = setDReading;
+setDReading = function(mk, di, st, k, raw){ const ok = _setDReadingNR(mk, di, st, k, raw);
+  if(ok && defNR(mk, di, st, k) && String(raw).trim()!==''){ const d = UTS[mk].defects[di]; delete d.nr[st][k]; if(!Object.keys(d.nr[st]).length) delete d.nr[st]; saveState(); }
+  return ok; };
+
+// ---- entry cards: "No reading" button and reason picker
+function nrPanel(popId, getCtx, apply, after){
+  const p = $(popId), act = p.querySelector('.pop-act'); if(!act) return null;
+  const btn = h('button', {type:'button', class:'ghost nr-btn', title:'This point cannot be read — record why'}, 'No reading');
+  act.append(btn);
+  const sel = h('select', {class:'nr-why', 'aria-label':'Reason no reading could be taken'}, ...NR_REASONS.map(r=>h('option', {value:r}, r)), h('option', {value:''}, 'Other — type the reason'));
+  const other = h('input', {class:'nr-other', autocomplete:'off', placeholder:'Reason (e.g. clamp over 6 o\'clock)', hidden:true});
+  const ok = h('button', {type:'button', class:'nr-ok'}, 'Record no reading'), cancel = h('button', {type:'button', class:'ghost nr-x'}, 'Cancel');
+  const clr = h('button', {type:'button', class:'ghost nr-clr', hidden:true}, 'Clear NR');
+  const panel = h('div', {class:'nr-panel', hidden:true}, h('label', null, 'Why can\'t it be read?'), sel, other, h('div', {class:'nr-row'}, ok, cancel, clr));
+  const line = h('div', {class:'nr-line', hidden:true});
+  act.insertAdjacentElement('beforebegin', line); act.insertAdjacentElement('afterend', panel);
+  sel.addEventListener('change', ()=>{ other.hidden = sel.value!==''; if(!other.hidden) other.focus(); });
+  btn.addEventListener('click', ()=>{ const c = getCtx(); if(!c) return; panel.hidden = !panel.hidden; clr.hidden = !c.nr;
+    if(c.nr){ if(NR_REASONS.includes(c.nr)){ sel.value = c.nr; other.hidden = true; } else { sel.value = ''; other.hidden = false; other.value = c.nr; } } });
+  cancel.addEventListener('click', ()=>{ panel.hidden = true; });
+  const run = why => { const c = getCtx(); if(!c) return;
+    const ow = c.own(); const go = ()=>{ apply(c, why); panel.hidden = true; after(c, why); };
+    if(ownIsOther(ow) && (c.hasVal || c.nr)){ ownAsk(ow, `${UTS[c.mk].id||c.mk} · ${c.pid} — ${c.hasVal ? c.val + ' mm' : 'NR (' + c.nr + ')'}`, why ? 'Record it as no reading' : 'Clear the NR', go); return; }
+    go(); };
+  ok.addEventListener('click', ()=>{ const why = sel.value || other.value.trim(); if(!why){ toast('Choose or type the reason no reading could be taken.', true); other.focus(); return; } run(why); });
+  clr.addEventListener('click', ()=>run(null));
+  return {panel, line, btn, reset:()=>{ panel.hidden = true; other.value = ''; sel.selectedIndex = 0; other.hidden = true; }};
+}
+const ringCtx = () => selected ? {mk:selected.mk, pid:pidRing(selected.mk, selected.key, selected.k), nr:ringNR(selected.mk, selected.key, selected.k),
+  val:(UTS[selected.mk].readings[selected.key]||{})[selected.k], hasVal:num((UTS[selected.mk].readings[selected.key]||{})[selected.k])!==null,
+  own:()=>ringOwn(selected.mk, selected.key, selected.k), key:selected.key, k:selected.k} : null;
+const NRP = nrPanel('pop', ringCtx, (c, why)=>setRingNR(c.mk, c.key, c.k, why),
+  (c, why)=>{ if(c.mk===UTS.active){ renderTable(); renderSummary(); } if(why){ toast(`${c.pid}: no reading recorded.`); step(1); } else nrShow(); });
+const defCtx = () => { const u = dsel; if(!u || u.st==='pit' || String(u.st).startsWith('edge:')) return u ? {mk:u.mk, pid:pidDef(u.mk, u.di, u.st, u.k), nr:null, own:()=>null, edge:true} : null;
+  const d = UTS[u.mk].defects[u.di]; return {mk:u.mk, di:u.di, st:u.st, k:u.k, pid:pidDef(u.mk, u.di, u.st, u.k), nr:defNR(u.mk, u.di, u.st, u.k), val:dVal(d, u.st, u.k), hasVal:num(dVal(d, u.st, u.k))!==null, own:()=>defOwn(u.mk, u.di, u.st, u.k)}; };
+const NRD = nrPanel('dpop', ()=>{ const c = defCtx(); return c && !c.edge ? c : null; }, (c, why)=>setDefNR(c.mk, c.di, c.st, c.k, why),
+  (c, why)=>{ buildDefects(); renderDefTable(); if(why){ toast(`${c.pid}: no reading recorded.`); dStep(1); } else nrShowD(); });
+function nrShow(){ if(!NRP) return; NRP.reset(); const c = ringCtx(); NRP.line.hidden = !(c && c.nr); NRP.line.textContent = c && c.nr ? `NR — no reading: ${c.nr}` : ''; }
+function nrShowD(){ if(!NRD) return; NRD.reset(); const c = defCtx(); NRD.btn.hidden = !c || c.edge; NRD.line.hidden = !(c && c.nr); NRD.line.textContent = c && c.nr ? `NR — no reading: ${c.nr}` : ''; }
+const _selectNR = select; select = function(sel, openPop){ _selectNR(sel, openPop); if(sel && openPop) nrShow(); };
+const _openDPopNR = openDPop; openDPop = function(u){ _openDPopNR(u); nrShowD(); };
+
+// ---- completion and summary
+const _memStatNR = memStat;
+memStat = function(mk){ const s = _memStatNR(mk), nr = nrCount(mk); s.nr = nr;
+  if(nr && !s.low && !s.defs) s.st = (s.tot && s.n + nr >= s.tot) ? 'done' : (s.n + nr) ? 'prog' : 'none';
+  return s; };
+const _renderSummaryNR = renderSummary;
+renderSummary = function(){ _renderSummaryNR(); const mk = UTS.active, nr = nrCount(mk); if(!nr) return;
+  const sumEl = $('sum'), tot = ringsFor(mk).length*4, n = tot ? memStat(mk).n : 0;
+  sumEl.insertBefore(document.createTextNode(` + ${nr} no reading (NR)`), sumEl.childNodes[2] || null);
+  const opt = $('mem-sel').querySelector(`option[value="${mk}"]`); if(opt) opt.textContent = opt.textContent.replace(/\((\d+)\/(\d+)\)/, `(${n + nr}/${tot})`); };
+
+// ---- model: NR points grey, shown like read points
+const _ptPlaceNR = ptPlace;
+ptPlace = function(mk){ _ptPlaceNR(mk); if(!PTS || !RIM) return; const M = MEM[mk];
+  ringsFor(mk).forEach(R=>KS.forEach(k=>{ const i = IDX[jk(mk,R.key,k)]; if(i===undefined || !ringNR(mk, R.key, k) || num((UTS[mk].readings[R.key]||{})[k])!==null) return;
+    const p = clockPos(M.o.clone().addScaledVector(M.a, R.s), M.f, M.u, M.r + PT_OUT, k);
+    _m.compose(p, _pq.identity(), _ps.set(PT_BIG, PT_BIG, PT_BIG)); PTS.setMatrixAt(i, _m); _m.compose(p, _pq, _ps.set(PT_BIG*1.4, PT_BIG*1.4, PT_BIG*1.4)); RIM.setMatrixAt(i, _m);
+    PTS.setColorAt(i, _c.setHex(NR_COL)); }));
+  PTS.instanceMatrix.needsUpdate = true; RIM.instanceMatrix.needsUpdate = true; if(PTS.instanceColor) PTS.instanceColor.needsUpdate = true; };
+
+// ---- tables: NR placeholder and reason on hover
+function nrTips(){ const mk = UTS.active;
+  document.querySelectorAll('#ut-body input.rd').forEach(inp=>{ const why = ringNR(mk, inp.dataset.key, inp.dataset.k), on = !!why && inp.value==='';
+    inp.classList.toggle('nr', on); if(on){ inp.placeholder = 'NR'; inp.title = (inp.title||'').split('\nNR')[0] + '\nNR — no reading: ' + why; } else if(inp.placeholder==='NR') inp.placeholder = ''; });
+  if(activeDef!==null) document.querySelectorAll('#df-body input.drd').forEach(inp=>{ const why = defNR(mk, activeDef, inp.dataset.st, +inp.dataset.k), on = !!why && inp.value==='';
+    inp.classList.toggle('nr', on); if(on){ inp.placeholder = 'NR'; inp.title = (inp.title||'').split('\nNR')[0] + '\nNR — no reading: ' + why; } else if(inp.placeholder==='NR') inp.placeholder = ''; }); }
+const _renderTableNR = renderTable; renderTable = function(){ _renderTableNR(); nrTips(); };
+const _updateRowNR = updateRow; updateRow = function(key){ _updateRowNR(key); nrTips(); };
+const _renderDefTableNR = renderDefTable; renderDefTable = function(){ _renderDefTableNR(); nrTips(); };
+
+// ---- exports: point register (ITP workbook Point Register and the Export all data CSV)
+const _pointRegisterNR = pointRegister;
+pointRegister = function(mk){ const rows = _pointRegisterNR(mk), map = {};
+  ringsFor(mk).forEach(R=>KS.forEach(k=>{ const w = ringNR(mk, R.key, k); if(w) map[pidRing(mk, R.key, k)] = w; }));
+  (UTS[mk].defects||[]).forEach((d,di)=>Object.entries(d.nr||{}).forEach(([st, o])=>Object.entries(o||{}).forEach(([k, w])=>{ map[pidDef(mk, di, st, +k)] = w; })));
+  rows.forEach(r=>{ const w = map[r[0]]; if(w && (r[5]===null || r[5]===undefined)){ r[5] = 'NR'; r[6] = 'No reading'; r[7] = [w, r[7]].filter(Boolean).join(' — '); } });
+  return rows; };
+{ const _owner = window.F12221_OWNER; window.F12221_OWNER = function(mk){ const out = _owner(mk);
+    ringsFor(mk).forEach(R=>KS.forEach(k=>{ if(ringNR(mk, R.key, k)) out[pidRing(mk, R.key, k)] = ringOwn(mk, R.key, k); }));
+    (UTS[mk].defects||[]).forEach((d,di)=>Object.entries(d.nr||{}).forEach(([st, o])=>Object.keys(o||{}).forEach(k=>{ out[pidDef(mk, di, st, +k)] = ownOf(get(d, ['own','rd',st,String(k)]), true); })));
+    return out; }; }
+
+// ---- typing "NR" or "NoR" (any case, also "N/R", "no reading") opens the reason picker; it is always recorded as NR (9 Nov 2026)
+const NR_TYPED = /^\s*(n\s*\/?\s*o?\s*r|no\s*reading)\s*\.?\s*$/i;
+function nrAsk(kind, a){
+  setTimeout(()=>{
+    if(kind==='ring'){
+      if(dive.on){ if(a.mk!==UTS.active) setActive(a.mk, false); select({mk:a.mk, key:a.key, k:+a.k}, true); setTimeout(()=>{ const b = document.getElementById('e26-dnrb'); if(b && document.getElementById('e26-dnrp').hidden) b.click(); }, 0); return; }
+      select({mk:a.mk, key:a.key, k:+a.k}, true); if(NRP && NRP.panel.hidden) NRP.btn.click();
+    } else {
+      const d = UTS[a.mk].defects[a.di]; if(!d) return; const st = genDefect(a.mk, d).stations.find(x=>x.id===a.st); if(!st) return;
+      activeDef = a.di; openDPop({mk:a.mk, di:a.di, st:a.st, k:+a.k, s:st.s}); if(NRD && NRD.panel.hidden) NRD.btn.click();
+    }
+    toast('Choose why no reading could be taken — it is recorded as NR.');
+  }, 0);
+}
+const _setReadingTyped = setReading;
+setReading = function(mk, key, k, raw){ if(NR_TYPED.test(String(raw))){ nrAsk('ring', {mk, key, k}); return false; } return _setReadingTyped(mk, key, k, raw); };
+const _setDReadingTyped = setDReading;
+setDReading = function(mk, di, st, k, raw){
+  if(NR_TYPED.test(String(raw))){ if(st==='pit' || String(st).startsWith('edge:')){ toast('NR is not available for pit and edge readings yet — add the reason as a note.', true); return false; } nrAsk('def', {mk, di, st, k}); return false; }
+  return _setDReadingTyped(mk, di, st, k, raw); };
+window.F12221_NR = {ringNR, defNR, nrCount};
+
+// ---------------------------------------------------------------- DEFECT AREAS (11 Nov 2026)
+// FUZE: multiple defects are one defect area — repair sized on the total, each defect still documented.
+// Defects whose zones are less than two landings apart (landings overlap) are read on ONE grid: landing A, one continuous
+// defect zone at 50 mm, landing B, on a 50 mm lattice from the member datum so station IDs never move when the area grows.
+// The grid lives on the area's primary defect (its readings / NR / stamps), the other defects keep their own record, photos,
+// pit / edge readings. Defects whose grid already has readings stay separate (unless already in an area), and any defect can be
+// kept separate with a written reason (defect.sep = {why, by, t}). Membership is stored on each defect (defect.da = 'DA1').
+const DA_P = 0.05;
+const _genDefectDA = genDefect;
+const daHasGrid = d => Object.values(d.rd||{}).some(o=>o && Object.keys(o).length) || Object.values(d.nr||{}).some(o=>o && Object.keys(o).length);
+function daClusters(mk){
+  const list = UTS[mk].defects||[], gap = rules().land/1000*2;
+  const el = list.map((d,i)=>({d, i, z:_genDefectDA(mk, d).zone})).filter(x=>!x.d.sep && (x.d.da || !daHasGrid(x.d))).sort((a,b)=>a.z[0]-b.z[0]);
+  const out = []; let cur = null;
+  el.forEach(x=>{ if(cur && x.z[0] - cur.z1 < gap){ cur.m.push(x); cur.z1 = Math.max(cur.z1, x.z[1]); } else { cur = {m:[x], z1:x.z[1]}; out.push(cur); } });
+  return out.filter(c=>c.m.length > 1 || (c.m[0].d.da && daHasGrid(c.m[0].d))).map(c=>c.m.map(x=>x.i).sort((a,b)=>a-b));
+}
+function daReconcile(mk){
+  const list = UTS[mk].defects||[]; if(!list.length) return false;
+  const cl = daClusters(mk), used = new Set(); let changed = false;
+  let next = list.reduce((a,d)=>Math.max(a, +(String(d.da||'').replace('DA',''))||0), 0);
+  const ids = cl.map(c=>{ const have = c.map(i=>list[i].da).filter(Boolean).find(x=>!used.has(x)); const id = have || ('DA' + (++next)); used.add(id); return id; });
+  const inArea = new Set(cl.flat());
+  cl.forEach((c,j)=>c.forEach(i=>{ if(list[i].da!==ids[j]){ list[i].da = ids[j]; changed = true; } }));
+  list.forEach((d,i)=>{ if(d.da && !inArea.has(i) && !daHasGrid(d)){ delete d.da; changed = true; } });
+  return changed;
+}
+function daOf(mk, di){
+  const list = UTS[mk].defects||[], d = list[di]; if(!d || !d.da) return null;
+  const members = list.map((x,i)=>x.da===d.da ? i : -1).filter(i=>i>=0);
+  if(members.length < 2 && !daHasGrid(d)) return null;
+  const primary = members.find(i=>daHasGrid(list[i])) ?? members[0];
+  return {id:d.da, members, primary};
+}
+function daSize(mk, a){   // FUZE: edge of the first defect to the edge of the last, along and around the member
+  const list = UTS[mk].defects||[], rs = a.members.map(i=>_genDefectDA(mk, list[i]));
+  const s0 = Math.min(...rs.map(r=>r.sc - r.ax/2000)), s1 = Math.max(...rs.map(r=>r.sc + r.ax/2000));
+  const iv = rs.map(r=>[normK(r.kc - r.halfK), Math.min(12, r.halfK*2)]).sort((x,y)=>x[0]-y[0]);
+  let cover = 12; if(iv.length){ let maxGap = 0; for(let j=0;j<iv.length;j++){ const e = iv[j][0] + iv[j][1], n = j+1 < iv.length ? iv[j+1][0] : iv[0][0] + 12; maxGap = Math.max(maxGap, n - e); } cover = Math.min(12, Math.max(0, 12 - maxGap)); }
+  return {len:Math.round((s1 - s0)*1000), wid:Math.round(cover*hourMM(mk)), from:s0, to:s1};
+}
+const daTag = (mk, s) => posLabel(mk, s).replace(' mm','').replace(' m','');
+genDefect = function(mk, d){
+  const r = _genDefectDA(mk, d), list = UTS[mk].defects||[], di = list.indexOf(d); if(di<0) return r;
+  if(d.sep) r.warn = [`Kept separate from nearby defects: ${d.sep.why}`].concat(r.warn);
+  const a = daOf(mk, di); if(!a) return r;
+  r.area = a.id; r.areaMembers = a.members; r.primary = a.primary;
+  const names = a.members.map(i=>defId(i)).join(' + ');
+  if(di !== a.primary){ r.stations = []; r.warn = [`Part of defect area ${a.id} (${names}) — the UT grid is read on ${defId(a.primary)}.`]; return r; }
+  const zs = a.members.map(i=>_genDefectDA(mk, list[i]).zone), [smin, smax] = memRange(mk), R = rules();
+  const L = R.pitchL/1000, nL = Math.max(1, Math.round(R.land/R.pitchL));
+  const i0 = Math.max(Math.ceil(smin/DA_P - 1e-6), Math.floor(Math.min(...zs.map(z=>z[0]))/DA_P + 1e-6)), i1 = Math.min(Math.floor(smax/DA_P + 1e-6), Math.ceil(Math.max(...zs.map(z=>z[1]))/DA_P - 1e-6));
+  const a0 = +(i0*DA_P).toFixed(4), a1 = +(i1*DA_P).toFixed(4), st = [];
+  for(let n=nL; n>=1; n--){ const s = +(a0 - n*L).toFixed(4); if(s >= smin - 1e-6) st.push({id:'LA' + daTag(mk, s), zone:'Landing A', s}); }
+  for(let i=i0; i<=i1; i++){ const s = +(i*DA_P).toFixed(4); st.push({id:'D' + daTag(mk, s), zone:'Defect', s}); }
+  for(let n=1; n<=nL; n++){ const s = +(a1 + n*L).toFixed(4); if(s <= smax + 1e-6) st.push({id:'LB' + daTag(mk, s), zone:'Landing B', s}); }
+  const sz = daSize(mk, a);
+  r.stations = st; r.zone = [a0, a1];
+  r.warn = [`Defect area ${a.id}: ${names} — one grid at ${R.pitchD} mm, total defect area ${sz.len} × ${sz.wid} mm (FUZE: multiple defects are one defect area).`]
+    .concat(r.warn.filter(w=>!/pitch widened|fit the D-S sheet|D-S sheet/.test(w)));
+  return r;
+};
+const _pidDefDA = pidDef;
+pidDef = function(mk, di, st, k){ if(st==='pit' || String(st).startsWith('edge:')) return _pidDefDA(mk, di, st, k);
+  const a = daOf(mk, di); return a ? [PID_STRUCT, mk, a.id, st, pidClock(k)].join('/') : _pidDefDA(mk, di, st, k); };
+function daSync(mk){ if(daReconcile(mk)){ const ed = typeof persistence==='undefined' || persistence.mode!=='shared' || persistence.role==='editor'; if(ed) saveState(); } }
+// defect list: area / kept-separate tags; secondary defects point to the grid
+const _renderDefectsDA = renderDefects;
+renderDefects = function(){ daSync(UTS.active); _renderDefectsDA(); const mk = UTS.active, list = UTS[mk].defects||[];
+  document.querySelectorAll('#df-list li').forEach(li=>{ const b = li.querySelector('.dsel'); if(!b) return; const i = +b.dataset.i, d = list[i], a = daOf(mk, i); if(!d) return;
+    let txt = null;
+    if(a){ const sz = daSize(mk, a); txt = i===a.primary ? `${a.id} · defect area ${sz.len} × ${sz.wid} mm · grid for ${a.members.map(defId).join(' + ')}` : `${a.id} · read on the ${defId(a.primary)} grid`; }
+    else if(d.sep) txt = `kept separate: ${d.sep.why} · ${String(d.sep.by||'').split('@')[0]} ${new Date(d.sep.t).toLocaleDateString('en-AU', {day:'numeric', month:'short'})}`;
+    if(txt) b.append(h('span', {class:'da-tag' + (a ? '' : ' sep')}, txt)); }); };
+const _renderDefTableDA = renderDefTable;
+renderDefTable = function(){ _renderDefTableDA(); const mk = UTS.active; if(activeDef===null) return; const a = daOf(mk, activeDef); const sum = $('df-sum'); if(!sum) return;
+  if(a && activeDef!==a.primary){ const go = h('button', {type:'button', class:'dbtn da-go'}, `Open the ${a.id} grid (${defId(a.primary)})`);
+    go.addEventListener('click', ()=>{ activeDef = a.primary; renderDefects(); buildDefects(); flyToDefect(mk, a.primary); });
+    sum.replaceChildren(`${defId(activeDef)} is part of defect area ${a.id} (${a.members.map(defId).join(' + ')}). Its UT grid is read on ${defId(a.primary)}. `, go); }
+  else if(a){ const sz = daSize(mk, a); sum.append(` · defect area ${a.id} (${a.members.map(defId).join(' + ')}) ${sz.len} × ${sz.wid} mm`); } };
+// new defect close to others: combine (default) or keep separate with a reason
+const daBox = h('div', {class:'ah-confirm', id:'da-box', hidden:true, role:'dialog', 'aria-modal':'true'},
+  h('div', null, h('p', {id:'da-msg'}), h('label', {class:'da-why'}, 'Reason, if keeping it separate (required)', h('textarea', {id:'da-why', rows:2, placeholder:'e.g. different repair method agreed with FUZE'})),
+    h('div', {class:'row'}, h('button', {type:'button', id:'da-sep'}, 'Keep separate'), h('button', {type:'button', id:'da-ok'}, 'Combine'))));
+document.body.append(daBox);
+let daAsk = null;
+let daN0 = null;
+$('df-save').addEventListener('click', ()=>{ daN0 = (UTS[UTS.active].defects||[]).length; }, true);
+$('df-save').addEventListener('click', ()=>{ const mk = UTS.active, n0 = daN0; daN0 = null; if(n0===null) return;
+  setTimeout(()=>{ const L = UTS[mk].defects||[]; if(L.length <= n0) return; const i = L.length-1; daSync(mk); const a = daOf(mk, i); if(!a) { renderDefects(); return; }
+    const z = _genDefectDA(mk, L[i]).zone, others = a.members.filter(x=>x!==i), sz = daSize(mk, a);
+    $('da-msg').replaceChildren(h('b', null, `${defId(i)} is close to ${others.map(defId).join(' + ')}`), h('br'),
+      `Their landing zones overlap, so they'll be recorded as one defect area, ${a.id} (${sz.len} × ${sz.wid} mm), read on one grid at 50 mm. Each defect keeps its own record, size and photos.`);
+    $('da-why').value = ''; daAsk = {mk, i}; daBox.hidden = false; $('da-ok').focus(); renderDefects(); buildDefects(); }, 0); });
+$('da-ok').addEventListener('click', ()=>{ daBox.hidden = true; daAsk = null; });
+$('da-sep').addEventListener('click', ()=>{ const why = $('da-why').value.trim(); if(!why){ toast('Give the reason for keeping this defect separate.', true); $('da-why').focus(); return; }
+  const q = daAsk; daBox.hidden = true; daAsk = null; if(!q) return; const d = UTS[q.mk].defects[q.i]; if(!d) return;
+  d.sep = {why, by:who(), t:Date.now()}; delete d.da; daSync(q.mk); saveState(); renderDefects(); buildDefects(); toast(`${defId(q.i)} kept separate.`); });
+// deleting the defect that carries an area's grid: copy the grid to the next defect in the area first
+$('df-list').addEventListener('click', e=>{ const b = e.target.closest('button.ddel'); if(!b) return; const i = +b.dataset.i, mk = UTS.active; if(delArm!==i) return;
+  const a = daOf(mk, i); if(!a || a.primary!==i || a.members.length < 2) return; const list = UTS[mk].defects, src = list[i], dst = list[a.members.find(x=>x!==i)];
+  ['rd','nr'].forEach(k=>{ if(src[k]) dst[k] = JSON.parse(JSON.stringify(src[k])); }); if(src.own && src.own.rd){ dst.own = dst.own || {}; dst.own.rd = JSON.parse(JSON.stringify(src.own.rd)); } }, true);
+window.F12221_DA = {daOf, daSize, daClusters};
+MKEYS.forEach(mk=>{ try{ daReconcile(mk); }catch(e){} });
+
+// ---------------------------------------------------------------- DENSO SEASHIELD SERIES 70 INSTALLATION ITP (draft, 13 Nov 2026)
+// Built from Denso "Engineering Specifications for SeaShield Series 70 Pile Protection System" Ver 2304.03 (clauses in brackets).
+// One record per member: UTS[mk].denso = {hdr:{...}, it:{rowId:{s:'ok'|'nc'|'na', v:{field:value}, note, by, t}}, hp:{rowId:{by,t}}}.
+// Points: H = hold (work stops until released), W = witness (client notified), S = surveillance (Franmarine check), R = document review.
+const DENSO_DOC = 'F12221-ITP-003', DENSO_SPEC = 'Denso SeaShield Series 70 Engineering Specification, Ver 2304.03';
+const DENSO = [
+  {sec:'1', title:'Pre-start', rows:[
+    {id:'1.1', act:'Documents on site and briefed', crit:'Series 70 specification, drawings showing protection zone elevations, SWMS / JSEA available and briefed to the crew.', ref:'1.2, 2.1', pt:'R'},
+    {id:'1.2', act:'Materials received', crit:'Supplied by Denso (Australia) Pty Ltd: SeaShield Primer, Denso Mastic, Marine Piling Tape, Glass Outerwrap 70 (wrappers sealed and undamaged), Poly-Wrap. Batch numbers recorded.', ref:'2.2, 3.1, 3.2', pt:'R', f:[['bPrimer','Primer batch','text'],['bMastic','Mastic batch','text'],['bTape','Piling Tape batch','text'],['bOuter','Outerwrap 70 batch','text'],['bPoly','Poly-Wrap batch','text']]},
+    {id:'1.3', act:'Application conditions', crit:'Temperature within −18 °C to 65 °C. Setting time of the outerwrap: 60 min at 10 °C, 30 min at 21 °C, 15 min at 32 °C.', ref:'3.2', pt:'S', f:[['tWater','Water temp (°C)','num'],['tAir','Air temp (°C)','num']]}]},
+  {sec:'2', title:'Cleaning and surface preparation', rows:[
+    {id:'2.1', act:'Surface prepared and accepted for wrapping', crit:'Protection zone identified and its low and high points marked to the drawings. Marine growth and foreign matter removed for the entire length to be protected. All surface projections removed (nails, bolts, splinters, fouling organisms, sharp edges) so nothing can penetrate the tape. Prepared surface photographed.', ref:'4.1', pt:'H', f:[['zLow','Low point','text'],['zHigh','High point','text']]}]},
+  {sec:'3', title:'Denso Marine Piling Tape', rows:[
+    {id:'3.1', act:'Primer applied', crit:'Apply a thin uniform coat of Denso SeaShield™ Primer to entire surface with gloved hand, brush or rag.', ref:'Denso advice', pt:'S'},
+    {id:'3.2', act:'Mastic applied', crit:'Use Denso Mastic to fill in cavities at the pile/pile cap interfaces and achieve a uniform contour to which tape can be applied without voids or bridging.', ref:'Denso advice', pt:'S'},
+    {id:'3.3', act:'Marine Piling Tape applied', crit:'Minimum 55 % overlap. Roll kept close to the pile; enough tension for continuous adhesion without stretching; all folds and air pockets pressed out. One roll width overlap at roll joints, smoothed by hand in the direction of the spiral.', ref:'4.2', pt:'W', f:[['start','Start elevation / position','text'],['finish','Finish elevation / position','text'],['ov','Overlap checked (%)','num'],['rolls','Rolls used','num']]}]},
+  {sec:'4', title:'Denso Glass Outerwrap 70', rows:[
+    {id:'4.1', act:'Activate the roll', crit:'Roll kept in its sealed wrapper until use, then immersed in clean water (clean, clear sea water is acceptable) for 20–30 seconds.', ref:'4.3', pt:'S', f:[['imm','Immersion time (s)','num']]},
+    {id:'4.2', act:'Start below the Marine Piling Tape', crit:'Two full circumferential wraps starting about 50 mm below the Marine Piling Tape.', ref:'4.3', pt:'S', f:[['below','Start below Marine Piling Tape (mm)','num']]},
+    {id:'4.3', act:'Spiral upward with overlap', crit:'Spiral upward with 55 % overlap, giving a minimum double thickness.', ref:'4.3', pt:'S', f:[['ov','Overlap checked (%)','num']]},
+    {id:'4.4', act:'Roll joints and smoothing', crit:'Each new roll overlaps the last by one roll width. Smoothed by gloved hand to exclude water, air bubbles and wrinkles; overlapped edges moulded and smoothed down.', ref:'4.3', pt:'S', f:[['rolls','Rolls used','num']]},
+    {id:'4.5', act:'Finish above the Marine Piling Tape', crit:'Finishes about 50 mm above the end of the Marine Piling Tape with two complete horizontal turns.', ref:'4.3', pt:'S', f:[['above','Finish above Marine Piling Tape (mm)','num']]}]},
+  {sec:'5', title:'Denso Poly-Wrap and cure', rows:[
+    {id:'5.1', act:'Poly-Wrap applied', crit:'A couple of layers of Poly-Wrap applied around the Glass Outerwrap 70.', ref:'4.4', pt:'S', f:[['on','Time applied','time']]},
+    {id:'5.2', act:'Poly-Wrap removed', crit:'Left approx. 15 minutes (longer in cold water — see 1.3), then removed without sharp tools. Outerwrap not damaged.', ref:'4.4', pt:'S', f:[['off','Time removed','time']]}]},
+  {sec:'6', title:'Final inspection', rows:[
+    {id:'6.1', act:'Final inspection', crit:'Full coverage of the protection zone; outerwrap at least 50 mm beyond the Marine Piling Tape at both ends; no gaps, wrinkles, lifting or damage; outerwrap set hard. Photographs taken. All rubbish (wrappers, offcuts, used Poly-Wrap) captured and removed from site for disposal; nothing lost to the water.', ref:'4.2–4.4', pt:'H'},
+    {id:'6.2', act:'Records complete', crit:'Batch numbers, elevations, temperatures, roll counts, photographs and sign-off recorded.', ref:'2.1', pt:'R'}]}];
+const DROWS = DENSO.flatMap(s=>s.rows.map(r=>Object.assign({sec:s.sec}, r)));
+const DPT = {H:'Hold point — work stops until released', W:'Witness point — client notified, may attend', S:'Surveillance — Franmarine check and record', R:'Review of documents / records'};
+const dRec = mk => { const m = UTS[mk]; m.denso = m.denso || {hdr:{}, it:{}, hp:{}}; m.denso.hdr = m.denso.hdr||{}; m.denso.it = m.denso.it||{}; m.denso.hp = m.denso.hp||{}; return m.denso; };
+const dPeek = mk => (UTS[mk] && UTS[mk].denso) || null;
+function dStat(mk){ const d = dPeek(mk), nH = DROWS.filter(r=>r.pt==='H').length;
+  if(!d) return {done:0, tot:DROWS.length, nc:0, holds:0, nH, wait:null, st:'none'};
+  let done = 0, nc = 0, holds = 0, naH = 0, wait = null;
+  DROWS.forEach(r=>{ const x = (d.it||{})[r.id]; if(x && x.s){ done++; if(x.s==='nc') nc++; }
+    if(r.pt==='H'){ if((d.hp||{})[r.id]) holds++; else if(x && x.s==='na') naH++; else if(x && x.s==='ok' && !wait) wait = r.id; } });
+  return {done, tot:DROWS.length, nc, holds, nH, wait, st: nc ? 'nc' : wait ? 'hold' : done===DROWS.length && holds + naH >= nH ? 'done' : done ? 'prog' : 'none'}; }
+const DST = {done:['Complete','#2e9e4f'], prog:['In progress','#3c7fd6'], hold:['Waiting on hold point','#e9a23b'], nc:['Non-conformance','#d62828'], none:['Not started','#8a8f99']};
+const DST_SHORT = {done:'Complete', prog:'In progress', hold:'Hold point', nc:'Non-conf.', none:'Not started'};
+// per-viewer settings: which scope feeds the tracker, list filter (kept in this browser)
+const DZ_KEY = STORE_KEY + '-denso';
+const dView = {scope:'', filter:'all', prevColour:''}; try{ Object.assign(dView, JSON.parse(localStorage.getItem(DZ_KEY) || '{}')); }catch(e){}
+const dSaveView = () => { try{ localStorage.setItem(DZ_KEY, JSON.stringify(dView)); }catch(e){} };
+const dScopes = () => (typeof scopes==='function' ? scopes() : {});
+const dInScope = mk => { const d = dPeek(mk); return !!(d && (d.scope || Object.values(d.it||{}).some(x=>x && x.s))); };
+function dMembers(){ const set = new Set(MKEYS.filter(dInScope)); const sc = dScopes()[dView.scope];
+  if(sc && typeof scMembers==='function') scMembers(sc).forEach(k=>set.add(k)); return MKEYS.filter(k=>set.has(k)); }
+// model colouring: "Denso" mode on the colour bar
+const dzMats = {}; Object.entries(DST).forEach(([k,[,c]])=>{ dzMats[k] = new THREE.MeshBasicMaterial({color:new THREE.Color(c), transparent:true, opacity: k==='none' ? .45 : .6, depthWrite:false}); });
+densoColour = () => { const c = counts.dz = {done:0, prog:0, hold:0, nc:0, none:0};
+  dMembers().forEach(mk=>{ const s = dStat(mk).st, M = MEM[mk]; c[s]++; G.denso.add(sleeve(M.p0, M.p1, M.r + 0.03, dzMats[s])); }); };
+densoLegend = () => h('div', {class:'items'}, ...Object.keys(DST).map(k=>h('span', {class:'it'}, h('i', {style:`background:${DST[k][1]}`}), DST[k][0], h('b', null, String((counts.dz||{})[k]||0)))));
+// rail button under UT data entry + the pane + the step card
+{ const eb = document.querySelector('.tabs button[data-tab="entry"]');
+  const db = h('button', {role:'tab', 'data-tab':'denso', 'aria-selected':'false'}, 'Denso Install'); eb.insertAdjacentElement('afterend', db);
+  db.addEventListener('click', ()=>showTab('denso'));
+  const pane = h('div', {id:'tab-denso', class:'tabpane', hidden:true}); $('tab-entry').insertAdjacentElement('afterend', pane);
+  view.appendChild(h('div', {class:'pop dz-card', id:'dz-card', hidden:true, role:'dialog', 'aria-label':'Denso install step'})); }
+const dCard = {open:false, row:DROWS[0].id};
+const _showTabD = showTab;
+showTab = function(t){ _showTabD(t); const on = t==='denso', was = !$('tab-denso').hidden; $('tab-denso').hidden = !on;
+  if(on && !was && colourMode!=='denso'){ dView.prevColour = colourMode; colourMode = 'denso'; dSaveView(); buildColour(); }
+  if(!on && was){ dCard.open = false; renderCard(); if(colourMode==='denso' && dView.prevColour){ colourMode = dView.prevColour; dView.prevColour = ''; dSaveView(); buildColour(); } }
+  dLayers(on, was); dzSetHint(on); dzHi(); if(on) renderDenso(); };
+// Denso view: inspection points off, member IDs on; the user's own layer settings come back when they leave the tab
+let dLayerPrev = null;
+function dLayers(on, was){ const cbR = $('L-rings'), cbM = document.querySelector('#lay-pop input[data-g="mid"]');
+  if(on && !was){ dLayerPrev = {rings:G.rings.visible, mid:!!(G.mid && G.mid.visible)};
+    G.rings.visible = false; if(cbR) cbR.checked = false; if(G.mid){ G.mid.visible = true; if(cbM) cbM.checked = true; } }
+  if(!on && was && dLayerPrev){ G.rings.visible = dLayerPrev.rings; if(cbR) cbR.checked = dLayerPrev.rings;
+    if(G.mid){ G.mid.visible = dLayerPrev.mid; if(cbM) cbM.checked = dLayerPrev.mid; } dLayerPrev = null; } }
+// Denso view: the selected member is highlighted (seen through the structure so it can always be found)
+const dzHiG = new THREE.Group(); dzHiG.renderOrder = 10; scene.add(dzHiG);
+const dzHiMat = new THREE.MeshBasicMaterial({color:0x19c3ff, transparent:true, opacity:.5, depthTest:false, depthWrite:false});
+const dzHiCore = new THREE.MeshBasicMaterial({color:0x19c3ff, transparent:true, opacity:.9, depthWrite:false});
+function dzHi(){ clearGroup(dzHiG); if($('tab-denso').hidden) return; const M = MEM[UTS.active]; if(!M) return;
+  const halo = sleeve(M.p0, M.p1, M.r + 0.14, dzHiMat); halo.renderOrder = 10; dzHiG.add(halo); dzHiG.add(sleeve(M.p0, M.p1, M.r + 0.045, dzHiCore)); }
+// Denso view: click (or tap) a member on the model to select it and open the step card
+let DZPICK = null;
+const dzPickMat = new THREE.MeshBasicMaterial({visible:false});
+function dzPicks(){ if(DZPICK) return DZPICK; DZPICK = MKEYS.map(mk=>{ const M = MEM[mk]; const m = sleeve(M.p0, M.p1, Math.max(M.r + 0.08, 0.15), dzPickMat); m.userData = {mk}; m.updateMatrixWorld(true); return m; }); return DZPICK; }
+const dzRay = new THREE.Raycaster(), dzMouse = new THREE.Vector2(); let dzDown = null;
+canvas.addEventListener('pointerdown', e=>{ dzDown = $('tab-denso').hidden ? null : {x:e.clientX, y:e.clientY}; }, true);
+canvas.addEventListener('pointerup', e=>{ const d = dzDown; dzDown = null; if(!d || $('tab-denso').hidden || Math.hypot(e.clientX-d.x, e.clientY-d.y) > 5) return;
+  const r = canvas.getBoundingClientRect(); dzMouse.set(((e.clientX-r.left)/r.width)*2-1, -((e.clientY-r.top)/r.height)*2+1); dzRay.setFromCamera(dzMouse, camera);
+  const hit = dzRay.intersectObjects(dzPicks(), false)[0]; if(!hit) return;
+  e.__handled = true; const mk = hit.object.userData.mk; dCommitCard();
+  if(mk!==UTS.active) setActive(mk, false);
+  dOpenCard(dNextOpen(mk)); }, true);
+const dzHint = document.querySelector('#view .hint'), dzHintOrig = dzHint ? dzHint.textContent : '';
+function dzSetHint(on){ if(dzHint) dzHint.textContent = on ? 'Click a member to select it and open its Denso step card · drag to rotate · right-drag to pan · scroll to zoom' : dzHintOrig; }
+const _flyToMemberDz = flyToMember; flyToMember = function(...a){ const r = _flyToMemberDz(...a);   // flying to a member turns the points back on; not in the Denso view
+  if(!$('tab-denso').hidden && dLayerPrev){ G.rings.visible = false; const cb = $('L-rings'); if(cb) cb.checked = false; } return r; };
+const dNextOpen = mk => { const d = dPeek(mk) || {it:{}}; const r = DROWS.find(r=>!((d.it||{})[r.id]||{}).s); return (r || DROWS[DROWS.length-1]).id; };
+const dPrevHold = (d, r) => DROWS.filter(q=>q.pt==='H' && DROWS.indexOf(q) < DROWS.indexOf(r) && !(d.hp||{})[q.id] && ((d.it||{})[q.id]||{}).s!=='na').map(q=>q.id).pop();
+const dWhen = t => new Date(t).toLocaleString('en-AU', {day:'numeric', month:'short', year:'numeric', hour:'2-digit', minute:'2-digit'});
+function dField(mk, r, k, label, type){ const d = dRec(mk), x = d.it[r.id] || {}, v = ((x.v||{})[k]) ?? '';
+  const inp = h('input', {type: type==='time' ? 'time' : 'text', inputmode: type==='num' ? 'decimal' : null, value:v, 'data-row':r.id, 'data-k':k, class:'dz-f', autocomplete:'off'});
+  return h('label', {class:'dz-fl'}, label, inp); }
+let dAddOpen = false;
+function renderDenso(){
+  const pane = $('tab-denso'); if(!pane || pane.hidden) return;
+  const mk = UTS.active, d = dPeek(mk) || {hdr:{}, it:{}, hp:{}}, st = dStat(mk), view = isViewer(), hdr = d.hdr || {};
+  const mems = dMembers(), stats = {}; mems.forEach(k=>{ stats[k] = dStat(k); });
+  const cnt = {done:0, prog:0, hold:0, nc:0, none:0}; mems.forEach(k=>cnt[stats[k].st]++);
+  const tot = mems.length || 1, f = dView.filter, shown = mems.filter(k=>f==='all' || stats[k].st===f);
+  const scs = Object.entries(dScopes());
+  const H = (k, label, type, opts) => h('label', {class:'dz-fl'}, label, type==='select' ? h('select', {class:'dz-h', 'data-k':k}, ...opts.map(o=>h('option', {value:o, selected:(hdr[k]||'')===o}, o||'—')))
+    : h('input', {class:'dz-h', 'data-k':k, type:type==='date' ? 'date' : 'text', value:hdr[k]||''}));
+  const tile = k => h('button', {type:'button', class:'dz-tile' + (f===k ? ' on' : ''), 'data-f':k, 'aria-pressed':String(f===k), style:`--c:${DST[k][1]}`}, h('b', null, String(cnt[k])), DST_SHORT[k]);
+  rc(pane,
+    h('section', {class:'dz-trk'},
+      h('h2', null, 'Denso install — progress'),
+      h('p', {class:'small e26-tip'}, `${DENSO_DOC} [draft] · ${DENSO_SPEC}. One ITP per member. The model is coloured by install status while this tab is open.`),
+      h('div', {class:'dz-scope'}, h('label', {for:'dz-sc'}, 'Members'),
+        h('select', {id:'dz-sc'}, h('option', {value:''}, 'Members added to Denso install'), ...scs.map(([id, s])=>h('option', {value:id, selected:dView.scope===id}, `+ scope: ${s.name}`))),
+        view ? null : h('button', {type:'button', class:'dbtn', id:'dz-addt', 'aria-expanded':String(dAddOpen)}, 'Add members…')),
+      dAddOpen && !view ? h('div', {class:'dz-add'}, h('textarea', {id:'dz-addtx', rows:2, placeholder:'Paste member IDs, e.g. SE-28, SE-27, NW-21 or a whole tower such as NW'}),
+        h('div', {class:'dz-addrow'}, h('span', {id:'dz-addmsg', class:'small'}), h('button', {type:'button', class:'dbtn primary', id:'dz-addgo'}, 'Add'))) : null,
+      h('div', {class:'dz-bar', title:`${mems.length} members`}, ...['done','prog','hold','nc'].map(k=>cnt[k] ? h('i', {style:`width:${cnt[k]/tot*100}%;background:${DST[k][1]}`}) : null)),
+      h('div', {class:'dz-tiles'}, ...['done','prog','hold','nc','none'].map(tile)),
+      h('div', {class:'dz-chips'}, h('button', {type:'button', class:'dz-chip' + (f==='all' ? ' on' : ''), 'data-f':'all'}, `All ${mems.length}`),
+        f!=='all' ? h('span', {class:'small'}, `Showing ${DST[f][0].toLowerCase()} · tap All to clear`) : null),
+      h('div', {class:'dz-list', role:'list'},
+        mems.length ? null : h('p', {class:'dz-empty'}, view ? 'No members have been added to the Denso install yet.' : 'No members yet. Use "Add members…", pick a scope above, or open a member and press "Add to Denso install".'),
+        mems.length && !shown.length ? h('p', {class:'dz-empty'}, 'No members with this status.') : null,
+        ...shown.map(k=>{ const s = stats[k]; return h('button', {type:'button', role:'listitem', class:'dz-mr' + (k===mk ? ' cur' : ''), 'data-mk':k},
+          h('span', {class:'id'}, idLabel(k)), h('span', {class:'dz-mp', title:`${s.done} of ${s.tot} checks`}, h('i', {style:`width:${s.done/s.tot*100}%;background:${DST[s.st][1]}`})),
+          h('span', {class:'dz-pill', style:`background:${DST[s.st][1]}`}, s.st==='hold' ? `Hold ${s.wait}` : DST_SHORT[s.st]), h('span', {class:'chev', 'aria-hidden':'true'}, '›')); }))),
+    h('section', {class:'dz-memsec'},
+      h('div', {class:'mem-row'}, h('button', {type:'button', id:'dz-prev', 'aria-label':'Previous member in the list'}, '‹'),
+        h('h2', {class:'mem-title'}, `${idLabel(mk)} — ${shortName(mk)}`), h('button', {type:'button', id:'dz-next', 'aria-label':'Next member in the list'}, '›')),
+      h('div', {class:'dz-status'}, h('span', {class:'dz-pill', style:`background:${DST[st.st][1]}`}, DST[st.st][0]), ` ${st.done} of ${st.tot} checks · ${st.holds} of ${st.nH} hold points released${st.nc ? ` · ${st.nc} not accepted` : ''}`),
+      !dInScope(mk) && !mems.includes(mk) && !view ? h('button', {type:'button', class:'dbtn', id:'dz-addme'}, 'Add to Denso install') : null,
+      h('div', {class:'form dz-hdr'}, H('sub','Substrate','select',['','Steel','Concrete','Timber']), H('date','Installation date','date'), H('installer','Installer (lead)','text'), H('supervisor','Supervisor','text'),
+        H('zone','Protection zone (from drawing)','text'), H('dwg','Drawing ref.','text')),
+      h('button', {type:'button', class:'dbtn primary dz-open', id:'dz-open'}, dCard.open ? 'Step card is open on the model' : `Open step card at ${dNextOpen(mk)}`),
+      h('div', {class:'dz-steps', role:'list'}, ...DENSO.flatMap(s=>[h('div', {class:'dz-ssec'}, `${s.sec}. ${s.title}`), ...s.rows.map(r=>{
+        const x = (d.it||{})[r.id] || {}, hp = (d.hp||{})[r.id], cur = dCard.open && dCard.row===r.id;
+        const tag = r.pt==='H' ? (hp ? h('span', {class:'dz-ht rel'}, 'Hold released') : x.s==='ok' ? h('span', {class:'dz-ht wait'}, 'Release hold') : h('span', {class:'dz-ht'}, 'Hold point')) : null;
+        const ic = x.s==='ok' ? '✓' : x.s==='nc' ? '✕' : x.s==='na' ? 'N/A' : cur ? '●' : '';
+        return h('button', {type:'button', role:'listitem', class:'dz-step' + (cur ? ' cur' : '') + (x.s ? ' ' + x.s : ''), 'data-row':r.id, title:x.note || r.crit},
+          h('span', {class:'n'}, r.id), h('span', {class:'a'}, r.act, tag), h('span', {class:'dz-pt pt-' + r.pt, title:DPT[r.pt]}, r.pt), h('span', {class:'ic'}, ic)); })])),
+      h('p', {class:'small'}, 'H = hold point (work stops until released) · W = witness · S = surveillance · R = review. Tap a step to open it on the card.')),
+    h('section', null, h('button', {type:'button', class:'dbtn primary', id:'dz-pdf'}, 'Export Denso ITP (PDF)'),
+      h('p', {class:'small'}, 'Photographs: add them in the Photos section of UT data entry with a caption such as "Denso 2.1 surface prep" — they print on the member sheet.')));
+  if(view) pane.querySelectorAll('.dz-hdr input, .dz-hdr select').forEach(e=>{ e.disabled = true; });
+  const cr = pane.querySelector('.dz-mr.cur'); if(cr && cr.scrollIntoViewIfNeeded) cr.scrollIntoViewIfNeeded(false);
+}
+function renderCard(){
+  const card = $('dz-card'); if(!card) return;
+  if(!dCard.open || $('tab-denso').hidden){ card.hidden = true; return; }
+  const mk = UTS.active, d = dPeek(mk) || {hdr:{}, it:{}, hp:{}}, r = DROWS.find(q=>q.id===dCard.row) || DROWS[0], i = DROWS.indexOf(r), view = isViewer();
+  const x = (d.it||{})[r.id] || {}, hp = (d.hp||{})[r.id], ph = dPrevHold(d, r);
+  const btn = (val, lab) => h('button', {type:'button', class:'dz-s' + (x.s===val ? ' on ' + val : ''), 'data-row':r.id, 'data-s':val, 'aria-pressed':String(x.s===val)}, lab);
+  rc(card,
+    h('div', {class:'pop-id'}, `${idLabel(mk)} · Denso ${r.id}`),
+    h('div', {class:'dz-dots', 'aria-label':`Step ${i+1} of ${DROWS.length}`}, ...DROWS.map((q, j)=>{ const s = ((d.it||{})[q.id]||{}).s; return h('i', {class:(s ? 'd ' + s : '') + (j===i ? ' c' : ''), title:`${q.id} ${q.act}`}); })),
+    h('div', {class:'dz-ct'}, h('span', {class:'dz-pt pt-' + r.pt, title:DPT[r.pt]}, r.pt), h('b', null, `${r.id} ${r.act}`), h('span', {class:'dz-ref'}, `cl. ${r.ref}`)),
+    h('p', {class:'dz-crit'}, r.crit),
+    ph && !x.s ? h('p', {class:'dz-warn'}, `Hold point ${ph} has not been released.`) : null,
+    (r.f||[]).length ? h('div', {class:'dz-fields'}, ...r.f.map(([k,l,t])=>dField(mk, r, k, l, t))) : null,
+    h('div', {class:'dz-btns'}, btn('ok', 'Accepted'), btn('nc', 'Not accepted'), btn('na', 'N/A')),
+    r.pt==='H' ? (hp ? h('p', {class:'dz-hp'}, `Hold point released · ${String(hp.by||'').split('@')[0]} · ${dWhen(hp.t)}`)
+      : h('button', {type:'button', class:'dz-rel', 'data-row':r.id, disabled: x.s!=='ok' ? true : null, title:'Supervisor releases the hold point once the item is accepted'}, x.s==='ok' ? 'Release hold point' : 'Release hold point (accept the item first)')) : null,
+    h('input', {class:'dz-note', 'data-row':r.id, placeholder:'Comment (optional)', value:x.note||'', autocomplete:'off'}),
+    x.by ? h('p', {class:'dz-by'}, `Checked by ${x.by} · ${dWhen(x.t)}`) : null,
+    h('div', {class:'dz-foot'}, h('div', {class:'dz-nav'}, h('button', {type:'button', id:'dzc-prev', 'aria-label':'Previous step'}, '‹'), h('button', {type:'button', id:'dzc-next', class:'p'}, i===DROWS.length-1 ? 'Save and close' : 'Save and next'),
+      h('button', {type:'button', id:'dzc-fwd', 'aria-label':'Next step'}, '›')),
+    h('div', {class:'dz-nav2'}, h('button', {type:'button', id:'dzc-close', class:'ghost'}, 'Close')),
+    h('div', {class:'pop-hint'}, '‹ › or Enter = save and next · Shift+Enter = previous · Esc = close')));
+  if(view) card.querySelectorAll('input, button.dz-s, button.dz-rel').forEach(e=>{ e.disabled = true; });
+  card.hidden = false;
+}
+const dRefresh = () => { renderDenso(); renderCard(); scheduleColour(); };
+const dSave = () => { saveState(); };
+function dCommitCard(){ const card = $('dz-card'); if(card.hidden || isViewer()) return; const mk = UTS.active; let ch = false;
+  card.querySelectorAll('input.dz-f, input.dz-note').forEach(t=>{ const d = dRec(mk), x = d.it[t.dataset.row] = d.it[t.dataset.row] || {};
+    if(t.classList.contains('dz-f')){ x.v = x.v || {}; const o = x.v[t.dataset.k] ?? ''; if(o!==t.value){ ch = true; if(t.value==='') delete x.v[t.dataset.k]; else x.v[t.dataset.k] = t.value; } }
+    else { const o = x.note || '', n = t.value.trim(); if(o!==n){ ch = true; if(n) x.note = n; else delete x.note; } } });
+  if(ch) dSave(); }
+function dOpenCard(row){ dCard.row = row || dNextOpen(UTS.active); dCard.open = true; renderCard(); renderDenso();
+  const f = $('dz-card').querySelector('input.dz-f') || $('dz-card').querySelector('button.dz-s'); if(f) f.focus({preventScroll:true}); }
+function dStep(dir){ dCommitCard(); const i = DROWS.findIndex(q=>q.id===dCard.row), j = i + dir;
+  if(j >= DROWS.length){ dCard.open = false; dRefresh(); toast(`Last step of ${idLabel(UTS.active)} saved.`); return; }
+  if(j < 0) return; dOpenCard(DROWS[j].id); scheduleColour(); }
+function dOnChange(e){ const t = e.target, mk = UTS.active;
+  if(t.id==='dz-sc'){ dView.scope = t.value; dSaveView(); dRefresh(); return; }
+  if(t.id==='dz-addtx'){ return; }
+  if(isViewer()) return;
+  const d = dRec(mk);
+  if(t.classList.contains('dz-h')){ d.hdr[t.dataset.k] = t.value; dSave(); return; }
+  if(t.classList.contains('dz-f')){ const x = d.it[t.dataset.row] = d.it[t.dataset.row] || {}; x.v = x.v || {}; if(t.value==='') delete x.v[t.dataset.k]; else x.v[t.dataset.k] = t.value; dSave(); return; }
+  if(t.classList.contains('dz-note')){ const x = d.it[t.dataset.row] = d.it[t.dataset.row] || {}; if(t.value.trim()) x.note = t.value.trim(); else delete x.note; dSave(); } }
+function dOnClick(e){ const b = e.target.closest('button'); if(!b) return; const mk = UTS.active;
+  if(b.dataset.f){ dView.filter = dView.filter===b.dataset.f && b.dataset.f!=='all' ? 'all' : b.dataset.f; dSaveView(); renderDenso(); return; }
+  if(b.dataset.mk){ dCommitCard(); if(b.dataset.mk!==mk){ setActive(b.dataset.mk, true); if(dCard.open){ dCard.row = dNextOpen(b.dataset.mk); renderCard(); } } else flyToMember(mk); return; }
+  if(b.id==='dz-prev' || b.id==='dz-next'){ dCommitCard(); const L = dMembers().length ? dMembers() : MKEYS; let i = L.indexOf(mk);
+    const n = i<0 ? L[0] : L[(i + (b.id==='dz-next' ? 1 : -1) + L.length) % L.length]; setActive(n, true); if(dCard.open){ dCard.row = dNextOpen(n); renderCard(); } return; }
+  if(b.id==='dz-open'){ dOpenCard(); return; }
+  if(b.classList.contains('dz-step')){ dCommitCard(); dOpenCard(b.dataset.row); return; }
+  if(b.id==='dzc-prev'){ dStep(-1); return; } if(b.id==='dzc-fwd' || b.id==='dzc-next'){ dStep(1); return; }
+  if(b.id==='dzc-close'){ dCommitCard(); dCard.open = false; dRefresh(); return; }
+  if(b.id==='dz-pdf'){ densoPdf(mk); return; }
+  if(b.id==='dz-addt'){ dAddOpen = !dAddOpen; renderDenso(); if(dAddOpen) $('dz-addtx').focus(); return; }
+  if(isViewer()){ toast('View only — you do not have edit access.', true); return; }
+  if(b.id==='dz-addgo'){ const tx = $('dz-addtx').value; if(typeof matchMembers!=='function') return; const {found, missed} = matchMembers(tx);
+    if(!found.length){ $('dz-addmsg').textContent = missed.length ? `Not recognised: ${missed.join(', ')}` : 'Paste some member IDs first.'; return; }
+    let n = 0; found.forEach(k=>{ const r = dRec(k); if(!r.scope){ r.scope = true; n++; } }); dSave(); dAddOpen = false; dRefresh();
+    toast(`${n} member${n===1 ? '' : 's'} added to the Denso install${missed.length ? ` · not recognised: ${missed.join(', ')}` : ''}.`, !!missed.length); return; }
+  if(b.id==='dz-addme'){ dRec(mk).scope = true; dSave(); dRefresh(); toast(`${idLabel(mk)} added to the Denso install.`); return; }
+  const d = dRec(mk);
+  if(b.classList.contains('dz-s')){ dCommitCard(); const x = d.it[b.dataset.row] = d.it[b.dataset.row] || {}; if(x.s===b.dataset.s){ delete x.s; delete x.by; delete x.t; delete d.hp[b.dataset.row]; } else { x.s = b.dataset.s; x.by = who(); x.t = Date.now(); if(x.s!=='ok') delete d.hp[b.dataset.row]; }
+    d.scope = true; dSave(); dRefresh(); return; }
+  if(b.classList.contains('dz-rel')){ dCommitCard(); d.hp[b.dataset.row] = {by:who(), t:Date.now()}; dSave(); dRefresh(); toast(`Hold point ${b.dataset.row} released.`); } }
+['tab-denso', 'dz-card'].forEach(id=>{ $(id).addEventListener('change', dOnChange); $(id).addEventListener('click', dOnClick); });
+$('tab-denso').addEventListener('input', e=>{ if(e.target.id!=='dz-addtx' || typeof matchMembers!=='function') return; const {found, missed} = matchMembers(e.target.value);
+  $('dz-addmsg').textContent = e.target.value.trim() ? `${found.length} member${found.length===1 ? '' : 's'} matched${missed.length ? ` · not recognised: ${missed.slice(0,6).join(', ')}${missed.length > 6 ? '…' : ''}` : ''}` : ''; });
+$('dz-card').addEventListener('keydown', e=>{
+  if(e.key==='Escape'){ e.preventDefault(); e.stopPropagation(); dCommitCard(); dCard.open = false; dRefresh(); return; }
+  if(e.key==='Enter' && !(e.target.tagName==='BUTTON')){ e.preventDefault(); e.stopPropagation(); dStep(e.shiftKey ? -1 : 1); } });
+const _setActiveDz = setActive; setActive = function(...a){ const r = _setActiveDz(...a); renderDenso(); renderCard(); dzHi(); return r; };
+const _buildMemberDz = buildMember; buildMember = function(...a){ const r = _buildMemberDz(...a); renderDenso(); renderCard(); return r; };
+try{ if(localStorage.getItem(STORE_KEY+'-tab')==='denso') showTab('denso'); }catch(e){}
+async function densoPdf(mk){
+  const b = $('dz-pdf'); b.disabled = true; b.textContent = 'Building PDF…';
+  try{
+    const jsPDF = await loadPDF(), doc = new jsPDF({unit:'mm', format:'a4'}), d = dPeek(mk) || {hdr:{}, it:{}, hp:{}}, hdr = d.hdr || {}, st = dStat(mk), m = UTS[mk];
+    const asc = t => typeof t==='string' ? t.replace(/−/g, '-').replace(/[–—]/g, '-') : Array.isArray(t) ? t.map(asc) : t;
+    const _text = doc.text.bind(doc); doc.text = (t, ...r) => _text(asc(t), ...r);
+    const _at = doc.autoTable.bind(doc); doc.autoTable = o => _at(Object.assign({}, o, {didParseCell: c=>{ c.cell.text = asc(c.cell.text); if(o.didParseCell) o.didParseCell(c); }}));
+    const PW = 210, ML = 12, CW = PW - 2*ML, NAVY = [0,32,96], MUTED = [90,103,128];
+    try{ doc.addImage(FM_LOGO, 'PNG', ML, 10, 39, 12); }catch(e){}
+    doc.setTextColor(...NAVY); doc.setFont('helvetica','bold'); doc.setFontSize(14); doc.text('DENSO SERIES 70 INSTALLATION ITP', PW-ML, 15, {align:'right'});
+    doc.setFont('helvetica','normal'); doc.setFontSize(8.5); doc.setTextColor(...MUTED); doc.text(`F12221 CIP Structural Remediation · ${DENSO_DOC} [draft]`, PW-ML, 20.5, {align:'right'});
+    doc.setDrawColor(...NAVY); doc.setLineWidth(0.6); doc.line(ML, 25, PW-ML, 25);
+    doc.setTextColor(20,33,58); doc.setFont('helvetica','bold'); doc.setFontSize(12); doc.text(m.id || mk, ML, 32);
+    doc.setFont('helvetica','normal'); doc.setFontSize(9); doc.text(doc.splitTextToSize(shortName(mk), CW), ML, 37);
+    const kv = [['Specification', DENSO_SPEC], ['Substrate', hdr.sub||'—'], ['Installation date', hdr.date||'—'], ['Protection zone', hdr.zone||'—'], ['Installer (lead)', hdr.installer||'—'], ['Drawing ref.', hdr.dwg||'—'],
+      ['Supervisor', hdr.supervisor||'—'], ['Status', `${DST[st.st][0]} · ${st.done}/${st.tot} items · ${st.holds}/${st.nH} hold points released`]];
+    doc.autoTable({startY:40, margin:{left:ML, right:ML}, theme:'grid', styles:{fontSize:8, cellPadding:1.5, lineColor:[211,217,227], lineWidth:0.2, textColor:[20,33,58]},
+      body: kv.reduce((rows, x, i)=>{ if(i%2===0) rows.push([x[0], x[1]]); else rows[rows.length-1].push(x[0], x[1]); return rows; }, []),
+      columnStyles:{0:{fontStyle:'bold', textColor:NAVY, cellWidth:30}, 2:{fontStyle:'bold', textColor:NAVY, cellWidth:30}}});
+    const SL = {ok:'Accepted', nc:'NOT ACCEPTED', na:'N/A'};
+    const body = [];
+    DENSO.forEach(s=>{ body.push([{content:`${s.sec}. ${s.title}`, colSpan:7, styles:{fillColor:[234,238,246], fontStyle:'bold', textColor:NAVY}}]);
+      s.rows.forEach(r=>{ const x = (d.it||{})[r.id] || {}, hp = (d.hp||{})[r.id];
+        const recs = (r.f||[]).map(([k,l])=>((x.v||{})[k]!==undefined ? `${l}: ${x.v[k]}` : '')).filter(Boolean).concat(x.note ? [x.note] : []).join('\n');
+        const by = [x.by ? `${String(x.by).split('@')[0]} ${new Date(x.t).toLocaleDateString('en-AU')}` : '', hp ? `Hold released: ${String(hp.by).split('@')[0]} ${new Date(hp.t).toLocaleDateString('en-AU')}` : ''].filter(Boolean).join('\n');
+        body.push([r.id, `${r.act}\n${r.crit}`, r.ref, r.pt, recs, x.s ? SL[x.s] : '', by]); }); });
+    doc.autoTable({startY:doc.lastAutoTable.finalY + 4, margin:{left:ML, right:ML, bottom:16}, theme:'grid',
+      head:[['Item', 'Activity and acceptance criteria', 'Spec cl.', 'Pt', 'Records', 'Result', 'Checked / released']], body,
+      styles:{fontSize:7, cellPadding:1.2, lineColor:[211,217,227], lineWidth:0.2, textColor:[20,33,58], valign:'top'}, headStyles:{fillColor:NAVY, textColor:255, fontStyle:'bold'},
+      columnStyles:{0:{cellWidth:9, fontStyle:'bold'}, 1:{cellWidth:72}, 2:{cellWidth:13}, 3:{cellWidth:7, halign:'center', fontStyle:'bold'}, 4:{cellWidth:34}, 5:{cellWidth:18}, 6:{cellWidth:33}},
+      didParseCell: c=>{ if(c.section!=='body') return; if(c.column.index===5){ const v = c.cell.raw; if(v==='NOT ACCEPTED'){ c.cell.styles.textColor = [176,28,28]; c.cell.styles.fontStyle = 'bold'; } else if(v==='Accepted') c.cell.styles.textColor = [31,122,54]; }
+        if(c.column.index===3 && c.cell.raw==='H'){ c.cell.styles.textColor = [176,28,28]; } }});
+    let y = doc.lastAutoTable.finalY + 5; if(y > 255){ doc.addPage(); y = 20; }
+    doc.setFontSize(7.5); doc.setTextColor(...MUTED); doc.text('H = hold point (work stops until released) · W = witness point (client notified) · S = surveillance (Franmarine) · R = review of records', ML, y); y += 4;
+    doc.autoTable({startY:y, margin:{left:ML, right:ML, bottom:16}, theme:'grid', head:[['Sign-off', 'Name', 'Signature', 'Date']],
+      body:[['Installer (lead)', hdr.installer||'', '', ''], ['Supervisor', hdr.supervisor||'', '', ''], ['Client representative', '', '', '']],
+      styles:{fontSize:8.5, cellPadding:3, lineColor:[211,217,227], lineWidth:0.2, minCellHeight:10}, headStyles:{fillColor:NAVY, textColor:255}, columnStyles:{0:{fontStyle:'bold', cellWidth:44}}});
+    const pages = doc.getNumberOfPages(), gen = new Date().toISOString().slice(0,16).replace('T',' ');
+    for(let p=1; p<=pages; p++){ doc.setPage(p); doc.setFontSize(7.5); doc.setTextColor(...MUTED);
+      doc.text(`${DENSO_DOC} · ${m.id || mk} · generated ${gen} · UNCONTROLLED WHEN PRINTED`, ML, 289); doc.text(`Page ${p} of ${pages}`, PW-ML, 289, {align:'right'}); }
+    await saveFile(`F12221 Denso ITP ${(m.id || mk).replace(/[^\w.-]+/g,' ')}.pdf`, doc.output('blob'));
+  }catch(err){ toast('PDF failed: ' + err.message, true); }
+  finally{ b.disabled = false; b.textContent = 'Export Denso ITP (PDF)'; }
+}
+window.__denso = {DROWS, dStat, mkeys:()=>MKEYS.slice(), rec:dRec, save:dSave, open:mk=>setActive(mk, false), refresh:dRefresh};   // used by the automated tests
+
 buildColour(); renderHist(); renderShift();
 return {buildColour, viewFrom, dive, undo};
 })();
@@ -4249,7 +5272,8 @@ const persistence = (function(){
   function pill(){
     const el = $('ah-pill'); if(!el) return;
     const hm = d => d ? ' · saved ' + d.toTimeString().slice(0,5) : '';
-    const st = P.mode!=='shared' ? ['local','Local only'] : !P.online ? ['off', P.dirty ? 'Offline — changes kept here' : 'Offline — reconnecting']
+    const st = P.mode!=='shared' ? ['local','Local only'] : (!P.online && navigator.onLine===false) ? ['off', P.dirty ? 'Offline — changes kept here' : 'Offline — reconnecting']
+      : (!P.online && P.role==='editor' && !P.failed) ? ['sync', (P.saving || P.dirty) ? 'Saving…' : 'Saved' + hm(P.lastSaved) + ' · reconnecting live'] : !P.online ? ['off', 'Reconnecting…']
       : P.role!=='editor' ? ['live','Live · View only'] : P.failed ? ['off','Not saved — see message'] : (P.saving || P.dirty) ? ['sync','Saving…'] : ['live','Live' + hm(P.lastSaved)];
     el.dataset.s = st[0]; el.textContent = st[1]; el.title = (P.email ? 'Signed in as ' + P.email + (P.role==='editor' ? ' (editor)' : ' (view only)') + '. ' : 'Not signed in — data stays in this browser. ') + 'Click for details.';
     const b = $('ah-banner');
@@ -4349,11 +5373,11 @@ const persistence = (function(){
     clearTimeout(debT);
     if(P.mode!=='shared' || P.role!=='editor') return;
     if(P.saving){ setTimeout(flush, 300); return; }
-    if(!P.online){ fail('Offline — your changes are kept in this browser and will be sent when the connection returns.'); return; }
+    if(navigator.onLine===false){ fail('Offline — your changes are kept in this browser and will be sent when the connection returns.'); setTimeout(()=>schedule(0), 15000); return; }
     const keys = changedKeys(); if(!keys.length){ if(P.dirty){ P.dirty = false; pill(); } return; }
     P.saving = true; pill(); let okAll = true;
     try{ for(const k of keys) okAll = (await saveOne(k)) && okAll; }
-    finally{ P.saving = false; if(okAll){ P.lastSaved = new Date(); if(P.failed){ P.failed = false; const b = $('ah-banner'); if(b){ delete b.dataset.err; b.classList.remove('err'); } } } P.dirty = changedKeys().length > 0; pill(); }
+    finally{ P.saving = false; if(!okAll){ clearTimeout(P.retryT); P.retryT = setTimeout(()=>schedule(0), 20000); } if(okAll){ P.lastSaved = new Date(); if(P.failed){ P.failed = false; const b = $('ah-banner'); if(b){ delete b.dataset.err; b.classList.remove('err'); } } } P.dirty = changedKeys().length > 0; pill(); }
   }
   async function saveOne(k, attempt){
     const mine = JSON.parse(js(cur(k)));
@@ -4393,15 +5417,28 @@ const persistence = (function(){
     if(dirty) schedule(400);
     refreshUI();
   }
+  let recT = null, recN = 0;
   function subscribe(){
-    if(P.chan) P.client.removeChannel(P.chan);
-    P.chan = P.client.channel('members-' + STRUCT)
+    if(P.chan){ const old = P.chan; P.chan = null; try{ P.client.removeChannel(old); }catch(e){} }
+    const ch = P.chan = P.client.channel('members-' + STRUCT)
       .on('postgres_changes', {event:'*', schema:'public', table:'members', filter:'structure=eq.' + STRUCT}, p=>onRemote(p.new))
       .subscribe(status=>{
-        if(status==='SUBSCRIBED'){ if(!P.online){ P.online = true; pill(); loadAll().then(()=>flush()); } }
-        else if(status==='CHANNEL_ERROR' || status==='TIMED_OUT' || status==='CLOSED'){ P.online = false; pill(); }
+        if(ch !== P.chan) return;   // a channel replaced by a reconnect
+        if(status==='SUBSCRIBED'){ recN = 0; clearTimeout(recT); const was = P.online; P.online = true; pill(); if(!was || P.needSync){ P.needSync = false; loadAll().then(()=>flush()); } }
+        else if(status==='CHANNEL_ERROR' || status==='TIMED_OUT' || status==='CLOSED'){ console.warn('[F12221 sync] live updates', status); P.online = false; P.needSync = true; pill(); reconnectSoon(); }
       });
   }
+  function reconnectSoon(delay){ clearTimeout(recT); recT = setTimeout(reconnect, delay ?? Math.min(30000, 2000 * Math.pow(2, recN++))); }
+  async function reconnect(){
+    if(P.mode!=='shared' || navigator.onLine===false){ reconnectSoon(10000); return; }
+    try{ const {data} = await P.client.auth.getSession();   // refreshes an expired sign-in token
+      const tok = data && data.session && data.session.access_token; if(tok && P.client.realtime && P.client.realtime.setAuth) P.client.realtime.setAuth(tok); }catch(e){}
+    subscribe();
+  }
+  // back on the page (iPad woken, tab reopened): make sure the live link is up and nothing was missed
+  document.addEventListener('visibilitychange', ()=>{ if(document.visibilityState!=='visible' || P.mode!=='shared') return;
+    if(!P.online || !P.chan || P.chan.state!=='joined') reconnectSoon(0); else loadAll().then(()=>flush()); });
+  setInterval(()=>{ if(P.mode==='shared' && !P.online && !recT) reconnectSoon(0); }, 60000);
 
   // ---- access list (Franmarine staff only)
   async function renderAccess(){
@@ -4514,7 +5551,7 @@ const persistence = (function(){
     if(data && data.session){ if(!started){ started = true; startSession(data.session); } }
     else gate('form');
     window.addEventListener('offline', ()=>{ P.online = false; pill(); });
-    window.addEventListener('online', ()=>{ P.online = true; pill(); if(P.mode==='shared'){ loadAll().then(()=>flush()); } });
+    window.addEventListener('online', ()=>{ if(P.mode==='shared'){ reconnectSoon(0); loadAll().then(()=>flush()); } });
     $('acc-add').addEventListener('click', accessAdd);
     $('acc-body').addEventListener('change', accessChange);
     $('acc-body').addEventListener('click', accessClick);

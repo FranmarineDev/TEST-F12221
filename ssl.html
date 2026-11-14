@@ -657,6 +657,28 @@ body.viewer .nr-btn,body.viewer .nr-panel{display:none}
 .dz-card{padding-bottom:0}
 .dz-card .dz-foot{position:sticky;bottom:0;background:var(--panel);display:grid;gap:6px;padding:8px 0 10px;box-shadow:0 -8px 8px -8px rgba(0,0,0,.18)}
 @media (max-width:900px){ .dz-card{top:auto;max-height:calc(100% - 16px)} }
+.dz-phs{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.dz-pht{position:relative;display:inline-block}
+.dz-pho{padding:0;border:1px solid var(--line);border-radius:6px;overflow:hidden;width:64px;height:64px;background:var(--bg);cursor:pointer;display:block}
+.dz-pho img{width:100%;height:100%;object-fit:cover;display:block}
+.dz-phdel{position:absolute;top:-6px;right:-6px;width:22px;height:22px;border-radius:50%;border:1px solid var(--line);background:var(--panel);color:#d62828;font:700 14px/1 var(--font-ui);padding:0;cursor:pointer}
+.dz-php{width:64px;height:64px;border:1px dashed var(--line);border-radius:6px;display:inline-flex;align-items:center;justify-content:center;color:var(--muted);font-size:18px}
+.dz-php.err{border-color:#d62828;font-size:11px}
+.dz-php button{font:600 11px var(--font-ui);border:1px solid #d62828;border-radius:4px;background:var(--panel);color:#d62828;padding:3px 6px;cursor:pointer}
+.dz-phadd{width:64px;height:64px;border:1px dashed var(--navy);border-radius:6px;background:var(--panel);color:var(--navy);font:600 12px var(--font-ui);cursor:pointer}
+.dz-card .dz-phrow{display:grid;gap:4px}
+.dz-card .dz-phrow .lab{font-size:11px;color:var(--muted)}
+.dz-phreq{font-weight:700;color:#d62828} .dz-phreq.ok{color:#2e9e4f}
+#tab-denso .dz-phn{margin-left:6px;font-size:11px;color:var(--muted);white-space:nowrap} #tab-denso .dz-phn.need{color:#d62828;font-weight:700}
+#tab-denso .dz-phsec{border-top:1px solid var(--line);margin-top:12px;padding-top:10px;display:grid;gap:8px}
+#tab-denso .dz-phsec h3{margin:0;font-size:13px;color:var(--navy)}
+#tab-denso .dz-phadd2{display:grid;grid-template-columns:1fr 1fr;gap:6px;align-items:end}
+#tab-denso .dz-phadd2 .dbtn{grid-column:1/-1}
+#tab-denso .dz-phadd2 select,#tab-denso .dz-phadd2 input{font:13px var(--font-ui);padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg);min-width:0;width:100%;box-sizing:border-box;min-height:34px}
+#tab-denso .dz-phgh{font:600 12px var(--font-ui);color:var(--fg);margin-bottom:4px}
+.dz-card .dz-phs button.dz-pho,.dz-card .dz-phs button.dz-phadd{width:64px!important;height:64px;padding:0!important;font-size:12px!important}
+.dz-card .dz-phs button.dz-pho{background:var(--bg)!important;border:1px solid var(--line)!important}
+.dz-card .dz-phs button.dz-phadd{background:var(--panel)!important;color:var(--navy)!important;border:1px dashed var(--navy)!important}
 </style>
 
 <div class="app">
@@ -4969,10 +4991,19 @@ function renderDenso(){
         const tag = r.pt==='H' ? (hp ? h('span', {class:'dz-ht rel'}, 'Hold released') : x.s==='ok' ? h('span', {class:'dz-ht wait'}, 'Release hold') : h('span', {class:'dz-ht'}, 'Hold point')) : null;
         const ic = x.s==='ok' ? '✓' : x.s==='nc' ? '✕' : x.s==='na' ? 'N/A' : cur ? '●' : '';
         return h('button', {type:'button', role:'listitem', class:'dz-step' + (cur ? ' cur' : '') + (x.s ? ' ' + x.s : ''), 'data-row':r.id, title:x.note || r.crit},
-          h('span', {class:'n'}, r.id), h('span', {class:'a'}, r.act, tag), h('span', {class:'dz-pt pt-' + r.pt, title:DPT[r.pt]}, r.pt), h('span', {class:'ic'}, ic)); })])),
-      h('p', {class:'small'}, 'H = hold point (work stops until released) · W = witness · S = surveillance · R = review. Tap a step to open it on the card.')),
+          h('span', {class:'n'}, r.id), h('span', {class:'a'}, r.act, tag, (n=>n ? h('span', {class:'dz-phn', title:`${n} photo${n===1?'':'s'}`}, `📷${n}`) : DZ_PHREQ[r.id] ? h('span', {class:'dz-phn need'}, '📷 needed') : null)(dzPhList(mk, r.id).length)), h('span', {class:'dz-pt pt-' + r.pt, title:DPT[r.pt]}, r.pt), h('span', {class:'ic'}, ic)); })])),
+      h('p', {class:'small'}, 'H = hold point (work stops until released) · W = witness · S = surveillance · R = review. Tap a step to open it on the card.'),
+      h('div', {class:'dz-phsec'}, h('h3', null, `Photos — proof of completion (${dzPhList(mk).length})`),
+        h('p', {class:'small e26-tip'}, `Pick the ITP item each photo shows. ${Object.keys(DZ_PHREQ).join(' and ')} need a photo before the hold point can be released. Photos print on the Denso ITP PDF.`),
+        phCanEdit() && !view ? h('div', {class:'dz-phadd2'}, h('label', {class:'dz-fl'}, 'ITP item', h('select', {id:'dz-phrow'}, h('option', {value:'G'}, 'General'),
+            ...DENSO.map(s=>h('optgroup', {label:`${s.sec}. ${s.title}`}, ...s.rows.map(r=>h('option', {value:r.id, selected:dCard.open && dCard.row===r.id}, `${r.id} ${r.act}`)))))),
+          h('label', {class:'dz-fl'}, 'Caption (optional)', h('input', {id:'dz-phcap', autocomplete:'off', placeholder:'e.g. east face after cleaning'})),
+          h('button', {type:'button', class:'dbtn primary', id:'dz-phgo'}, '+ Add photo')) : null,
+        ...['G', ...DROWS.map(r=>r.id)].filter(row=>dzPhList(mk, row).length || DZPH.pending.some(x=>x.mk===mk && x.row===row))
+          .map(row=>h('div', {class:'dz-phg'}, h('div', {class:'dz-phgh'}, dzRowLabel(row)), dzPhStrip(mk, row, {del:true}))),
+        !dzPhList(mk).length && !DZPH.pending.some(x=>x.mk===mk) ? h('p', {class:'small'}, phClient() ? 'No Denso photos on this member yet.' : 'Photos are kept in the team database — sign in to see or add them.') : null)),
     h('section', null, h('button', {type:'button', class:'dbtn primary', id:'dz-pdf'}, 'Export Denso ITP (PDF)'),
-      h('p', {class:'small'}, 'Photographs: add them in the Photos section of UT data entry with a caption such as "Denso 2.1 surface prep" — they print on the member sheet.')));
+      h('p', {class:'small'}, 'The PDF includes every Denso photo on this member, grouped by ITP item.')));
   if(view) pane.querySelectorAll('.dz-hdr input, .dz-hdr select').forEach(e=>{ e.disabled = true; });
   const cr = pane.querySelector('.dz-mr.cur'); if(cr && cr.scrollIntoViewIfNeeded) cr.scrollIntoViewIfNeeded(false);
 }
@@ -4991,8 +5022,10 @@ function renderCard(){
     (r.f||[]).length ? h('div', {class:'dz-fields'}, ...r.f.map(([k,l,t])=>dField(mk, r, k, l, t))) : null,
     h('div', {class:'dz-btns'}, btn('ok', 'Accepted'), btn('nc', 'Not accepted'), btn('na', 'N/A')),
     r.pt==='H' ? (hp ? h('p', {class:'dz-hp'}, `Hold point released · ${String(hp.by||'').split('@')[0]} · ${dWhen(hp.t)}`)
-      : h('button', {type:'button', class:'dz-rel', 'data-row':r.id, disabled: x.s!=='ok' ? true : null, title:'Supervisor releases the hold point once the item is accepted'}, x.s==='ok' ? 'Release hold point' : 'Release hold point (accept the item first)')) : null,
+      : h('button', {type:'button', class:'dz-rel', 'data-row':r.id, disabled: x.s!=='ok' || dzPhNeed(mk, r.id) ? true : null, title:'Supervisor releases the hold point once the item is accepted and photographed'}, x.s!=='ok' ? 'Release hold point (accept the item first)' : dzPhNeed(mk, r.id) ? 'Release hold point (add a photo first)' : 'Release hold point')) : null,
     h('input', {class:'dz-note', 'data-row':r.id, placeholder:'Comment (optional)', value:x.note||'', autocomplete:'off'}),
+    h('div', {class:'dz-phrow'}, h('span', {class:'lab'}, `Photos for ${r.id}`, DZ_PHREQ[r.id] ? h('span', {class:'dz-phreq' + (dzPhNeed(mk, r.id) ? '' : ' ok')}, dzPhNeed(mk, r.id) ? ' · required' : ' · ✓') : null),
+      dzPhStrip(mk, r.id, {add:true})),
     x.by ? h('p', {class:'dz-by'}, `Checked by ${x.by} · ${dWhen(x.t)}`) : null,
     h('div', {class:'dz-foot'}, h('div', {class:'dz-nav'}, h('button', {type:'button', id:'dzc-prev', 'aria-label':'Previous step'}, '‹'), h('button', {type:'button', id:'dzc-next', class:'p'}, i===DROWS.length-1 ? 'Save and close' : 'Save and next'),
       h('button', {type:'button', id:'dzc-fwd', 'aria-label':'Next step'}, '›')),
@@ -5001,6 +5034,86 @@ function renderCard(){
   if(view) card.querySelectorAll('input, button.dz-s, button.dz-rel').forEach(e=>{ e.disabled = true; });
   card.hidden = false;
 }
+// ---- Denso photos: proof of completion, each one nominated to an ITP item (or "General"). Stored with the member's Denso record
+// (UTS[mk].denso.ph = {id:{path, tp, row, cap, by, t, w, h, del?}}), files in the same private bucket under SSL|NSL/<member>/denso/.
+const DZPH = {max:30, pending:[], busy:false, target:null};
+const DZ_PHREQ = {'2.1':true, '6.1':true};   // a photo is needed before these hold points can be released
+const dzRowOrd = row => row==='G' ? -1 : DROWS.findIndex(r=>r.id===row);
+const dzPhList = (mk, row) => Object.entries(((dPeek(mk)||{}).ph)||{}).filter(([,p])=>p && !p.del && (row===undefined || p.row===row)).map(([id,p])=>Object.assign({id}, p))
+  .sort((a,b)=>dzRowOrd(a.row) - dzRowOrd(b.row) || a.t - b.t);
+const dzRowLabel = row => { if(row==='G') return 'General'; const r = DROWS.find(q=>q.id===row); return r ? `${r.id} ${r.act}` : row; };
+const dzPhNeed = (mk, row) => !!DZ_PHREQ[row] && !dzPhList(mk, row).length;
+async function dzPhUpload(mk, x){
+  const sb = phClient(); if(!sb) throw new Error('not signed in to the team database');
+  const id = Date.now().toString(36) + Math.random().toString(36).slice(2,6), path = `${STRUCT}/${mk}/denso/${id}.jpg`;
+  const r = await sb.storage.from(PH.bucket).upload(path, x.blob, {contentType:'image/jpeg', upsert:false});
+  if(r.error) throw new Error(r.error.message || 'upload failed');
+  PH.url[path] = URL.createObjectURL(x.blob);
+  let tp = null;
+  try{ const tb = await phSmall(x.blob, 480), tpath = `${STRUCT}/${mk}/denso/${id}_t.jpg`;
+    const t = await sb.storage.from(PH.bucket).upload(tpath, tb, {contentType:'image/jpeg', upsert:false}); if(!t.error){ tp = tpath; PH.url[tpath] = URL.createObjectURL(tb); } }catch(e){}
+  const d = dRec(mk); d.ph = d.ph || {}; d.scope = true;
+  d.ph[id] = Object.assign({path, row:x.row, cap:x.cap||'', by:who(), t:Date.now(), w:x.w, h:x.h}, tp ? {tp} : {});
+  dSave();
+}
+async function dzPhRun(){
+  if(DZPH.busy) return; DZPH.busy = true;
+  try{ for(const x of DZPH.pending.slice()){ if(x.err) continue;
+      try{ await dzPhUpload(x.mk, x); DZPH.pending.splice(DZPH.pending.indexOf(x), 1); toast(`Photo added to ${idLabel(x.mk)} · ${dzRowLabel(x.row)}.`); }
+      catch(e){ x.err = e.message; }
+      renderDenso(); renderCard(); } }
+  finally{ DZPH.busy = false; }
+}
+async function dzPhFiles(files, t){
+  if(!phCanEdit()){ toast(phClient() ? 'View only — you do not have edit access.' : 'Sign in to the team database to add photos.', true); return; }
+  const room = DZPH.max - dzPhList(t.mk).length - DZPH.pending.filter(x=>x.mk===t.mk).length;
+  if(room <= 0){ toast(`${DZPH.max} Denso photos is the limit per member.`, true); return; }
+  for(const f of files.slice(0, room)){
+    try{ const r = await phResize(f); DZPH.pending.push({mk:t.mk, row:t.row, cap:t.cap||'', blob:r.blob, w:r.w, h:r.h}); }
+    catch(err){ toast(`${f.name}: ${err.message}`, true); } }
+  if(files.length > room) toast(`Only ${room} more photo${room===1?'':'s'} fit on this member — the rest were not added.`, true);
+  renderDenso(); renderCard(); dzPhRun();
+}
+const dzFile = h('input', {type:'file', id:'dz-file', accept:'image/*', multiple:true, hidden:true}); document.body.append(dzFile);
+dzFile.addEventListener('change', e=>{ const files = [...e.target.files]; e.target.value = ''; const t = DZPH.target; DZPH.target = null; if(files.length && t) dzPhFiles(files, t); });
+function dzPhPick(mk, row, cap){ DZPH.target = {mk, row, cap}; dzFile.click(); }
+// thumbnails (with pending uploads) for one item, or for the whole member
+function dzPhStrip(mk, row, opts){ opts = opts || {}; const sb = phClient(), edit = phCanEdit() && !isViewer();
+  const L = dzPhList(mk, row), P = DZPH.pending.filter(x=>x.mk===mk && (row===undefined || x.row===row));
+  return h('div', {class:'dz-phs'}, ...L.map(p=>{ const img = h('img', {alt:`${dzRowLabel(p.row)}${p.cap ? ' — ' + p.cap : ''}`, loading:'lazy'});
+      if(sb) phThumb(p).then(u=>{ img.src = u; }).catch(()=>{ img.alt = 'Could not load'; });
+      return h('span', {class:'dz-pht'}, h('button', {type:'button', class:'dz-pho', 'data-id':p.id, title:`${dzRowLabel(p.row)}${p.cap ? ' — ' + p.cap : ''} · ${String(p.by||'').split('@')[0]} ${dWhen(p.t)} — open full size`}, img),
+        opts.del && edit ? h('button', {type:'button', class:'dz-phdel', 'data-id':p.id, 'aria-label':'Remove this photo', title:'Remove this photo'}, '×') : null); }),
+    ...P.map(x=>h('span', {class:'dz-php' + (x.err ? ' err' : ''), title:x.err ? `Not uploaded: ${x.err}` : 'Uploading…'}, x.err ? h('button', {type:'button', class:'dz-phretry', 'data-i':DZPH.pending.indexOf(x)}, 'Retry') : '…')),
+    opts.add && edit ? h('button', {type:'button', class:'dz-phadd', 'data-row':row}, '+ Photo') : null,
+    !L.length && !P.length && !(opts.add && edit) ? h('span', {class:'small'}, sb ? 'No photos.' : 'Sign in to see photos.') : null);
+}
+// full-size viewer: reuses the photo viewer, stepping through this member's Denso photos
+let dzCur = null;
+async function dzView(mk, id){
+  const seq = dzPhList(mk), i = seq.findIndex(p=>p.id===id); if(i<0) return; const p = seq[i]; dzCur = {mk, seq, i}; phCur = null;
+  phBox.hidden = false;
+  rc($('ph-cap-big'), h('div', {class:'t'}, h('b', null, `${idLabel(mk)} · Denso ${dzRowLabel(p.row)}`), `  (${i+1} of ${seq.length})`),
+    p.cap ? h('div', {class:'c'}, p.cap) : null, h('div', {class:'m'}, `${String(p.by||'')} · ${dWhen(p.t)}${p.w ? ` · ${p.w} × ${p.h} px` : ''}`));
+  $('ph-big').removeAttribute('src');
+  try{ const u = await phUrl(p); if(!dzCur || dzCur.seq[dzCur.i].id!==id) return; $('ph-big').src = u; $('ph-dl').href = u;
+    $('ph-dl').download = `${idLabel(mk)} Denso ${p.row==='G' ? 'general' : p.row} ${p.id}.jpg`; }catch(e){ toast(e.message, true); }
+}
+['ph-prev', 'ph-next'].forEach(id=>$(id).addEventListener('click', e=>{ if(!dzCur) return; e.stopImmediatePropagation();
+  const n = dzCur.seq.length, j = (dzCur.i + (id==='ph-next' ? 1 : -1) + n) % n; dzView(dzCur.mk, dzCur.seq[j].id); }, true));
+$('ph-x').addEventListener('click', ()=>{ dzCur = null; }, true);
+phBox.addEventListener('click', e=>{ if(e.target===phBox) dzCur = null; }, true);
+window.addEventListener('keydown', e=>{ if(e.key==='Escape' && dzCur){ dzCur = null; phBox.hidden = true; } }, true);
+// clicks on photo controls (tab and step card)
+function dzPhClick(b){ const mk = UTS.active;
+  if(b.classList.contains('dz-pho')){ dzView(mk, b.dataset.id); return true; }
+  if(b.classList.contains('dz-phadd')){ dCommitCard(); dzPhPick(mk, b.dataset.row, ''); return true; }
+  if(b.id==='dz-phgo'){ dzPhPick(mk, $('dz-phrow').value, $('dz-phcap').value.trim()); $('dz-phcap').value = ''; return true; }
+  if(b.classList.contains('dz-phretry')){ const x = DZPH.pending[+b.dataset.i]; if(x){ delete x.err; dzPhRun(); } return true; }
+  if(b.classList.contains('dz-phdel')){ if(isViewer() || !phCanEdit()) return true; const d = dRec(mk), p = (d.ph||{})[b.dataset.id]; if(!p) return true;
+    p.del = {by:who(), t:Date.now()}; dSave(); renderDenso(); renderCard();
+    actionToast(`Photo removed from ${dzRowLabel(p.row)}.`, [['Undo', ()=>{ delete p.del; dSave(); renderDenso(); renderCard(); }]]); return true; }
+  return false; }
 const dRefresh = () => { renderDenso(); renderCard(); scheduleColour(); };
 const dSave = () => { saveState(); };
 function dCommitCard(){ const card = $('dz-card'); if(card.hidden || isViewer()) return; const mk = UTS.active; let ch = false;
@@ -5022,6 +5135,7 @@ function dOnChange(e){ const t = e.target, mk = UTS.active;
   if(t.classList.contains('dz-f')){ const x = d.it[t.dataset.row] = d.it[t.dataset.row] || {}; x.v = x.v || {}; if(t.value==='') delete x.v[t.dataset.k]; else x.v[t.dataset.k] = t.value; dSave(); return; }
   if(t.classList.contains('dz-note')){ const x = d.it[t.dataset.row] = d.it[t.dataset.row] || {}; if(t.value.trim()) x.note = t.value.trim(); else delete x.note; dSave(); } }
 function dOnClick(e){ const b = e.target.closest('button'); if(!b) return; const mk = UTS.active;
+  if(dzPhClick(b)) return;
   if(b.dataset.f){ dView.filter = dView.filter===b.dataset.f && b.dataset.f!=='all' ? 'all' : b.dataset.f; dSaveView(); renderDenso(); return; }
   if(b.dataset.mk){ dCommitCard(); if(b.dataset.mk!==mk){ setActive(b.dataset.mk, true); if(dCard.open){ dCard.row = dNextOpen(b.dataset.mk); renderCard(); } } else flyToMember(mk); return; }
   if(b.id==='dz-prev' || b.id==='dz-next'){ dCommitCard(); const L = dMembers().length ? dMembers() : MKEYS; let i = L.indexOf(mk);
@@ -5041,6 +5155,7 @@ function dOnClick(e){ const b = e.target.closest('button'); if(!b) return; const
   const d = dRec(mk);
   if(b.classList.contains('dz-s')){ dCommitCard(); const x = d.it[b.dataset.row] = d.it[b.dataset.row] || {}; if(x.s===b.dataset.s){ delete x.s; delete x.by; delete x.t; delete d.hp[b.dataset.row]; } else { x.s = b.dataset.s; x.by = who(); x.t = Date.now(); if(x.s!=='ok') delete d.hp[b.dataset.row]; }
     d.scope = true; dSave(); dRefresh(); return; }
+  if(b.classList.contains('dz-rel') && dzPhNeed(mk, b.dataset.row)){ toast(`Add a photo for ${b.dataset.row} before releasing the hold point.`, true); return; }
   if(b.classList.contains('dz-rel')){ dCommitCard(); d.hp[b.dataset.row] = {by:who(), t:Date.now()}; dSave(); dRefresh(); toast(`Hold point ${b.dataset.row} released.`); } }
 ['tab-denso', 'dz-card'].forEach(id=>{ $(id).addEventListener('change', dOnChange); $(id).addEventListener('click', dOnClick); });
 $('tab-denso').addEventListener('input', e=>{ if(e.target.id!=='dz-addtx' || typeof matchMembers!=='function') return; const {found, missed} = matchMembers(e.target.value);
@@ -5074,7 +5189,7 @@ async function densoPdf(mk){
     const body = [];
     DENSO.forEach(s=>{ body.push([{content:`${s.sec}. ${s.title}`, colSpan:7, styles:{fillColor:[234,238,246], fontStyle:'bold', textColor:NAVY}}]);
       s.rows.forEach(r=>{ const x = (d.it||{})[r.id] || {}, hp = (d.hp||{})[r.id];
-        const recs = (r.f||[]).map(([k,l])=>((x.v||{})[k]!==undefined ? `${l}: ${x.v[k]}` : '')).filter(Boolean).concat(x.note ? [x.note] : []).join('\n');
+        const recs = (r.f||[]).map(([k,l])=>((x.v||{})[k]!==undefined ? `${l}: ${x.v[k]}` : '')).filter(Boolean).concat(x.note ? [x.note] : []).concat((n=>n ? [`Photos: ${n}`] : [])(dzPhList(mk, r.id).length)).join('\n');
         const by = [x.by ? `${String(x.by).split('@')[0]} ${new Date(x.t).toLocaleDateString('en-AU')}` : '', hp ? `Hold released: ${String(hp.by).split('@')[0]} ${new Date(hp.t).toLocaleDateString('en-AU')}` : ''].filter(Boolean).join('\n');
         body.push([r.id, `${r.act}\n${r.crit}`, r.ref, r.pt, recs, x.s ? SL[x.s] : '', by]); }); });
     doc.autoTable({startY:doc.lastAutoTable.finalY + 4, margin:{left:ML, right:ML, bottom:16}, theme:'grid',
@@ -5088,6 +5203,24 @@ async function densoPdf(mk){
     doc.autoTable({startY:y, margin:{left:ML, right:ML, bottom:16}, theme:'grid', head:[['Sign-off', 'Name', 'Signature', 'Date']],
       body:[['Installer (lead)', hdr.installer||'', '', ''], ['Supervisor', hdr.supervisor||'', '', ''], ['Client representative', '', '', '']],
       styles:{fontSize:8.5, cellPadding:3, lineColor:[211,217,227], lineWidth:0.2, minCellHeight:10}, headStyles:{fillColor:NAVY, textColor:255}, columnStyles:{0:{fontStyle:'bold', cellWidth:44}}});
+    // photographs: proof of completion, grouped by ITP item
+    const PL = dzPhList(mk);
+    if(PL.length && phClient()){ b.textContent = `Adding ${PL.length} photos…`; doc.addPage(); let y2 = 20, last = null;
+      doc.setTextColor(...NAVY); doc.setFont('helvetica','bold'); doc.setFontSize(11); doc.text(`Photographs — ${m.id || mk} — Denso installation`, ML, y2); y2 += 7;
+      const gap = 6, cw = (CW - gap)/2; let col = 0, rowH = 0;
+      for(const p of PL){
+        if(p.row!==last){ if(col){ col = 0; y2 += rowH + 4; rowH = 0; } if(y2 > 262){ doc.addPage(); y2 = 20; }
+          doc.setTextColor(...NAVY); doc.setFont('helvetica','bold'); doc.setFontSize(9); doc.text(dzRowLabel(p.row), ML, y2); y2 += 4; last = p.row; }
+        let data; try{ data = await phDataUrl(p); }catch(e){ continue; }
+        const ar = (p.h && p.w) ? p.h/p.w : 0.75, ih = Math.min(cw*ar, 85), w2 = Math.min(cw, ih/ar);
+        if(col===0 && y2 + ih + 12 > 280){ doc.addPage(); y2 = 20; }
+        const x = ML + col*(cw + gap);
+        doc.addImage(data, 'JPEG', x, y2, w2, ih);
+        doc.setFont('helvetica','normal'); doc.setFontSize(7.5); doc.setTextColor(20,33,58);
+        const cap = doc.splitTextToSize(`${p.cap ? p.cap + ' · ' : ''}${String(p.by||'').split('@')[0]} · ${new Date(p.t).toLocaleString('en-AU', {day:'2-digit', month:'2-digit', year:'numeric', hour:'2-digit', minute:'2-digit', hour12:false})}`, cw);
+        doc.text(cap, x, y2 + ih + 4);
+        rowH = Math.max(rowH, ih + 6 + cap.length*3.3);
+        if(++col === 2){ col = 0; y2 += rowH + 4; rowH = 0; } } }
     const pages = doc.getNumberOfPages(), gen = new Date().toISOString().slice(0,16).replace('T',' ');
     for(let p=1; p<=pages; p++){ doc.setPage(p); doc.setFontSize(7.5); doc.setTextColor(...MUTED);
       doc.text(`${DENSO_DOC} · ${m.id || mk} · generated ${gen} · UNCONTROLLED WHEN PRINTED`, ML, 289); doc.text(`Page ${p} of ${pages}`, PW-ML, 289, {align:'right'}); }
